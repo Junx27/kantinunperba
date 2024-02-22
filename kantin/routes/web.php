@@ -16,24 +16,27 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/profil', function () {
-    return view('profil');
+Route::get('admin/dasboard', function () {
+    return view('/admin/dasboard');
 });
-Route::get('/konsumen', function () {
-    return view('konsumen');
+Route::get('user/dasboard', function () {
+    return view('/user/dasboard');
 });
-Route::get('/about', function () {
-    return view('about');
+Route::get('admin/login', function () {
+    return view('/admin/login');
 });
-Route::get('/keranjang', function () {
-    return view('/user/keranjang');
+Route::get('user/login', function () {
+    return view('/user/login');
 });
-Route::get('admin/keranjang', function () {
-    return view('/admin/keranjang');
+Route::get('user/register', function () {
+    return view('/user/register');
 });
-Route::get('admin/daftarmenu', function () {
-    return view('/admin/daftarmenu');
+Route::get('admin/register', function () {
+    return view('/admin/register');
 });
-Route::get('admin/pesananmasuk', function () {
-    return view('/admin/pesananmasuk');
+Route::get('admin/menu', function () {
+    return view('/admin/menu');
+});
+Route::get('user/menu', function () {
+    return view('/user/menu');
 });
