@@ -1,114 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kantin Unperba</title>
-    <style>
-        body {
-
-        }
-        .content {
-            text-align: center;
-            padding: 100px;
-            color: black;
-        }
-        h1 {
-            font-size: 38px;
-        }
-        p {
-            font-size: 20px;
-        }
-        .button {
-            background-color: rgba(255, 255, 255, 0.5); /* Menggunakan alpha channel untuk transparansi */
-            color: black;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 18px;
-            margin-top: 20px;
-            display: inline-block;
-        }
-        .button:hover {
-            background-color: rgba(255, 255, 255, 0.7); /* Efek hover */
-        }
-        body {
-            background-color: white;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .navbar {
-            background-color: yellow;
-            padding: 20px;
-            text-align: center;
-        }
-        .navbar a {
-            text-decoration: none;
-            color: black;
-            padding: 10px 20px;
-            margin: 0 10px;
-            border-radius: 5px;
-        }
-        .content {
-            text-align: center;
-            padding: 50px;
-        }
-        .footer {
-            background-color: white;
-            text-align: center;
-            padding: 20px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: white;
-            padding: 3px 0;
-            text-align: right;
-            z-index: 1000;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  @vite('resources/css/app.css')
 </head>
 <body>
-
-<div class="navbar">
-    <a href="#">Menu</a>
-    <a href="#">Contact</a>
-    <a href="#">Login</a>
-    <a href="#">Register</a>
-</div>
-
-<div class="content">
-    <h1>Selamat Datang Di Sistem Informasi Kantin Unperba</h1>
-    <p style="font-size: 12px;">Temukan pengalaman pemesanan menu kantin yang lebih mudah dan efisien. Mulailah hari Anda dengan menjelajahi beragam pilihan makanan lezat dari kantin favorit Anda, semuanya hanya dalam beberapa klik. Nikmati kemudahan dan kenyamanan dalam memesan makanan favorit Anda kapanpun dan dimanapun.
-    Segera bergabung dan rasakan kemudahan dalam menikmati hidangan tanpa batas!</p>
-    <div class="card-group">
-      <p>Nikmati berbagai pilihan menu lezat dari kantin favorit Anda!</p>
-</div>
-    <img src="https://th.bing.com/th?id=OIP.c5a8pThfxx6dGCd-MjJ-7wHaGL&w=273&h=228&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" class="rounded float-start" alt="es teh">
-    <img src="https://th.bing.com/th?id=OIP.c5a8pThfxx6dGCd-MjJ-7wHaGL&w=273&h=228&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" class="rounded float-start" alt="es teh">
-    <img src="https://th.bing.com/th?id=OIP.c5a8pThfxx6dGCd-MjJ-7wHaGL&w=273&h=228&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" class="rounded float-start" alt="es teh">
-    <img src="https://th.bing.com/th?id=OIP.c5a8pThfxx6dGCd-MjJ-7wHaGL&w=273&h=228&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" class="rounded float-start" alt="es teh">
-</body>
-</div>
-    <footer>
-    <nav>
-    <div class="feedback">
-        <h2>Kritik dan Saran</h2>
-        <form action="#" method="post">
-            <textarea name="feedback" placeholder="Tulis kritik dan saran Anda di sini"></textarea>
-            <br>
-            <input type="submit" value="Kirim">
-        </form>
+    <div class="text-center">
+        <h1 class="text-3xl font-bold mt-20">
+          Selamat Datang di Sistem Informasi Menu Kantin UNPERBA
+        </h1>
+        <p class="mt-20">Login your account</p>
     </div>
-    </nav>
-</footer>
-
+    <div class="w-[600px] h-[280px] bg-yellow-400 rounded-[20px] mx-auto mt-5">
+        <div class="flex flex-col mx-20 py-5">
+            <label for="" class="my-2 flex items-center"><span class="material-symbols-outlined mr-3">
+                mail
+            </span>Username</label>
+            <input type="text" class="p-3 rounded-lg outline-none" placeholder="username">
+        </div>
+        <div class="flex flex-col mx-20">
+        <label for="" class="my-2 flex items-center"><span class="material-symbols-outlined mr-3">
+                encrypted
+            </span>Password</label>
+            <input type="text" class="p-3 rounded-lg outline-none" placeholder="password">
+        </div>
+        <p class="mt-20 ml-5 text-xs text-blue-400">Forgot password?</p>
+        <div class="flex justify-end mt-3">
+            <button class="bg-orange-400 p-2 px-20 rounded-[13px]">Login</button>
+        </div>
+        <div class="flex justify-end mr-3 mt-3">
+            <p class="text-sm">Don't have account, <span class="text-blue-400 cursor-pointer"><a href="http://127.0.0.1:8000/register">Sign Up?</a></span></p>
+        </div>
+        
+    </div>
 </body>
 </html>
