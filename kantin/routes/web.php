@@ -40,3 +40,6 @@ Route::get('admin/menu', function () {
 Route::get('user/menu', function () {
     return view('/user/menu');
 });
+Route::get('user/keranjang', function () {
+    return view('/user/keranjang');
+});
