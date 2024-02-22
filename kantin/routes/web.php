@@ -19,3 +19,12 @@ Route::get('/', function () {
 Route::get('/register', function () {
     return view('register');
 });
+Route::get('/dasboard', function () {
+    return view('dasboard');
+});
+Route::get('/daftarmenu', function () {
+    return view('daftarmenu');
+});
+Route::get('/keranjang', function () {
+    return view('keranjang');
+});
