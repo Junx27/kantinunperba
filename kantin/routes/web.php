@@ -34,3 +34,6 @@ Route::get('admin/keranjang', function () {
 Route::get('admin/daftarmenu', function () {
     return view('/admin/daftarmenu');
 });
+Route::get('admin/login', function () {
+    return view('/admin/login');
+});
