@@ -42,7 +42,7 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="flex justify-center mt-10">
+    <div class="flex justify-center mt-5">
         <?php
         // Daftar nama yang akan dimasukkan ke dalam kotak
         $names = ["Daftar Menu", "Keranjang", "History Pembelian"];
@@ -50,7 +50,7 @@
         // Loop melalui array nama untuk membuat kotak
         foreach ($names as $name) {
             ?>
-            <div class="w-1/4 bg-yellow-300 m-8 p-8">
+            <div class="w-[250px] bg-yellow-300 m-10 p-10 h-[130px]">
                 <h2 class="text-xl font-bold"><?php echo $name; ?></h2>
             </div>
             <?php

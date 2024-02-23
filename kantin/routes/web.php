@@ -28,3 +28,6 @@ Route::get('/daftarmenu', function () {
 Route::get('/keranjang', function () {
     return view('keranjang');
 });
+Route::get('/historypembelian', function () {
+    return view('historypembelian');
+});
