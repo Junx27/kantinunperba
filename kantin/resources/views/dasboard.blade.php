@@ -21,16 +21,16 @@
 <body class="bg-gray-100">
     <div class="flex">
         <!-- Sidebar -->
-        <div class="w-1/6 bg-gray-400 h-screen text-white">
+        <div class="w-1/6 bg-gray-200 h-screen text-black">
             <div class="p-4">
               <div class="p-4">
            
             <ul>
-                <li class="mb-2"><a href="#" class="block">Profil</a></li>
-                <li class="mb-2"><a href="#" class="block">Daftar Menu</a></li>
-                <li class="mb-2"><a href="#" class="block">Keranjang</a></li>
-                <li class="mb-2"><a href="#" class="block">History Pembelian</a></li>
-                <li class="mb-2"><a href="#" class="block">Logout</a></li>
+                <li class="px-4 mb-2"><a href="#" class="block">Profil</a></li>
+                <li class="px-4 mb-2"><a href="#" class="block">Daftar Menu</a></li>
+                <li class="px-4 mb-2"><a href="#" class="block">Keranjang</a></li>
+                <li class="px-4 mb-2"><a href="#" class="block">History Pembelian</a></li>
+                <li class="px-4 mb-2"><a href="#" class="block">Logout</a></li>
             </ul>
         </div>
             </div>
