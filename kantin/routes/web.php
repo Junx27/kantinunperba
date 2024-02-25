@@ -16,15 +16,36 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/register', function () {
-    return view('register');
+Route::get('admin/register', function () {
+    return view('admin/register');
 });
-Route::get('/dasboard', function () {
-    return view('dasboard');
+Route::get('admin/dasboard', function () {
+    return view('admin/dasboard');
 });
-Route::get('/daftarmenu', function () {
-    return view('daftarmenu');
+Route::get('admin/daftarmenu', function () {
+    return view('admin/daftarmenu');
 });
-Route::get('/keranjang', function () {
-    return view('keranjang');
+Route::get('admin/historypenjualan', function () {
+    return view('admin/historypenjualan');
+});
+Route::get('admin/datapelanggan', function () {
+    return view('admin/datapelanggan');
+});
+Route::get('user/login', function () {
+    return view('user/login');
+});
+Route::get('user/register', function () {
+    return view('user/register');
+});
+Route::get('user/keranjang', function () {
+    return view('user/keranjang');
+});
+Route::get('user/daftarmenu', function () {
+    return view('user/daftarmenu');
+});
+Route::get('user/historypembelian', function () {
+    return view('user/historypembelian');
+});
+Route::get('user/editprofil', function () {
+    return view('user/editprofil');
 });

@@ -31,7 +31,7 @@
             <button class="bg-orange-400 p-2 px-20 rounded-[13px]">Login</button>
         </div>
         <div class="flex justify-end mr-3 mt-3">
-            <p class="text-sm">Don't have account, <span class="text-blue-400 cursor-pointer"><a href="http://127.0.0.1:8000/register">Sign Up?</a></span></p>
+            <p class="text-sm">Don't have account, <span class="text-blue-400 cursor-pointer"><a href="http://127.0.0.1:8000/user/register">Sign Up?</a></span></p>
         </div>
         
     </div>
