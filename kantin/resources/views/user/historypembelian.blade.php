@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>History Pembelian</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <!-- Tambahkan link CSS Tailwind -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
@@ -12,7 +13,9 @@
     <div class="bg-gray-200 text-gray-700 h-screen w-1/6 fixed left-0 top-0">
         <div class="p-4">
             <ul>
-                <li class="mb-2"><a href="#" class="block">Profil</a></li>
+                <li class="flex flex-row items-center mb-2"><a href="#" class="block"><span class="material-symbols-outlined">
+                    person
+                    </span><p>Profil</p></a></li>
                 <li class="mb-2"><a href="#" class="block">Data Menu</a></li>
                 <li class="mb-2"><a href="#" class="block">Pesanan Saya</a></li>
                 <li class="mb-2"><a href="#" class="block">History Pembelian</a></li>
@@ -26,7 +29,7 @@
     <div class="ml-1/4 p-2">
         <h1 class="flex justify-center text-2xl font-bold mb-10">History Pembelian</h1>
         <!-- Tabel Data History Penjualan -->
-        <table class="min-w-full">
+        <table class="ml-56">
             <thead>
                 <tr class="bg-yellow-400">
                     <th class="py-2 px-4">No.</th>

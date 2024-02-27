@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('admin/login', function () {
+    return view('admin/login');
 });
 Route::get('admin/register', function () {
     return view('admin/register');
@@ -31,7 +31,13 @@ Route::get('admin/historypenjualan', function () {
 Route::get('admin/datapelanggan', function () {
     return view('admin/datapelanggan');
 });
-Route::get('user/login', function () {
+Route::get('admin/pesananmasuk', function () {
+    return view('admin/pesananmasuk');
+});
+Route::get('admin/tambahmenu', function () {
+    return view('admin/tambahmenu');
+});
+Route::get('/', function () {
     return view('user/login');
 });
 Route::get('user/register', function () {
@@ -48,4 +54,7 @@ Route::get('user/historypembelian', function () {
 });
 Route::get('user/editprofil', function () {
     return view('user/editprofil');
+});
+Route::get('user/dasboard', function () {
+    return view('user/dasboard');
 });

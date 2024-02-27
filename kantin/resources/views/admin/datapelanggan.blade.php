@@ -16,7 +16,7 @@
     <div class="flex h-screen">
         <div class="w-1/6 bg-gray-200">
             <ul>
-                <li class="px-4 mb-2"><a href="#" class="block">Profil</a></li>
+                <li class="px-4 mb-2"><a href="#" class="block">Profil Admin</a></li>
                 <li class="px-4 mb-2"><a href="#" class="block">Daftar Menu</a></li>
                 <li class="px-4 mb-2"><a href="#" class="block">Keranjang</a></li>
                 <li class="px-4 mb-2"><a href="#" class="block">History Pembelian</a></li>
@@ -30,7 +30,7 @@
         <!-- Tabel Data Anggota -->
         <div class="overflow-x-auto">
             <table class="min-w-full bg-white rounded-lg overflow-hidden shadow-md">
-                <thead class="bg-gray-800 text-white">
+                <thead class="bg-yellow-400 text-white">
                     <tr>
                         <th class="px-4 py-2">Nomor</th>
                         <th class="px-4 py-2">Nama Pelanggan</th>

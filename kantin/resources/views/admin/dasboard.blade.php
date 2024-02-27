@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="text-center bg-yellow-400 py-5 text-xl">
-        Dasboard
+        Dasboard Admin
   </div>
   <head>
   <head>
@@ -26,36 +26,12 @@
               <div class="p-4">
            
             <ul>
-                <li class="px-4 mb-2"><a href="#" class="block">Profil</a></li>
-                <li class="px-4 mb-2"><a href="#" class="block">Daftar Menu</a></li>
-                <li class="px-4 mb-2"><a href="#" class="block">Keranjang</a></li>
-                <li class="px-4 mb-2"><a href="#" class="block">History Pembelian</a></li>
-                <li class="px-4 mb-2"><a href="#" class="block">Logout</a></li>
+            <li class="mb-2"><a href="#" class="block">Profil Admin</a></li>
+                <li class="mb-2"><a href="#" class="block">Data Menu</a></li>
+                <li class="mb-2"><a href="#" class="block">Pesanan Masuk</a></li>
+                <li class="mb-2"><a href="#" class="block">History Penjualan</a></li>
+                <li class="mb-2"><a href="#" class="block">Data Pelanggan</a></li>
+                <li class="mb-2"><a href="#" class="block">Logout</a></li>
             </ul>
         </div>
-            </div>
-        </div>
-
-        <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Three Boxes with PHP and Tailwind CSS</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body>
-    <div class="flex justify-center mt-5">
-        <?php
-        // Daftar nama yang akan dimasukkan ke dalam kotak
-        $names = ["Daftar Menu", "Keranjang", "History Pembelian"];
-        
-        // Loop melalui array nama untuk membuat kotak
-        foreach ($names as $name) {
-            ?>
-            <div class="w-[250px] bg-yellow-300 m-10 p-10 h-[130px]">
-                <h2 class="text-xl font-bold"><?php echo $name; ?></h2>
-            </div>
-            <?php
-        }
-        ?>
-    </div>
-</body>
 </html>

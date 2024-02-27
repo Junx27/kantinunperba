@@ -52,7 +52,7 @@
                 </div>
             </div>
             <!-- Add more product items here -->
-            <div class="flex justify-between mt-8">
+            <div class="flex justify-between mt-8 ml-10">
                 <p class="font-semibold">Total harga: Rp.10.0000</p>
                 <button class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">
                     Pesan Sekarang

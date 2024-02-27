@@ -16,11 +16,12 @@
     <div class="flex h-screen">
         <div class="w-1/6 bg-gray-200">
             <ul>
-                <li class="px-4 mb-2"><a href="#" class="block">Profil</a></li>
-                <li class="px-4 mb-2"><a href="#" class="block">Daftar Menu</a></li>
-                <li class="px-4 mb-2"><a href="#" class="block">Keranjang</a></li>
-                <li class="px-4 mb-2"><a href="#" class="block">History Pembelian</a></li>
-                <li class="px-4 mb-2"><a href="#" class="block">Logout</a></li>
+            <li class="mb-2"><a href="#" class="block">Profil Admin</a></li>
+                <li class="mb-2"><a href="#" class="block">Data Menu</a></li>
+                <li class="mb-2"><a href="#" class="block">Pesanan Masuk</a></li>
+                <li class="mb-2"><a href="#" class="block">History Penjualan</a></li>
+                <li class="mb-2"><a href="#" class="block">Data Pelanggan</a></li>
+                <li class="mb-2"><a href="#" class="block">Logout</a></li>
                 <!-- Add more menu items here -->
             </ul>
         </div>

@@ -11,7 +11,7 @@
         <h1 class="text-3xl font-bold mt-20">
           Selamat Datang di Sistem Informasi Menu Kantin UNPERBA
         </h1>
-        <p class="mt-20">Login your account</p>
+        <p class="mt-20">Login Admin</p>
     </div>
     <div class="w-[600px] h-[280px] bg-yellow-400 rounded-[20px] mx-auto mt-5">
         <div class="flex flex-col mx-20 py-5">
@@ -29,11 +29,7 @@
         <p class="mt-20 ml-5 text-xs text-blue-400">Forgot password?</p>
         <div class="flex justify-end mt-3">
             <button class="bg-orange-400 p-2 px-20 rounded-[13px]">Login</button>
-        </div>
-        <div class="flex justify-end mr-3 mt-3">
-            <p class="text-sm">Don't have account, <span class="text-blue-400 cursor-pointer"><a href="http://127.0.0.1:8000/admin/register">Sign Up?</a></span></p>
-        </div>
-        
+        </div> 
     </div>
 </body>
 </html>
