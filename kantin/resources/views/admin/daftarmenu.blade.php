@@ -35,7 +35,8 @@
                         <h2 class="font-semibold text-lg">Menu 1</h2>
                         <p class="text-gray-500">Rp.10</p>
                         <p class="text-gray-500">Stock: 50</p>
-                        <button class="mt-2 bg-orange-500 hover:bg-yellow-400 text-white py-2 px-4 rounded">pesan</button>
+                        <button class="mt-2 bg-orange-500 hover:bg-yellow-400 text-white py-2 px-4 rounded">edit Menu</button>
+                        <button class="mt-2 bg-orange-500 hover:bg-yellow-400 text-white py-2 px-4 rounded">Hapus</button>
                     </div>
                 </div>
                 <!-- Product 2 -->
@@ -45,7 +46,8 @@
                         <h2 class="font-semibold text-lg">Menu 2</h2>
                         <p class="text-gray-500">Rp. 15</p>
                         <p class="text-gray-500">Stock: 30</p>
-                        <button class="mt-2 bg-orange-500 hover:bg-yellow-400 text-white py-2 px-4 rounded">Pesan</button>
+                        <button class="mt-2 bg-orange-500 hover:bg-yellow-400 text-white py-2 px-4 rounded">edit Menu</button>
+                        <button class="mt-2 bg-orange-500 hover:bg-yellow-400 text-white py-2 px-4 rounded">Hapus</button>
                     </div>
                 </div>
                 <!-- Product 3 -->
@@ -55,7 +57,8 @@
                         <h2 class="font-semibold text-lg">Menu 3</h2>
                         <p class="text-gray-500">Rp 20</p>
                         <p class="text-gray-500">Stock: 20</p>
-                        <button class="mt-2 bg-orange-500 hover:bg-yellow-400 text-white py-2 px-4 rounded">Pesan</button>
+                        <button class="mt-2 bg-orange-500 hover:bg-yellow-400 text-white py-2 px-4 rounded">edit Menu</button>
+                        <button class="mt-2 bg-orange-500 hover:bg-yellow-400 text-white py-2 px-4 rounded">Hapus</button>
                     </div>
                 </div>
                 <!-- Add more product cards here -->

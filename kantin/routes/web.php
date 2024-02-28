@@ -58,3 +58,12 @@ Route::get('user/editprofil', function () {
 Route::get('user/dasboard', function () {
     return view('user/dasboard');
 });
+Route::get('user/strukpemesanan', function () {
+    return view('user/strukpemesanan');
+});
+Route::get('user/metodepembayaran', function () {
+    return view('user/metodepembayaran');
+});
+Route::get('user/intruksipembayaran', function () {
+    return view('user/intruksipembayaran');
+});

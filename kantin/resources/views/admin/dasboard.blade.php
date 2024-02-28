@@ -33,5 +33,30 @@
                 <li class="mb-2"><a href="#" class="block">Data Pelanggan</a></li>
                 <li class="mb-2"><a href="#" class="block">Logout</a></li>
             </ul>
+            </div>
+            </div>
         </div>
+
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Boxes with PHP and Tailwind CSS</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="flex justify-center mt-5">
+        <?php
+        // Daftar nama yang akan dimasukkan ke dalam kotak
+        $names = ["Daftar Menu", "Pesanan Masuk", "History Penjualan"];
+        
+        // Loop melalui array nama untuk membuat kotak
+        foreach ($names as $name) {
+            ?>
+            <div class="w-[250px] bg-yellow-300 m-10 p-10 h-[130px]">
+                <h2 class="text-xl font-bold"><?php echo $name; ?></h2>
+            </div>
+            <?php
+        }
+        ?>
+    </div>
+</body>
 </html>
