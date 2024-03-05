@@ -40,6 +40,9 @@ Route::get('admin/pesananmasuk', function () {
 Route::get('admin/tambahmenu', function () {
     return view('admin/tambahmenu');
 });
+Route::get('admin/editmenu', function () {
+    return view('admin/editmenu');
+});
 Route::get('/', function () {
     return view('user/login');
 });
@@ -69,4 +72,7 @@ Route::get('user/metodepembayaran', function () {
 });
 Route::get('user/intruksipembayaran', function () {
     return view('user/intruksipembayaran');
+});
+Route::get('user/landingpage', function () {
+    return view('user/landingpage');
 });
