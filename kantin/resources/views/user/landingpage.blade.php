@@ -9,17 +9,16 @@
 </head>
 <body class="bg-gray-100">
     <!-- Navbar -->
-    <nav class="bg-yellow-400 p-4">
+    <nav class="bg-white p-4">
         <div class="container mx-auto flex justify-between items-center">
             <!-- Logo -->
-            <a href="#" class="text-white font-bold text-lg">Kantin Unperba</a>
+            <a href="#" class="text-black font-bold text-lg">Kantin Unperba</a>
             <!-- Menu -->
             <ul class="flex space-x-4">
-                <li><a href="#" class="text-white hover:text-yellow-100">Menu</a></li>
-                <li><a href="#" class="text-white hover:text-yellow-100">Contact</a></li>
-                <li><a href="#" class="text-white hover:text-yellow-100">Kritik & Saran</a></li>
-                <li><a href="#" class="text-white hover:text-yellow-100">Login</a></li>
-                <li><a href="#" class="text-white hover:text-yellow-100">Register</a></li>
+                <li><a href="#" class="text-black hover:text-yellow-100">Contact</a></li>
+                <li><a href="#" class="text-white hover:text-yellow-100"></a></li><a href="http://127.0.0.1:8000/user/kritik&saran">Kritik & Saran</a></button>
+                <li><a href="#" class="text-white hover:text-yellow-100"></a></li><a href="http://127.0.0.1:8000/user/login">Login</a></button>
+                <li><a href="#" class="text-white hover:text-yellow-100"></a></li><a href="http://127.0.0.1:8000/user/register">Register</a></button>
             </ul>
         </div>
     </nav>
@@ -60,14 +59,38 @@
                 </div>
             </div>
         </div>
+        <!-- Testimoni Section -->
+    <section class="bg-white text-black py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-semibold mb-8">Apa yang Pelanggan Kami Katakan</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Testimoni 1 -->
+                <div class="bg-white p-8 rounded-md">
+                    <p>"Sistem Informasi Kantin ini benar-benar membantu saya untuk memesan makanan dengan mudah. Sangat direkomendasikan!"</p>
+                    <p class="font-semibold mt-4">- John Doe</p>
+                </div>
+                <!-- Testimoni 2 -->
+                <div class="bg-white p-8 rounded-md">
+                    <p>"Saya sangat menyukai menu interaktifnya. Sangat membantu saya untuk memilih makanan yang ingin saya pesan."</p>
+                    <p class="font-semibold mt-4">- Jane Smith</p>
+                </div>
+            </div>
+        </div>
+    </section>
         <!-- Informasi Kontak -->
-    <footer class="bg-yellow-500 text-white py-8">
+    <footer class="bg-yellow-400 text-white py-8">
         <div class="container mx-auto flex justify-center">
             <div class="text-center">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
                 <h2 class="text-2xl font-bold mb-4">Hubungi Kami</h2>
-                <p>Alamat: Jl. Kedungmenjangan No. 123</p>
-                <p>Telepon: 123-456-789</p>
-                <p>Email: kantinunperba@gmail.com</p>
+                <p><span class="material-symbols-outlined">pin_drop
+                </span>Alamat: Jl. Kedungmenjangan No. 123</p>
+                <p><span class="material-symbols-outlined">
+                perm_phone_msg
+                </span>Telepon: 123-456-789</p>
+                <p><span class="material-symbols-outlined">
+                stacked_email
+                </span>Email: kantinunperba@gmail.com</p>
             </div>
         </div>
     </footer>

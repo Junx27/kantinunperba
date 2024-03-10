@@ -43,7 +43,10 @@ Route::get('admin/tambahmenu', function () {
 Route::get('admin/editmenu', function () {
     return view('admin/editmenu');
 });
-Route::get('/', function () {
+Route::get('admin/profiladmin', function () {
+    return view('admin/profiladmin');
+});
+Route::get('user/login', function () {
     return view('user/login');
 });
 Route::get('user/register', function () {
@@ -70,9 +73,18 @@ Route::get('user/strukpemesanan', function () {
 Route::get('user/metodepembayaran', function () {
     return view('user/metodepembayaran');
 });
-Route::get('user/intruksipembayaran', function () {
-    return view('user/intruksipembayaran');
+Route::get('user/pembayaranBank', function () {
+    return view('user/pembayaranBank');
+});
+Route::get('user/pembayaranDana', function () {
+    return view('user/pembayaranDana');
 });
 Route::get('user/landingpage', function () {
     return view('user/landingpage');
+});
+Route::get('user/profiluser', function () {
+    return view('user/profiluser');
+});
+Route::get('user/kritik&saran', function () {
+    return view('user/kritik&saran');
 });

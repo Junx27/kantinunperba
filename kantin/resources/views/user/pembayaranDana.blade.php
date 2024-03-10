@@ -9,14 +9,15 @@
     <title>Intruksi Pembayaran</title>
 </head>
 <body>
-    <div class="text-center bg-yellow-400 py-5 text-xl">
-        Intruksi Pembayaran
+    <div class="text-center bg-yellow-400 py-5 text-xl"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <span class="material-symbols-outlined">
+payments
+</span>Intruksi Pembayaran
   </div>
         <!-- Informasi Pembayaran -->
         <div class="flex justify-center mb-8 py-10">
-            <p>Silahkan melakukan pembayaran melalui nomor rekening dibawah ini!</p>
-            <p>Bank BRI: 0200050000.</p>
-
+            <p>Silahkan melakukan pembayaran melalui nomor DANA dibawah ini!</p>
+            <p>no. DANA: 081229044579.</p>
         </div>
         <!-- Instruksi Pembayaran -->
         <div class="flex justify-center mb-8">
@@ -28,7 +29,7 @@
         </div>
         <!-- Tombol Konfirmasi Pembayaran -->
         <div class="flex justify-center">
-        <button class="w-[300px] bg-orange-400 p-2 rounded-lg mt-4">Konfirmasi Pembayaran</button>
+        <button class="bg-orange-400 p-2 rounded-lg mt-4">Konfirmasi Pembayaran</button>
     </div>
 </body>
 </html>

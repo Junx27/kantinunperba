@@ -21,17 +21,25 @@
 <body class="bg-gray-100">
     <div class="flex">
         <!-- Sidebar -->
-        <div class="w-1/6 bg-gray-200 h-screen text-black">
+        <div class="w-1/6 bg-gray-400 h-screen text-black">
             <div class="p-4">
-              <div class="p-4">
-           
+            <div class="p-4">
             <ul>
-            <li class="mb-2"><a href="#" class="block">Profil Admin</a></li>
-                <li class="mb-2"><a href="#" class="block">Data Menu</a></li>
-                <li class="mb-2"><a href="#" class="block">Pesanan Masuk</a></li>
-                <li class="mb-2"><a href="#" class="block">History Penjualan</a></li>
-                <li class="mb-2"><a href="#" class="block">Data Pelanggan</a></li>
-                <li class="mb-2"><a href="#" class="block">Logout</a></li>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+            <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/profiladmin"><span class="material-symbols-outlined">
+            person</span>Profil Admin</a></button>
+            <li class="px-4 mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/dasboard"><span class="material-symbols-outlined">
+            home</span>Dasboard</a></button>
+            <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/daftarmenu"><span class="material-symbols-outlined">
+            book</span>Daftar Menu</a></button>
+            <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/pesananmasuk"><span class="material-symbols-outlined">
+            notifications_unread</span>Pesanan Masuk</a></button>
+            <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/historypenjualan"><span class="material-symbols-outlined">
+            manage_history</span>History Penjualan</a></button>
+            <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/datapelanggan"><span class="material-symbols-outlined">
+            groups</span>Data Pelanggan</a></button>
+            <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/landingpage"><span class="material-symbols-outlined">
+            logout</span>Log Out</a></button>
             </ul>
             </div>
             </div>
