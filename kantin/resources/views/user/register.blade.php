@@ -8,7 +8,7 @@
     <title>Registrasi</title>
 </head>
 <body>
-    <div class="text-center bg-yellow-400 py-5 text-xl">
+    <div class="text-center bg-yellow-400 py-2 text-xl">
         Registrasi
     </div>
     <div class="mt-20 grid grid-cols-2 gap-10">

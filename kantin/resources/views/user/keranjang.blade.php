@@ -8,7 +8,7 @@
     <title>keranjang</title>
 </head>
 <body>
-    <div class="text-center bg-yellow-400 py-5 text-xl">
+    <div class="text-center bg-yellow-400 py-2 text-xl">
         Keranjang
     </div>
 </head>

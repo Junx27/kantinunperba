@@ -8,19 +8,19 @@
     <title>Daftar Menu</title>
 </head>
 <body>
-    <div class="text-center bg-yellow-400 py-5 text-xl">
+    <div class="text-center bg-yellow-400 py-2 text-xl">
         Daftar Menu
   </div>
   <body class="bg-gray-100">
     <!-- Sidebar -->
     <div class="flex h-screen">
-        <div class="w-1/6 bg-gray-400">
+    <div class="w-1/6 bg-gray-400">
             <ul>
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
             <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/profiladmin"><span class="material-symbols-outlined">
             person</span>Profil Admin</a></button>
             <li class="px-4 mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/dasboard"><span class="material-symbols-outlined">
-            home</span>Dasboard</a></button>
+            storefront</span>Dasboard</a></button>
             <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/daftarmenu"><span class="material-symbols-outlined">
             book</span>Daftar Menu</a></button>
             <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/pesananmasuk"><span class="material-symbols-outlined">
@@ -48,9 +48,9 @@
                         <h2 class="font-semibold text-lg">Menu 1</h2>
                         <p class="text-gray-500">Rp.10</p>
                         <p class="text-gray-500">Stock: 50</p>
-                        <button class="mt-2 bg-orange-500 hover:bg-yellow-400 text-white py-2 px-4 rounded"></li><a href="http://127.0.0.1:8000/admin/editmenu">Edit Menu</a></button>
-                        <button class="mt-2 bg-orange-500 hover:bg-yellow-400 text-white py-2 px-4 rounded">Tambah Menu</button>
-                        <button class="mt-2 bg-orange-500 hover:bg-yellow-400 text-white py-2 px-4 rounded">Hapus</button>
+                        <button class="mt-2 bg-orange-500 hover:bg-yellow-400 text-white py-2 px-2 rounded"></li><a href="http://127.0.0.1:8000/admin/editmenu">Edit</a></button>
+                        <button class="mt-2 bg-orange-500 hover:bg-yellow-400 text-white py-2 px-2 rounded">Tambah</button>
+                        <button class="mt-2 bg-red-500 hover:bg-yellow-400 text-white py-2 px-2 rounded">Hapus</button>
                     </div>
                 </div>
                 <!-- Product 2 -->
@@ -60,9 +60,9 @@
                         <h2 class="font-semibold text-lg">Menu 2</h2>
                         <p class="text-gray-500">Rp. 15</p>
                         <p class="text-gray-500">Stock: 30</p>
-                        <button class="mt-2 bg-orange-500 hover:bg-yellow-400 text-white py-2 px-4 rounded"></li><a href="http://127.0.0.1:8000/admin/editmenu">Edit Menu</a></button>
-                        <button class="mt-2 bg-orange-500 hover:bg-yellow-400 text-white py-2 px-4 rounded">Tambah Menu</button>
-                        <button class="mt-2 bg-orange-500 hover:bg-yellow-400 text-white py-2 px-4 rounded">Hapus</button>
+                        <button class="mt-2 bg-orange-500 hover:bg-yellow-400 text-white py-2 px-2 rounded"></li><a href="http://127.0.0.1:8000/admin/editmenu">Edit</a></button>
+                        <button class="mt-2 bg-orange-500 hover:bg-yellow-400 text-white py-2 px-2 rounded">Tambah</button>
+                        <button class="mt-2 bg-red-500 hover:bg-yellow-400 text-white py-2 px-2 rounded">Hapus</button>
                     </div>
                 </div>
                 <!-- Product 3 -->
@@ -72,9 +72,9 @@
                         <h2 class="font-semibold text-lg">Menu 3</h2>
                         <p class="text-gray-500">Rp 20</p>
                         <p class="text-gray-500">Stock: 20</p>
-                        <button class="mt-2 bg-orange-500 hover:bg-yellow-400 text-white py-2 px-4 rounded"></li><a href="http://127.0.0.1:8000/admin/editmenu">Edit Menu</a></button>
-                        <button class="mt-2 bg-orange-500 hover:bg-yellow-400 text-white py-2 px-4 rounded">Tambah Menu</button>
-                        <button class="mt-2 bg-orange-500 hover:bg-yellow-400 text-white py-2 px-4 rounded">Hapus</button>
+                        <button class="mt-2 bg-orange-500 hover:bg-yellow-400 text-white py-2 px-2 rounded"></li><a href="http://127.0.0.1:8000/admin/editmenu">Edit</a></button>
+                        <button class="mt-2 bg-orange-500 hover:bg-yellow-400 text-white py-2 px-2 rounded">Tambah</button>
+                        <button class="mt-2 bg-red-500 hover:bg-yellow-400 text-white py-2 px-2 rounded">Hapus</button>
                     </div>
                 </div>
                 <!-- Add more product cards here -->

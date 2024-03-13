@@ -8,7 +8,7 @@
     <title>Data Pelanggan</title>
 </head>
 <body>
-    <div class="text-center bg-yellow-400 py-5 text-xl">
+    <div class="text-center bg-yellow-400 py-2 text-xl">
     Data Pelanggan
   </div>
   <body class="bg-gray-100">

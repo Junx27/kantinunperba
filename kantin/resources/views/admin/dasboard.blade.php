@@ -8,7 +8,7 @@
     <title>Dasboard</title>
 </head>
 <body>
-    <div class="text-center bg-yellow-400 py-5 text-xl">
+    <div class="text-center bg-yellow-400 py-2 text-xl">
         Dasboard Admin
   </div>
   <head>
@@ -29,7 +29,7 @@
             <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/profiladmin"><span class="material-symbols-outlined">
             person</span>Profil Admin</a></button>
             <li class="px-4 mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/dasboard"><span class="material-symbols-outlined">
-            home</span>Dasboard</a></button>
+            storefront</span>Dasboard</a></button>
             <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/daftarmenu"><span class="material-symbols-outlined">
             book</span>Daftar Menu</a></button>
             <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/pesananmasuk"><span class="material-symbols-outlined">
@@ -51,20 +51,30 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="flex justify-center mt-5">
-        <?php
-        // Daftar nama yang akan dimasukkan ke dalam kotak
-        $names = ["Daftar Menu", "Pesanan Masuk", "History Penjualan"];
-        
-        // Loop melalui array nama untuk membuat kotak
-        foreach ($names as $name) {
-            ?>
-            <div class="w-[250px] bg-yellow-300 m-10 p-10 h-[130px]">
-                <h2 class="text-xl font-bold"><?php echo $name; ?></h2>
+     <!-- Fitur Section -->
+     <section class="container py-5">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <!-- Fitur 1 -->
+            <div class="bg-purple-300 shadow-md p-8 rounded-md text-center">
+                <h3 class="text-xl font-semibold mb-4">Daftar Menu</h3>
+                <p class="text-gray-600"><span class="material-symbols-outlined">restaurant_menu</span></p>
             </div>
-            <?php
-        }
-        ?>
-    </div>
+            <!-- Fitur 2 -->
+            <div class="bg-blue-300 shadow-md p-8 rounded-md text-center">
+                <h3 class="text-xl font-semibold mb-4">History Penjualan</h3>
+                <p class="text-gray-600"><span class="material-symbols-outlined">monitoring</span>.</p>
+            </div>
+            <!-- Fitur 3 -->
+            <div class="bg-yellow-300 shadow-md p-8 rounded-md text-center">
+                <h3 class="text-xl font-semibold mb-4">Data Pelanggan</h3>
+                <p class="text-gray-600"><span class="material-symbols-outlined">folder_shared</span></p>
+            </div>
+            <!-- Fitur 4 -->
+            <div class="bg-green-300 shadow-md p-8 rounded-md text-center">
+                <h3 class="text-xl font-semibold mb-4">Pesanan Masuk</h3>
+                <p class="text-gray-600"><span class="material-symbols-outlined">mark_unread_chat_alt</span></p>
+            </div>
+        </div>
+    </section>
 </body>
 </html>

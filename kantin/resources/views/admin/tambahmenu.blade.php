@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    @vite('resources/css/app.css')
     <title>Tambah Menu</title>
-    <!-- Tambahkan link CSS Tailwind -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100">
+<body>
+    <div class="text-center bg-yellow-400 py-2 text-xl">
+        Tambah Daftar Menu
+  </div>
+  <body class="bg-gray-100">
     <!-- Sidebar -->
     <div class="bg-gray-400 text-gray-700 h-screen w-1/6 fixed left-0 top-0">
         <div class="p-4">
@@ -33,7 +37,7 @@
 
     <!-- Konten -->
     <div class="ml-1/5 p-8">
-        <h1 class="flex justify-center text-3xl font-bold mb-8">Tambah Daftar Menu</h1>
+        <h1 class="flex justify-center text-1xl font-bold mb-8">Form Input Data Menu</h1>
         <!-- Formulir Tambah Menu -->
         <form action="#" method="POST" enctype="multipart/form-data" class="max-w-lg mx-auto">
             <div class="mb-4">

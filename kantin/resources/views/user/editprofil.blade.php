@@ -8,7 +8,7 @@
     <title>Edit Profil</title>
 </head>
 <body>
-    <div class="text-center bg-yellow-400 py-5 text-xl">
+    <div class="text-center bg-yellow-400 py-2 text-xl">
         Edit Profil
     </div>
     <div class="mt-20 grid grid-cols-2 gap-10">

@@ -88,3 +88,6 @@ Route::get('user/profiluser', function () {
 Route::get('user/kritik&saran', function () {
     return view('user/kritik&saran');
 });
+Route::get('user/pesanansaya', function () {
+    return view('user/pesanansaya');
+});
