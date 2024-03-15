@@ -46,6 +46,9 @@ Route::get('admin/editmenu', function () {
 Route::get('admin/profiladmin', function () {
     return view('admin/profiladmin');
 });
+Route::get('admin/kritik&saran', function () {
+    return view('admin/kritik&saran');
+});
 Route::get('user/login', function () {
     return view('user/login');
 });
@@ -90,4 +93,7 @@ Route::get('user/kritik&saran', function () {
 });
 Route::get('user/pesanansaya', function () {
     return view('user/pesanansaya');
+});
+Route::get('user/pembayarantunai', function () {
+    return view('user/pembayarantunai');
 });

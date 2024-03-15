@@ -53,23 +53,23 @@
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
             <!-- Fitur 1 -->
             <div class="bg-purple-300 shadow-md p-8 rounded-md text-center">
-                <h3 class="text-xl font-semibold mb-4">Daftar Menu</h3>
                 <p class="text-gray-600"><span class="material-symbols-outlined">restaurant_menu</span></p>
+                <a href="http://127.0.0.1:8000/user/daftarmenu"><h3 class="text-xl font-semibold mb-4">Daftar Menu</a></button>
             </div>
             <!-- Fitur 2 -->
             <div class="bg-blue-300 shadow-md p-8 rounded-md text-center">
-                <h3 class="text-xl font-semibold mb-4">Keranjang</h3>
                 <p class="text-gray-600"><span class="material-symbols-outlined">shopping_cart</span>
+                <a href="http://127.0.0.1:8000/user/keranjang"><h3 class="text-xl font-semibold mb-4">Keranjang Saya</a></button>
             </div>
             <!-- Fitur 3 -->
             <div class="bg-green-300 shadow-md p-8 rounded-md text-center">
-                <h3 class="text-xl font-semibold mb-4">Histori Pembelian</h3>
                 <p class="text-gray-600"><span class="material-symbols-outlined">monitoring</span>.</p>
+                <a href="http://127.0.0.1:8000/user/historypembelian"><h3 class="text-xl font-semibold mb-4">Histori Pembelian</a></button>
             </div>
             <!-- Fitur 4 -->
             <div class="bg-yellow-300 shadow-md p-8 rounded-md text-center">
-                <h3 class="text-xl font-semibold mb-4">Pesanan Saya</h3>
                 <p class="text-gray-600"><span class="material-symbols-outlined">featured_play_list</span></p>
+                <a href="http://127.0.0.1:8000/user/pesanansaya"><h3 class="text-xl font-semibold mb-4">Pesanan Saya</a></button>
     </section>
 </body>
 </html>

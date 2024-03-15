@@ -21,17 +21,13 @@
             <li class="px-4 mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/user/dasboard"><span class="material-symbols-outlined">
             home</span>Dasboard</a></button>
             <li class="px-4 mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/user/daftarmenu"><span class="material-symbols-outlined">
-            book
-            </span>Daftar Menu</a></button>
+            book</span>Daftar Menu</a></button>
             <li class="px-4 mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/user/keranjang"><span class="material-symbols-outlined">
-            shopping_cart_checkout
-            </span>keranjang</a></button>
+            shopping_cart_checkout</span>keranjang</a></button>
             <li class="px-4 mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/user/historypembelian"><span class="material-symbols-outlined">
-            manage_history
-            </span>History Pembelian</a></button>
+            manage_history</span>History Pembelian</a></button>
             <li class="px-4 mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/user/landingpage"><span class="material-symbols-outlined">
-            logout
-            </span>Log out</a></button>
+            logout</span>Log out</a></button>
             </ul>
         </div>
         <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6">

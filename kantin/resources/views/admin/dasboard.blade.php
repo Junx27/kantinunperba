@@ -21,10 +21,9 @@
 <body class="bg-gray-100">
     <div class="flex">
         <!-- Sidebar -->
-        <div class="w-1/6 bg-gray-400 h-screen text-black">
-            <div class="p-4">
-            <div class="p-4">
-            <ul>
+        <div class="bg-gray-400 text-gray-700 h-screen w-1/6 fixed left-0 top-0">
+        <div class="p-4">
+        <ul>
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
             <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/profiladmin"><span class="material-symbols-outlined">
             person</span>Profil Admin</a></button>
@@ -41,8 +40,8 @@
             <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/landingpage"><span class="material-symbols-outlined">
             logout</span>Log Out</a></button>
             </ul>
-            </div>
-            </div>
+        </div>
+    </div>
         </div>
 
         <meta charset="UTF-8">
@@ -56,23 +55,23 @@
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
             <!-- Fitur 1 -->
             <div class="bg-purple-300 shadow-md p-8 rounded-md text-center">
-                <h3 class="text-xl font-semibold mb-4">Daftar Menu</h3>
                 <p class="text-gray-600"><span class="material-symbols-outlined">restaurant_menu</span></p>
+                <a href="http://127.0.0.1:8000/admin/daftarmenu"><h3 class="text-xl font-semibold mb-4">Daftar Menu</a></button>
             </div>
             <!-- Fitur 2 -->
             <div class="bg-blue-300 shadow-md p-8 rounded-md text-center">
-                <h3 class="text-xl font-semibold mb-4">History Penjualan</h3>
                 <p class="text-gray-600"><span class="material-symbols-outlined">monitoring</span>.</p>
+                <a href="http://127.0.0.1:8000/admin/historypenjualan"><h3 class="text-xl font-semibold mb-4">Histori Penjualan</a></button>
             </div>
             <!-- Fitur 3 -->
             <div class="bg-yellow-300 shadow-md p-8 rounded-md text-center">
-                <h3 class="text-xl font-semibold mb-4">Data Pelanggan</h3>
                 <p class="text-gray-600"><span class="material-symbols-outlined">folder_shared</span></p>
+                <a href="http://127.0.0.1:8000/admin/datapelanggan"><h3 class="text-xl font-semibold mb-4">Data Pelanggan</a></button>
             </div>
             <!-- Fitur 4 -->
             <div class="bg-green-300 shadow-md p-8 rounded-md text-center">
-                <h3 class="text-xl font-semibold mb-4">Pesanan Masuk</h3>
                 <p class="text-gray-600"><span class="material-symbols-outlined">mark_unread_chat_alt</span></p>
+                <a href="http://127.0.0.1:8000/admin/pesananmasuk"><h3 class="text-xl font-semibold mb-4">Pesanan Masuk</a></button>
             </div>
         </div>
     </section>

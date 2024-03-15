@@ -3,33 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-    @vite('resources/css/app.css')
     <title>Intruksi Pembayaran</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <div class="text-center bg-yellow-400 py-2 text-xl"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <span class="material-symbols-outlined">
-payments
-</span>Intruksi Pembayaran
-  </div>
-        <!-- Informasi Pembayaran -->
-        <div class="flex justify-center mb-8 py-10">
-            <p>Silahkan melakukan pembayaran melalui nomor DANA dibawah ini!</p>
-            <p>no. DANA: 081229044579.</p>
+<body class="bg-yellow-100 min-h-screen flex items-center justify-center">
+    <div class="max-w-lg w-full bg-white p-8 rounded-lg shadow-md">
+        <h1 class="text-3xl font-bold text-center mb-6">Intruksi Pembayaran</h1>
+        
+        <div class="mb-6">
+            <p class="text-gray-800">Silakan lakukan pembayaran sesuai instruksi di bawah ini:</p>
+            <ul class="list-disc pl-6 mt-2">
+                <li>Nama Dana: Kantinunperba</li>
+                <li>Nomor Dana: 081229044579</li>
+                <li>Jumlah Pembayaran: Rp.40.000</li>
+                <!-- Ganti informasi pembayaran sesuai dengan kebutuhan -->
+            </ul>
         </div>
-        <!-- Instruksi Pembayaran -->
-        <div class="flex justify-center mb-8">
-            <p>Setelah melakukan pembayaran, silahkan mengunggah bukti pembayaran.</p>
+
+        <div class="mb-6">
+            <p class="text-gray-800">Setelah melakukan pembayaran, silakan unggah bukti pembayaran di bawah ini:</p>
+            <form action="upload.php" method="post" enctype="multipart/form-data" class="mt-4">
+                <input type="file" name="bukti_pembayaran" accept="image/*" required>
+                <button type="submit" class="py-2 px-4 bg-blue-500 text-white rounded-md mt-2 hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Unggah</button>
+            </form>
         </div>
-        <!-- Tombol Upload Bukti Pembayaran -->
-        <div class="flex justify-center">
-        <button class="bg-blue-500 text-white py-2 px-4 rounded-md mb-4">Unggah Bukti Pembayaran</button>
-        </div>
+
         <!-- Tombol Konfirmasi Pembayaran -->
         <div class="flex justify-center">
         <button class="bg-orange-400 p-2 rounded-lg mt-4">Konfirmasi Pembayaran</button>
+    </div>
     </div>
 </body>
 </html>

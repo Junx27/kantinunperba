@@ -13,10 +13,9 @@
         <div class="container mx-auto flex justify-between items-center py-2">
             <h1 class="text-xl font-semibold text-gray-800">Sistem Informasi Kantin UNPERBA</h1>
             <nav>
-            <a href="#" class="text-gray-600 hover:text-gray-800 px-4 py-2">Chat</a>
-            <a href="#" class="text-gray-600 hover:text-gray-800 px-4 py-2">Login</a>
-            <a href="#" class="text-gray-600 hover:text-gray-800 px-4 py-2">Register</a>
-            <a href="#" class="text-gray-600 hover:text-gray-800 px-4 py-2">Kritik & saran</a>
+            <a href="#" class="text-gray-600 hover:text-gray-800 px-4 py-2"><a href="http://127.0.0.1:8000/user/login">Login</a>
+            <a href="#" class="text-gray-600 hover:text-gray-800 px-4 py-2"><a href="http://127.0.0.1:8000/user/register">Register</a>
+            <a href="#" class="text-gray-600 hover:text-gray-800 px-4 py-2"><a href="http://127.0.0.1:8000/user/kritik&saran">Kritik & saran</a>
             
             </nav>
         </div>
@@ -29,12 +28,47 @@
             <p class="text-lg text-white mb-8">Sistem Informasi Kantin kami memberikan pengalaman yang nyaman untuk pemesanan makanan dan minuman favorit Anda.</p>
         </div>
     </section>
+<!-- Tailwind CSS -->
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Alpine.js for interactivity -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+    <style>
+        /* Custom styles */
+        .product-image {
+            transition: transform 0.2s;
+        }
+        .product-image:hover {
+            transform: scale(1.1);
+        }
+    </style>
+    </head>
+    <body class="bg-gray-100">
+    <div class="container mx-auto py-8">
+        <h1 class="text-3xl font-bold text-center mb-8">Menu Kantin</h1>
+        <div class="flex flex-wrap justify-center">
+            <?php
+            // Array of product images (replace with actual data)
+            $productImages = [
+                "product1.jpg",
+                "product2.jpg",
+                "product3.jpg",
+                "product4.jpg",
+                "product5.jpg",
+                "product6.jpg",
+                "product7.jpg",
+            ];
+            foreach ($productImages as $image) {
+                echo '<img src="' . $image . '" alt="Product" class="w-32 h-32 object-cover m-2 product-image">';
+            }
+            ?>
+        </div>
+    </div>
 
     <!-- Fitur Section -->
     <section class="container mx-auto py-16">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
             <!-- Fitur 1 -->
-            <div class="bg-yellow-400 shadow-md p-8 rounded-md text-center">
+            <div class="bg-green-400 shadow-md p-8 rounded-md text-center">
                 <h3 class="text-xl font-semibold mb-4">Pemesanan Online</h3>
                 <p class="text-gray-600">Pesan makanan dan minuman favorit Anda secara online tanpa antri!</p>
             </div>
