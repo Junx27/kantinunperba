@@ -22,7 +22,7 @@
     <div class="flex">
         <!-- Sidebar -->
         <div class="w-1/6 bg-gray-400 h-screen text-black">
-            <div class="p-4">
+            <div class="p-1">
             <div class="p-4">
             <ul>
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" /><li class="px-4 mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/user/profiluser"><span class="material-symbols-outlined">
