@@ -49,6 +49,9 @@ Route::get('admin/profiladmin', function () {
 Route::get('admin/kritik&saran', function () {
     return view('admin/kritik&saran');
 });
+Route::get('admin/detailpesanan', function () {
+    return view('admin/detailpesanan');
+});
 Route::get('user/login', function () {
     return view('user/login');
 });

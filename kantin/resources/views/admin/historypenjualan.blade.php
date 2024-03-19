@@ -56,7 +56,7 @@
                     <td class="py-2 px-4">Rp 150.000</td>
                     <td class="py-2 px-4">2024-02-07</td>
                     <td class="py-2 px-4">Transfer Bank</td>
-                    <td class="py-2 px-4"><a href="#">Detail</a></td>
+                    <td class="py-2 px-4"><button class="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">Lihat Detail</button>
                     <td class="py-2 px-4">Dikirim</td>
                 </tr>
                 <!-- Data History Penjualan lainnya -->
