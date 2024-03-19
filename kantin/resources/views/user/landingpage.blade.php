@@ -49,13 +49,13 @@
             <?php
             // Array of product images (replace with actual data)
             $productImages = [
-                "product1.jpg",
-                "product2.jpg",
-                "product3.jpg",
-                "product4.jpg",
-                "product5.jpg",
-                "product6.jpg",
-                "product7.jpg",
+                "https://cdn-brilio-net.akamaized.net/news/2019/10/01/171511/1104781-1000xauto-resep-soto-ayam-santan.jpg",
+                "https://1.bp.blogspot.com/-z5TzU1NiOOc/VbjRojnm8iI/AAAAAAAAEb0/8a79yoP5y1c/s640/IMG_3659.JPG",
+                "https://th.bing.com/th/id/OIP.3140EtMQYk4Pyb5-gyLeLwHaHa?w=1200&h=1200&rs=1&pid=ImgDetMain",
+                "https://th.bing.com/th/id/R.c53d6a303a9f174ffe2a02222e1f4f84?rik=UCRBJ9%2bvPp6mbA&riu=http%3a%2f%2fwww.meeteat.org%2fwp-content%2fuploads%2f2021%2f08%2fsate-taichan-6.jpg&ehk=arWjf%2fcYgkff1lpdHyOfzmSFWQSKC%2fv2XMVuYpF7vMc%3d&risl=&pid=ImgRaw&r=0",
+                "https://pktvkaltim.com/wp-content/uploads/2016/06/Manfaat-Jus-Alpukat-768x510.jpg",
+                "https://doktersehat.com/wp-content/uploads/2018/09/jus-jeruk.jpg",
+                "https://majalah.ottencoffee.co.id/wp-content/uploads/2015/08/shutterstock_223511062.jpg",
             ];
             foreach ($productImages as $image) {
                 echo '<img src="' . $image . '" alt="Product" class="w-32 h-32 object-cover m-2 product-image">';

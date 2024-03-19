@@ -36,8 +36,8 @@
     <div class="flex justify-center">
     <div class="ml-1/4 p-2">
         <h1 class="flex justify-center text-2xl font-bold mb-10">Pesanan Masuk</h1>
-        <!-- Tabel Data History Penjualan -->
-        <table class="ml-56">
+        <!-- Tabel Data Pesanan Masuk -->
+        <table class="ml-56 p-2">
             <thead>
                 <tr class="bg-yellow-400">
                     <th class="py-2 px-4">No.</th>
@@ -49,6 +49,7 @@
                     <th class="py-2 px-4">Ket</th>
                     <th class="py-2 px-4">Bukti Pembayaran</th>
                     <th class="py-2 px-4">Aksi</th>
+                    <th class="py-2 px-4">Detail Pesanan</th>
                 </tr>
             </thead>
             <tbody>
@@ -61,9 +62,10 @@
                     <td class="py-2 px-4">Transfer Bank</td>
                     <td class="py-2 px-4">Sudah Bayar</td>
                     <td class="py-2 px-4"><button class="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">Detail</button>
-                    <td class="py-2 px-4"><button class="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">Konfirmasi</button>
+                    <td class="py-2 px-4"><button class="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-green-600">Konfirmasi</button>
+                    <td class="py-2 px-4"><button class="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600"><a href="http://127.0.0.1:8000/admin/detailpesanan">Lihat</button>
                 </tr>
-                <!-- Data History Penjualan lainnya -->
+                <!-- Data Pesanan Masuk Lainnya -->
             </tbody>
         </table>
     </div>

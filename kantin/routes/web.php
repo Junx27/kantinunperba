@@ -100,3 +100,6 @@ Route::get('user/pesanansaya', function () {
 Route::get('user/pembayarantunai', function () {
     return view('user/pembayarantunai');
 });
+Route::get('user/deskripsi', function () {
+    return view('user/deskripsi');
+});
