@@ -52,7 +52,7 @@ Route::get('admin/kritik&saran', function () {
 Route::get('admin/detailpesanan', function () {
     return view('admin/detailpesanan');
 });
-Route::get('/', function () {
+Route::get('user/login', function () {
     return view('user/login');
 });
 Route::get('user/register', function () {
@@ -85,7 +85,7 @@ Route::get('user/pembayaranBank', function () {
 Route::get('user/pembayaranDana', function () {
     return view('user/pembayaranDana');
 });
-Route::get('user/landingpage', function () {
+Route::get('/', function () {
     return view('user/landingpage');
 });
 Route::get('user/profiluser', function () {
