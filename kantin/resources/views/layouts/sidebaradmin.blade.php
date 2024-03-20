@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    @vite('resources/css/app.css')
+    <title>{{ $judul }}</title>
+</head>
+
+<body>
+    <div class="fixed top-0 z-20 w-full text-center bg-yellow-400 py-2 text-xl font-bold">
+        {{ $judul }}
+    </div>
+    </head>
+
+    <body class="">
+        <!-- Sidebar -->
+        <div class="z-10 w-[280px] h-[800px] bg-gray-400 fixed top-0">
+            <ul class="pt-20 pl-8">
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+                <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/profiladmin"><span class="material-symbols-outlined">
+                        person</span>Profil Admin</a></button>
+                <li class="px-4 mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/dasboard"><span class="material-symbols-outlined">
+                        storefront</span>Dasboard</a></button>
+                <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/daftarmenu"><span class="material-symbols-outlined">
+                        book</span>Daftar Menu</a></button>
+                <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/pesananmasuk"><span class="material-symbols-outlined">
+                        notifications_unread</span>Pesanan Masuk</a></button>
+                <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/historypenjualan"><span class="material-symbols-outlined">
+                        manage_history</span>History Penjualan</a></button>
+                <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/datapelanggan"><span class="material-symbols-outlined">
+                        groups</span>Data Pelanggan</a></button>
+                <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/landingpage"><span class="material-symbols-outlined">
+                        logout</span>Log Out</a></button>
+            </ul>
+            <!-- end sidebar -->
+        </div>
+        <!-- content -->
+        <div class="m-10 ml-[310px] mt-20">
+            @yield ("container")
+        </div>
+        <!-- end content -->
+    </body>
+
+</html>
