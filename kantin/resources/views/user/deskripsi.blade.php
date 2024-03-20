@@ -20,7 +20,8 @@
             </div>
             <div class="p-8">
                 <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Nama Makanan</div>
-                <p class="mt-2 text-gray-600">Deskripsi makanan yang panjang dan detail dapat ditulis di sini. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p class="mt-2 text-black-600">Detail Menu</p>
+                <p class="mt-2 text-gray-600">Soto Ayam adalah hidangan khas Indonesia yang terdiri dari sup ayam yang gurih, disajikan dengan berbagai tambahan seperti mie, tauge, daun bawang, seledri, bawang goreng, dan irisan telur rebus. Kuahnya yang kental dan beraroma rempah-rempah membuat soto ayam sangat lezat dan cocok dinikmati sebagai hidangan utama atau sarapan.</p>
                 <div class="mt-4">
                     <button class="bg-blue-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded">Pesan Menu</button>
                 </div>

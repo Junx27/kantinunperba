@@ -52,7 +52,7 @@ Route::get('admin/kritik&saran', function () {
 Route::get('admin/detailpesanan', function () {
     return view('admin/detailpesanan');
 });
-Route::get('user/login', function () {
+Route::get('/', function () {
     return view('user/login');
 });
 Route::get('user/register', function () {
