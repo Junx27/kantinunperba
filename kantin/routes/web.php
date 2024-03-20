@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MenuController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -61,9 +63,7 @@ Route::get('user/register', function () {
 Route::get('user/keranjang', function () {
     return view('user/keranjang');
 });
-Route::get('user/daftarmenu', function () {
-    return view('user/daftarmenu');
-});
+Route::get('user/daftarmenu', [MenuController::class, "getMenu"]);
 Route::get('user/historypembelian', function () {
     return view('user/historypembelian');
 });
