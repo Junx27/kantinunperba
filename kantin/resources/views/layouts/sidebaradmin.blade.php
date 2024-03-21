@@ -10,38 +10,43 @@
 </head>
 
 <body>
-    <div class="fixed top-0 z-20 w-full text-center bg-yellow-400 py-2 text-xl font-bold">
-        {{ $judul }}
+    <div class="text-xs m-2 z-20 w-[280px] h-[760px] bg-white fixed top-0 rounded-lg">
+        <div class="flex flex-col pt-20">
+            <a href="/admin/profiladmin" class="{{ request()->is('admin/profiladmin') ? 'flex items-center bg-cyan-700 text-white p-2 pl-5 mx-5 rounded-lg my-1' : 'flex items-center p-2 pl-5 mx-5 my-1' }}">
+                <img src="{{ asset('images/icons/user.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full mr-3">
+                Profil Admin
+            </a>
+            <a href="/admin/dasboard" class="{{ request()->is('admin/dasboard') ? 'flex items-center bg-cyan-700 text-white p-2 pl-5 mx-5 rounded-lg my-1' : 'flex items-center p-2 pl-5 mx-5 my-1' }}">
+                <img src="{{ asset('images/icons/dashboard.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full mr-3">
+                Dasboard
+            </a>
+            <a href="/admin/daftarmenu" class="{{ request()->is('admin/daftarmenu') ? 'flex items-center bg-cyan-700 text-white p-2 pl-5 mx-5 rounded-lg my-1' : 'flex items-center p-2 pl-5 mx-5 my-1' }}">
+                <img src="{{ asset('images/icons/restaurant.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full mr-3">
+                Daftar Menu
+            </a>
+            <a href="/admin/pesananmasuk" class="{{ request()->is('admin/pesananmasuk') ? 'flex items-center bg-cyan-700 text-white p-2 pl-5 mx-5 rounded-lg my-1' : 'flex items-center p-2 pl-5 mx-5 my-1' }}">
+                <img src="{{ asset('images/icons/shopping-cart-add.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full mr-3">
+                Pesanan Masuk
+            </a>
+            <a href="/admin/historypenjualan" class="{{ request()->is('admin/historypenjualan') ? 'flex items-center bg-cyan-700 text-white p-2 pl-5 mx-5 rounded-lg my-1' : 'flex items-center p-2 pl-5 mx-5 my-1' }}">
+                <img src="{{ asset('images/icons/time-past.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full mr-3">
+                History Penjualan
+            </a>
+            <a href="/admin/datapelanggan" class="{{ request()->is('admin/datapelanggan') ? 'flex items-center bg-cyan-700 text-white p-2 pl-5 mx-5 rounded-lg my-1' : 'flex items-center p-2 pl-5 mx-5 my-1' }}">
+                <img src="{{ asset('images/icons/address-book.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full mr-3">
+                Data Pelanggan
+            </a>
+            <a href="/admin/landingpage" class="{{ request()->is('') ? 'flex items-center bg-cyan-700 text-white p-2 pl-5 mx-5 rounded-lg my-1' : 'flex items-center p-2 pl-5 mx-5 my-1' }}">
+                <img src="{{ asset('images/icons/leave.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full mr-3">
+                Logout
+            </a>
+        </div>
     </div>
-    </head>
-
-    <body class="">
-        <!-- Sidebar -->
-        <div class="z-10 w-[280px] h-[800px] bg-gray-400 fixed top-0">
-            <ul class="pt-20 pl-8">
-                <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-                <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/profiladmin"><span class="material-symbols-outlined">
-                        person</span>Profil Admin</a></button>
-                <li class="px-4 mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/dasboard"><span class="material-symbols-outlined">
-                        storefront</span>Dasboard</a></button>
-                <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/daftarmenu"><span class="material-symbols-outlined">
-                        book</span>Daftar Menu</a></button>
-                <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/pesananmasuk"><span class="material-symbols-outlined">
-                        notifications_unread</span>Pesanan Masuk</a></button>
-                <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/historypenjualan"><span class="material-symbols-outlined">
-                        manage_history</span>History Penjualan</a></button>
-                <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/datapelanggan"><span class="material-symbols-outlined">
-                        groups</span>Data Pelanggan</a></button>
-                <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/landingpage"><span class="material-symbols-outlined">
-                        logout</span>Log Out</a></button>
-            </ul>
-            <!-- end sidebar -->
-        </div>
-        <!-- content -->
-        <div class="m-10 ml-[310px] mt-20">
-            @yield ("container")
-        </div>
-        <!-- end content -->
-    </body>
+    <!-- content -->
+    <div class="bg-gray-200 pl-[300px] p-2">
+        @yield ("container")
+    </div>
+    <!-- end content -->
+</body>
 
 </html>

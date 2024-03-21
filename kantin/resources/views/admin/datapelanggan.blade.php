@@ -1,45 +1,35 @@
+@php
+$konsumens = [
+['nama' => 'Dinda Ayu Sekar Melati', 'jenis' => 'perempuan', 'telepone' => '0978677575', 'email' => 'dinda@gmail.com', 'foto' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGpG_i4M73KdyafyCmfU1NLRW-qaSVXdpzzQ&usqp=CAU'],
+['nama' => 'Dinda Ayu Sekar Melati', 'jenis' => 'perempuan', 'telepone' => '0978677575', 'email' => 'dinda@gmail.com', 'foto' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGpG_i4M73KdyafyCmfU1NLRW-qaSVXdpzzQ&usqp=CAU'],
+['nama' => 'Dinda Ayu Sekar Melati', 'jenis' => 'perempuan', 'telepone' => '0978677575', 'email' => 'dinda@gmail.com', 'foto' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGpG_i4M73KdyafyCmfU1NLRW-qaSVXdpzzQ&usqp=CAU'],
+['nama' => 'Dinda Ayu Sekar Melati', 'jenis' => 'perempuan', 'telepone' => '0978677575', 'email' => 'dinda@gmail.com', 'foto' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGpG_i4M73KdyafyCmfU1NLRW-qaSVXdpzzQ&usqp=CAU'],
+['nama' => 'Dinda Ayu Sekar Melati', 'jenis' => 'perempuan', 'telepone' => '0978677575', 'email' => 'dinda@gmail.com', 'foto' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGpG_i4M73KdyafyCmfU1NLRW-qaSVXdpzzQ&usqp=CAU'],
+];
+@endphp
+
 @extends("layouts.sidebaradmin")
 
 @section("container")
-<!-- Konten -->
-<div class="ml-1/5 p-8">
-    <!-- Pencarian -->
-    <div class="mb-4">
-        <input type="text" id="searchInput" class="border border-gray-300 rounded-md py-2 px-3 w-full" placeholder="Cari...">
+<div class="w-full h-screen bg-white p-10 rounded-lg">
+    <div>
+        <input type="text" class="w-64 text-xs border p-2 rounded-lg outline-cyan-700" placeholder="cari konsumen">
+        <button class="text-xs w-16 text-white bg-cyan-700 p-2 rounded-lg">cari</button>
     </div>
-    <!-- Tabel Data Anggota -->
-    <div class="overflow-x-auto">
-        <table class="min-w-full bg-white rounded-lg overflow-hidden shadow-md">
-            <thead class="bg-yellow-400 text-white">
-                <tr>
-                    <th class="px-4 py-2">Nomor</th>
-                    <th class="px-4 py-2">Nama Pelanggan</th>
-                    <th class="px-4 py-2">Jenis Kelamin</th>
-                    <th class="px-4 py-2">No Telepon</th>
-                    <th class="px-4 py-2">Email</th>
-                    <th class="px-4 py-2">Foto Profil</th>
-                    <th class="px-4 py-2">Aksi</th>
-                </tr>
-            </thead>
-            <tbody class="text-gray-700">
-                <!-- Data Anggota -->
-                <tr>
-                    <td class="px-4 py-2">1</td>
-                    <td class="px-4 py-2">Dinda Ayu</td>
-                    <td class="px-4 py-2">Perempuan</td>
-                    <td class="px-4 py-2">08123456789</td>
-                    <td class="px-4 py-2">dindaayu@gmail.com</td>
-                    <td class="px-4 py-2">
-                        <img src="path_to_profile_image" alt="Profil" class="w-10 h-10 rounded-full">
-                    </td>
-                    <td class="px-4 py-2">
-                        <button class="bg-blue-500 text-white py-1 px-2 rounded-md">Edit</button>
-                        <button class="bg-red-500 text-white py-1 px-2 rounded-md">Hapus</button>
-                    </td>
-                </tr>
-                <!-- Data Anggota lainnya dapat ditambahkan di sini -->
-            </tbody>
-        </table>
+
+    <div class="mt-10 grid grid-cols-5 gap-5">
+        @foreach ($konsumens as $konsumen)
+        <div class="transition-all duration-500 text-xs border rounded-lg text-center p-5 shadow hover:shadow-md hover:shadow-lime-400 cursor-pointer">
+            <img src="{{ $konsumen['foto']}}" alt="" class="w-20 rounded-full mx-auto">
+            <h1 class="text-sm mt-5 text-cyan-700 capitalize">{{ $konsumen['nama']}}</h1>
+            <h1 class="mt-2 text-gray-400">{{ $konsumen['email']}}</h1>
+            <div class="flex">
+                <button class="w-32 mt-5 font-semibold bg-lime-400 text-cyan-700 p-2 rounded-lg mr-3">Edit</button>
+                <button class="w-32 mt-5 font-semibold bg-red-500 p-2 text-white rounded-lg">Hapus</button>
+            </div>
+        </div>
+
+        @endforeach
     </div>
 </div>
 @endsection

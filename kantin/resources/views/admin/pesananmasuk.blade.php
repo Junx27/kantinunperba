@@ -1,14 +1,42 @@
+@php
+$judul = "Pesanan Masuk";
+$dataPesanan = [
+[
+'no' => 1,
+'nama_pembeli' => 'John Doe',
+'id_pesanan' => 'ORD001',
+'total_harga' => 'Rp 500.000',
+'tanggal_transaksi' => '2024-02-28',
+'metode_pembayaran' => 'Transfer Bank',
+'keterangan' => 'Sudah Bayar',
+'bukti_pembayaran' => 'Link ke bukti pembayaran',
+'aksi' => 'Konfirmasi',
+'detail_pesanan' => 'Detail',
+],
+[
+'no' => 2,
+'nama_pembeli' => 'Jane Doe',
+'id_pesanan' => 'ORD002',
+'total_harga' => 'Rp 750.000',
+'tanggal_transaksi' => '2024-02-27',
+'metode_pembayaran' => 'Kartu Kredit',
+'keterangan' => 'Belum Bayar',
+'bukti_pembayaran' => '-',
+'aksi' => 'Konfirmasi',
+'detail_pesanan' => 'Detail',
+],
+// Anda bisa menambahkan data pesanan lainnya di sini
+];
+
+@endphp
 @extends("layouts.sidebaradmin")
 
 @section("container")
-<!-- Konten -->
-<div class="flex justify-center">
-    <div class="ml-[10px] p-2">
-        <h1 class="flex justify-center text-2xl font-bold mb-10">Pesanan Masuk</h1>
-        <!-- Tabel Data Pesanan Masuk -->
-        <table class="ml-10 p-2">
+<div class="text-xs w-full h-screen bg-white p-10 rounded-lg">
+    <div class="overflow-x-auto">
+        <table class="min-w-full bg-white rounded-lg overflow-hidden shadow-md">
             <thead>
-                <tr class="bg-yellow-400">
+                <tr class="bg-lime-400">
                     <th class="py-2 px-4">No.</th>
                     <th class="py-2 px-4">Nama Pembeli</th>
                     <th class="py-2 px-4">ID Pesanan</th>
@@ -22,24 +50,25 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td class="py-2 px-4">1</td>
-                    <td class="py-2 px-4">Dinda</td>
-                    <td class="py-2 px-4">12345</td>
-                    <td class="py-2 px-4">Rp 150.000</td>
-                    <td class="py-2 px-4">2024-02-07</td>
-                    <td class="py-2 px-4">Transfer Bank</td>
-                    <td class="py-2 px-4">Sudah Bayar</td>
-                    <td class="py-2 px-4"><button class="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">Detail</button>
-                    <td class="py-2 px-4"><button class="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-green-600">Konfirmasi</button>
-                    <td class="py-2 px-4"><button class="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600"><a href="http://127.0.0.1:8000/admin/detailpesanan">Lihat</button>
+                @foreach ($dataPesanan as $pesanan)
+                <tr class="bg-white">
+                    <td class="py-2 px-4 border">{{ $pesanan['no'] }}</td>
+                    <td class="py-2 px-4 border">{{ $pesanan['nama_pembeli'] }}</td>
+                    <td class="py-2 px-4 border">{{ $pesanan['id_pesanan'] }}</td>
+                    <td class="py-2 px-4 border">{{ $pesanan['total_harga'] }}</td>
+                    <td class="py-2 px-4 border">{{ $pesanan['tanggal_transaksi'] }}</td>
+                    <td class="py-2 px-4 border">{{ $pesanan['metode_pembayaran'] }}</td>
+                    <td class="py-2 px-4 border">{{ $pesanan['keterangan'] }}</td>
+                    <td class="py-2 px-4 border">{{ $pesanan['bukti_pembayaran'] }}</td>
+                    <td class="py-2 px-4 border">
+                        <button class="px-4 py-2 font-semibold hover:text-cyan-700">{{ $pesanan['aksi'] }}</button>
+                    </td>
+                    <td class="py-2 px-4 border">
+                        <button class="px-4 py-2 font-semibold hover:text-cyan-700">{{ $pesanan['detail_pesanan'] }}</button>
+                    </td>
                 </tr>
-                <!-- Data Pesanan Masuk Lainnya -->
+                @endforeach
             </tbody>
         </table>
     </div>
     @endsection
-
-    @php
-    $judul = "Pesanan Masuk";
-    @endphp
