@@ -14,12 +14,15 @@
         <div class="bg-white p-5 pb-10 rounded-lg">
             <div class="relative mt-10">
                 <div class="flex flex-row items-end">
-                    <div class="w-full mx-10">
-                        <div class="text-xs mb-10 flex justify-between">
-                            <h1 class="font-semibold text-lime-400 bg-cyan-700 py-2 px-3 rounded-full">Kantin Unperba.</h1>
-                            <div class="flex mr-20">
-                                <h1 class="font-semibold text-cyan-700 border border-2 border-cyan-700 py-2 px-3 rounded-full mr-3">Food & Drink</h1>
-                                <h1 class="font-semibold text-cyan-700 border border-2 border-cyan-700 py-2 px-3 rounded-full">Free Delivery</h1>
+                    <div class="w-full mx-20">
+                        <div class="absolute top-0 w-full top-3">
+                            <div class="text-xs mb-10 flex justify-between">
+                                <h1 class="font-semibold text-lime-400 bg-cyan-700 py-2 px-3 rounded-full">Kantin Unperba.</h1>
+                                <div class="flex mr-32">
+                                    <h1 class="font-semibold text-cyan-700 border border-2 border-cyan-700 py-2 px-3 rounded-full mr-3">Food & Drink</h1>
+                                    <h1 class="font-semibold text-cyan-700 border border-2 border-cyan-700 py-2 px-3 rounded-full mr-3">Free Delivery</h1>
+                                    <h1 class="font-semibold text-cyan-700 border border-2 border-cyan-700 py-2 px-3 rounded-full">Online Payment</h1>
+                                </div>
                             </div>
                         </div>
                         <h1 class="tracking-wide text-6xl font-black text-cyan-700">Temukan <br>Menu Favoritmu</h1>
@@ -27,10 +30,10 @@
                         <h1 class="tracking-wide text-6xl font-black text-lime-400">Di Kantin Unperba.</h1>
                         <div class="mt-10 flex flex-row">
                             <h1 class="text-emerald-500 font-semibold">Pesanan Kantin Jadi Lebih Mudah!</h1>
-                            <p class="text-xs mx-10">Sistem Informasi Kantin kami memberikan pengalaman yang nyaman untuk pemesanan makanan dan minuman favorit Anda.</p>
+                            <p class="text-xs mx-12">Sistem Informasi Kantin kami memberikan pengalaman yang nyaman untuk pemesanan makanan dan minuman favorit Anda.</p>
                         </div>
                         <div class="mt-10">
-                            <button class="w-96 font-semibold bg-emerald-500 text-white p-3 px-10 rounded-lg">Daftar Sekarang</button>
+                            <a class="font-semibold bg-emerald-500 text-white p-3 px-24 rounded-lg">Daftar Sekarang</a>
                             <a href="/admin/login" class="font-semibold text-lime-400 bg-cyan-700 p-3 px-24 rounded-lg">Masuk</a>
                         </div>
                     </div>

@@ -12,4 +12,9 @@ class MenuController extends Controller
         $menus = Menu::all();
         return view('user/daftarmenu', ['menus' => $menus]);
     }
+    public function getMenuAdmin()
+    {
+        $menus = Menu::all();
+        return view('admin/daftarmenu', ['menus' => $menus]);
+    }
 }

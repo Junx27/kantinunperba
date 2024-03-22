@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\PesananController;
 
 
 /*
@@ -27,18 +28,14 @@ Route::get('admin/register', function () {
 Route::get('admin/dasboard', function () {
     return view('admin/dasboard');
 });
-Route::get('admin/daftarmenu', function () {
-    return view('admin/daftarmenu');
-});
+Route::get('admin/daftarmenu', [MenuController::class, "getMenuAdmin"]);
 Route::get('admin/historypenjualan', function () {
     return view('admin/historypenjualan');
 });
 Route::get('admin/datapelanggan', function () {
     return view('admin/datapelanggan');
 });
-Route::get('admin/pesananmasuk', function () {
-    return view('admin/pesananmasuk');
-});
+Route::get('admin/pesananmasuk', [PesananController::class, 'index']);
 Route::get('admin/tambahmenu', function () {
     return view('admin/tambahmenu');
 });
