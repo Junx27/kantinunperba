@@ -17,7 +17,7 @@ class PesananSeeder extends Seeder
     {
         // Generate data pesanan secara acak
         $dataPesanan = [];
-        for ($i = 1; $i <= 10; $i++) {
+        for ($i = 1; $i <= 30; $i++) {
             // Ambil foto profil secara acak dari Unsplash
             $response = Http::get('https://api.unsplash.com/photos/random', [
                 'client_id' => env('YOUR_UNSPLASH_ACCESS_KEY'),

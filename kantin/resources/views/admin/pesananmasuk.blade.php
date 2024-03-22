@@ -6,20 +6,24 @@ $judul = "Daftar Menu Admin";
 
 @section("container")
 <div class="flex">
-    <div class="text-xs w-[300px] h-screen bg-white p-5 rounded-lg mr-3">
-        <h1 class="bg-emerald-500 p-2 text-center rounded-lg">Daftar Pesanan</h1>
+    <div class="text-xs absolute p-2 rounded-lg fixed w-[300px] bg-white">
+        <h1 class="mx-auto w-32 p-2 text-center">Daftar Pesanan</h1>
+    </div>
+    <div class="fixed top-16 text-xs w-[300px] h-[760px] bg-white p-5 rounded-lg mr-3 overflow-auto">
         <div class="mt-5">
             @foreach ($pesanans as $pesanans)
-            <a href="/admin/pesananmasuk/{{ $pesanans->id}}" class="{{ request()->is('admin/pesananmasuk/'.$pesanans->id) ? 'transition-all duration-500 my-2 p-2 bg-lime-400 rounded-lg cursor-pointer flex items-center' : 'transition-all duration-500 hover:bg-lime-400 hover:rounded-lg my-2 p-2 cursor-pointer flex items-center' }}">
+            <a href="/admin/pesananmasuk/{{ $pesanans->id}}" class="{{ request()->is('admin/pesananmasuk/'.$pesanans->id) ? 'transition-all duration-500 my-2 p-2 bg-lime-400 rounded-lg cursor-pointer flex items-center' : 'transition-all duration-500 my-2 p-2 hover:bg-lime-400 hover:rounded-lg cursor-pointer flex items-center' }}">
                 <img src="{{ $pesanans->foto }}" alt="" class="w-10 h-10 rounded-full mr-2">
                 <h1 class="py-2 px-4">{{ $pesanans->nama_pembeli }}</h1>
             </a>
             @endforeach
         </div>
     </div>
-    <div class=" flex flex-col text-xs w-full h-full">
-        <div id="detail_pesanan" class="text-xs w-full h-[170px] bg-white p-5 rounded-lg">
-            <h1 class="w-32 bg-emerald-500 p-2 text-center rounded-lg">Detail Pesanan</h1>
+    <div class=" flex flex-col text-xs ml-[310px] w-full h-full">
+        <div class="w-full bg-white p-2 rounded-lg">
+            <h1 class="mx-auto w-32 p-2 text-center">Detail Pesanan</h1>
+        </div>
+        <div class="mt-2 text-xs w-full h-[170px] bg-white p-5 rounded-lg">
             <div class="mt-5 overflow-x-auto">
                 <table class="min-w-full bg-white rounded-lg overflow-hidden shadow-md">
                     <thead>
@@ -32,16 +36,27 @@ $judul = "Daftar Menu Admin";
                             <th class="py-2 px-4">Ket</th>
                         </tr>
                     </thead>
+                    <tbody>
+
                     </tbody>
                 </table>
             </div>
         </div>
         <div class="flex flex-row">
-            <div class="mt-3 text-xs w-full h-[600px] bg-white p-5 rounded-lg">
-                <h1 class="w-32 bg-emerald-500 p-2 text-center rounded-lg">Detail Items</h1>
+            <div class="text-xs w-full mt-2 rounded-lg">
+                <div class="w-full bg-white p-2 rounded-lg">
+                    <h1 class="mx-auto w-32 p-2 text-center">Detail Pesanan</h1>
+                </div>
+                <div class="mt-2 bg-white rounded-lg w-full h-[470px] p-5">
+
+                </div>
             </div>
-            <div id="bukti_pembayaran" class="ml-3 mt-3 text-xs w-[500px] h-[600px] bg-white p-5 rounded-lg">
-                <h1 class="w-32 bg-emerald-500 p-2 text-center rounded-lg">Bukti Pembayaran</h1>
+            <div id="bukti_pembayaran" class="text-xs w-[500px] mt-2 ml-2 rounded-lg">
+                <div class="w-full bg-white p-2 rounded-lg">
+                    <h1 class="mx-auto w-32 p-2 text-center">Bukti pembayaran</h1>
+                </div>
+                <div alt="" class="bg-white w-full h-[470px] object-cover mt-2 rounded-lg">
+                </div>
             </div>
         </div>
     </div>
