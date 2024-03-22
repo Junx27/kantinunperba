@@ -1,95 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Pesanan</title>
-    <!-- Tambahkan link CSS Tailwind -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="bg-gray-100">
-    <!-- Sidebar -->
-    <div class="bg-gray-400 text-gray-700 h-screen w-1/6 fixed left-0 top-0">
-        <div class="p-4">
-        <ul>
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-            <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/profiladmin"><span class="material-symbols-outlined">
-            person</span>Profil Admin</a></button>
-            <li class="px-4 mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/dasboard"><span class="material-symbols-outlined">
-            home</span>Dasboard</a></button>
-            <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/daftarmenu"><span class="material-symbols-outlined">
-            book</span>Daftar Menu</a></button>
-            <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/pesananmasuk"><span class="material-symbols-outlined">
-            notifications_unread</span>Pesanan Masuk</a></button>
-            <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/historypenjualan"><span class="material-symbols-outlined">
-            manage_history</span>History Penjualan</a></button>
-            <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/datapelanggan"><span class="material-symbols-outlined">
-            groups</span>Data Pelanggan</a></button>
-            <li class="mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/admin/landingpage"><span class="material-symbols-outlined">
-            logout</span>Log Out</a></button>
-            </ul>
+@php
+$judul = "Daftar Menu Admin";
+@endphp
+
+@extends("layouts.sidebaradmin")
+
+@section("container")
+<div class="flex">
+    <div class="text-xs w-[300px] h-screen bg-white p-5 rounded-lg mr-3">
+        <h1 class="bg-emerald-500 p-2 text-center rounded-lg">Daftar Pesanan</h1>
+        <div class="mt-5">
+            @foreach ($pesanans as $pesanans)
+            <a href="/admin/pesananmasuk/{{ $pesanans->id}}" class="{{ request()->is('admin/pesananmasuk/'.$pesanans->id) ? 'transition-all duration-500 my-2 p-2 bg-lime-400 rounded-lg cursor-pointer flex items-center' : 'transition-all duration-500 my-2 p-2 hover:bg-lime-400 hover:rounded-lg cursor-pointer flex items-center' }}">
+                <img src="{{ $pesanans->foto }}" alt="" class="w-10 h-10 rounded-full mr-2">
+                <h1 class="py-2 px-4">{{ $pesanans->nama_pembeli }}</h1>
+            </a>
+            @endforeach
         </div>
     </div>
- <!-- Konten -->
- <div class="flex justify-center">
-    <div class="ml-1/4 p-2">
-        <h1 class="flex justify-center text-2xl font-bold mb-5">Detail Pesanan</h1>
-        <!-- Tabel Data Detail Pesanan -->
-        <table class="ml-40">
-            <thead>
-                <tr class="bg-yellow-400">
-                    <th class="py-2 px-4">Nama Pemesan</th>
-                    <th class="py-2 px-4">Dinda</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="py-2 px-4">ID Pesanan</td>
-                    <td class="py-2 px-4">12345</td>
-                </tr>
-                <thead>
-                <tr class="bg-yellow-400">
-                    <th class="py-2 px-4">Pengiriman</th>
-                    <th class="py-2 px-4">Meja 5</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="py-2 px-4">Metode Pembayaran</td>
-                    <td class="py-2 px-4">Transfer Bank</td>
-                </tr>
-                <tr>
-                    <td class="py-2 px-4">Bukti Pembayaran</td>
-                    <td class="py-2 px-4"><button class="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">Lihat</button></td>
-                </tr>
-                <table class="ml-40">
-            <thead>
-                <tr class="bg-yellow-400">
-                    <th class="py-2 px-4">No</th>
-                    <th class="py-2 px-4">Gambar Menu</th>
-                    <th class="py-2 px-4">Nama Menu</th>
-                    <th class="py-2 px-4">Kategori</th>
-                    <th class="py-2 px-4">Harga</th>
-                    <th class="py-2 px-4">Jumlah Item</th>
-                    <th class="py-2 px-4">Catatan Pembeli</th>
-                    <th class="py-2 px-4">Total Harga</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tr>
-                    <td class="py-2 px-4">1</td>
-                    <td class="py-2 px-4"><img src="" alt=""></td>
-                    <td class="py-2 px-4">Soto Ayam</td>
-                    <td class="py-2 px-4">makanan</td>
-                    <td class="py-2 px-4">Rp 150.000</td>
-                    <td class="py-2 px-4">1</td>
-                    <td class="py-2 px-4">Pedas</td>
-                    <td class="py-2 px-4">Rp 150.000</td>
-                </tr>
-                <!-- Data Detail Pesanan lainnya -->
-            </tbody>
-        </table>
+    <div class=" flex flex-col text-xs w-full h-full">
+        <div id="detail_pesanan" class="text-xs w-full h-[170px] bg-white p-5 rounded-lg">
+            <h1 class="w-32 bg-emerald-500 p-2 text-center rounded-lg">Detail Pesanan</h1>
+            <div class="mt-5 overflow-x-auto">
+                <table class="min-w-full bg-white rounded-lg overflow-hidden shadow-md">
+                    <thead>
+                        <tr class="bg-lime-400">
+                            <th class="py-2 px-4">Nama Pembeli</th>
+                            <th class="py-2 px-4">ID Pesanan</th>
+                            <th class="py-2 px-4">Total Harga</th>
+                            <th class="py-2 px-4">Tanggal Transaksi</th>
+                            <th class="py-2 px-4">Metode Pembayaran</th>
+                            <th class="py-2 px-4">Ket</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white">
+                            <td class="py-2 px-4 border">{{ $pesanan->nama_pembeli }}</td>
+                            <td class="py-2 px-4 border">{{ $pesanan->id_pesanan }}</td>
+                            <td class="py-2 px-4 border">{{ $pesanan->total_harga }}</td>
+                            <td class="py-2 px-4 border">{{ $pesanan->tanggal_transaksi }}</td>
+                            <td class="py-2 px-4 border">{{ $pesanan->metode_pembayaran }}</td>
+                            <td class="py-2 px-4 border">{{ $pesanan->keterangan }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="flex flex-row">
+            <div class="mt-3 text-xs w-full h-[600px] bg-white p-5 rounded-lg">
+                <h1 class="w-32 bg-emerald-500 p-2 text-center rounded-lg">Detail Items</h1>
+                <td class="py-2 px-4 border">{{ $pesanan->nama_pembeli }}</td>
+            </div>
+            <div id="bukti_pembayaran" class="ml-3 mt-3 text-xs w-[500px] h-[600px] bg-white p-5 rounded-lg">
+                <h1 class="w-32 bg-emerald-500 p-2 text-center rounded-lg">Bukti Pembayaran</h1>
+                <img src="{{ $pesanan->foto }}" alt="" class="m-2">
+            </div>
+        </div>
     </div>
-</body>
-</html>
-
+</div>
+@endsection

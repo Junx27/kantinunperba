@@ -27,9 +27,10 @@ class PesananController extends Controller
     public function show($id)
     {
         $pesanan = Pesanan::find($id);
+        $pesanans = Pesanan::all();
         if (!$pesanan) {
             return response()->json(['message' => 'Pesanan not found'], 404);
         }
-        return response()->json($pesanan);
+        return view('admin/detailpesanan', ['pesanan' => $pesanan], ['pesanans' => $pesanans]);
     }
 }

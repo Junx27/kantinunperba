@@ -36,6 +36,7 @@ Route::get('admin/datapelanggan', function () {
     return view('admin/datapelanggan');
 });
 Route::get('admin/pesananmasuk', [PesananController::class, 'index']);
+Route::get('admin/pesananmasuk/{id}', [PesananController::class, 'show']);
 Route::get('admin/tambahmenu', function () {
     return view('admin/tambahmenu');
 });
