@@ -8,7 +8,7 @@
     <div class="grid grid-cols-3 gap-4">
         @foreach ($menus as $menu)
         <div class="relative bg-white rounded-lg shadow-md">
-            <img src="{{$menu["gambar"]}}" alt="Product 2" class="w-full h-96 object-cover rounded-lg hover:scale-[101%] transition-transform duration-500">
+            <img src="{{$menu["gambar"]}}" alt="Product 2" class="w-full h-96 object-cover rounded-lg hover:scale-[101%] hover:rounded-none transition-all duration-500">
             <div class="z-0 top-64 left-2 absolute bg-black w-[337px] rounded-lg h-[120px] opacity-40"></div>
             <div class="absolute top-64 left-2 z-10 p-4">
                 <h2 class="font-semibold text-xl text-white">{{$menu["nama"]}}</h2>

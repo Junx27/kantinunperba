@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('metode_pembayaran');
             $table->string('keterangan');
             $table->string('foto');
+            $table->string('bukti_pembayaran');
             $table->timestamps();
         });
     }

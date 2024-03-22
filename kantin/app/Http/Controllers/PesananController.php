@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pesanan;
+use App\Models\Menu;
 
 class PesananController extends Controller
 {
@@ -15,7 +16,7 @@ class PesananController extends Controller
     public function index()
     {
         $pesanans = Pesanan::all();
-        return view('admin/pesananmasuk', ['pesanans' => $pesanans]);
+        return view('admin/pesananmasuk', compact('pesanans'));
     }
 
     /**
@@ -28,9 +29,10 @@ class PesananController extends Controller
     {
         $pesanan = Pesanan::find($id);
         $pesanans = Pesanan::all();
+        $menus = Menu::all();
         if (!$pesanan) {
             return response()->json(['message' => 'Pesanan not found'], 404);
         }
-        return view('admin/detailpesanan', ['pesanan' => $pesanan], ['pesanans' => $pesanans]);
+        return view('admin/detailpesanan', compact('pesanan', 'pesanans', 'menus'));
     }
 }
