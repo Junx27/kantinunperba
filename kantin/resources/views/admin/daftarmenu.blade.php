@@ -2,7 +2,7 @@
 
 @section("container")
 <div class="z-30 text-xs sticky top-0 w-full bg-white p-4 rounded-lg overflow-auto">
-    <h1 class="mx-auto w-64 p-2 font-bold text-center bg-lime-400 rounded-lg">Daftar Menu</h1>
+    <h1 class="mx-auto w-64 p-2 text-center">Daftar Menu</h1>
 </div>
 <div class="text-xs mt-2 w-full bg-white p-5 rounded-lg">
     <div class="grid grid-cols-3 gap-4">
