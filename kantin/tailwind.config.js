@@ -6,7 +6,12 @@ export default {
         "./resources/**/*.vue",
     ],
     theme: {
-        extend: {},
+        extend: {
+            boxShadow: {
+                myShadow1: "10px 20px 0 0 white",
+                myShadow2: "-10px 20px 0 0 white",
+            },
+        },
     },
     plugins: [],
 };

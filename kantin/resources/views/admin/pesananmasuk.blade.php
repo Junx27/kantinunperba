@@ -1,5 +1,6 @@
 @php
 $judul = "Daftar Menu Admin";
+$pesanan_terendah = $pesanans->first(); // Mengambil pesanan terendah
 @endphp
 
 @extends("layouts.sidebaradmin")
@@ -9,10 +10,10 @@ $judul = "Daftar Menu Admin";
     <div class="fixed top-2 text-xs w-[300px] h-[760px] bg-white p-5 rounded-lg mr-3 overflow-auto">
         <h1 class="sticky -top-5 bg-white border-b font-bold text-center -mt-3 py-3 px-4">Daftar Pemesanan</h1>
         <div class="mt-5">
-            @foreach ($pesanans as $pesanans)
-            <a href="/admin/pesananmasuk/{{ $pesanans->id}}" class="{{ request()->is('admin/pesananmasuk/'.$pesanans->id) ? 'transition-all duration-500 my-2 p-2 bg-lime-400 rounded-lg cursor-pointer flex items-center' : 'transition-all duration-500 my-2 p-2 hover:bg-lime-400 hover:rounded-lg cursor-pointer flex items-center' }}">
-                <img src="{{ $pesanans->foto }}" alt="" class="w-10 h-10 rounded-full mr-2">
-                <h1 class="py-2 px-4">{{ $pesanans->nama_pembeli }}</h1>
+            @foreach ($pesanans as $pesanan)
+            <a href="/admin/pesananmasuk/{{ $pesanan->id }}" class="{{ $pesanan->id == $pesanan_terendah->id ? 'transition-all duration-500 my-2 p-2 bg-lime-400 rounded-lg cursor-pointer flex items-center' : 'transition-all duration-500 my-2 p-2 hover:bg-lime-400 hover:rounded-lg cursor-pointer flex items-center' }}">
+                <img src="{{ $pesanan->foto }}" alt="" class="w-10 h-10 rounded-full mr-2">
+                <h1 class="py-2 px-4">{{ $pesanan->nama_pembeli }}</h1>
             </a>
             @endforeach
         </div>
@@ -35,7 +36,14 @@ $judul = "Daftar Menu Admin";
                         </tr>
                     </thead>
                     <tbody>
-
+                        <tr class="bg-white">
+                            <td class="py-2 px-4 border">{{ $pesanan_terendah->nama_pembeli }}</td>
+                            <td class="py-2 px-4 border">{{ $pesanan_terendah->id_pesanan }}</td>
+                            <td class="py-2 px-4 border">{{ $pesanan_terendah->total_harga }}</td>
+                            <td class="py-2 px-4 border">{{ $pesanan_terendah->tanggal_transaksi }}</td>
+                            <td class="py-2 px-4 border">{{ $pesanan_terendah->metode_pembayaran }}</td>
+                            <td class="py-2 px-4 border">{{ $pesanan_terendah->keterangan }}</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -46,16 +54,29 @@ $judul = "Daftar Menu Admin";
                     <h1 class="mx-auto w-32 p-2 text-center">Informasi Pesanan</h1>
                 </div>
                 <div class="relative mt-2 bg-white rounded-lg w-full h-[470px] p-5 overflow-auto">
-
+                    <img src="{{ $pesanan_terendah->foto}}" alt="" class="mx-auto w-32 h-32 rounded-full object-cover">
+                    <h1 class="sticky -top-5 bg-white border-b font-bold text-center mt-5 py-3 px-4">{{ $pesanan_terendah->nama_pembeli }}</h1>
+                    @foreach ($menus as $menu)
+                    <div class="flex items-center">
+                        <img src="{{$menu->gambar}}" alt="" class="w-10 h-10 my-2 rounded-full mr-2">
+                        <p class="font-bold">{{$menu->nama}}</p>
+                        <p class="mx-5">x</p>
+                        <p class="">Rp.{{$menu->harga}}</p>
+                        <p class="mx-5">=</p>
+                        <p class="">Rp.{{$menu->harga}}</p>
+                    </div>
+                    @endforeach
+                    <hr>
+                    <p class="font-bold my-2 text-end">Total = Rp. 200.000,00</p>
                 </div>
             </div>
             <div id="bukti_pembayaran" class="text-xs w-[500px] mt-2 ml-2 rounded-lg">
                 <div class="w-full bg-white p-2 rounded-lg">
                     <h1 class="mx-auto w-32 p-2 text-center">Bukti pembayaran</h1>
                 </div>
-                <div alt="" class="bg-white w-full h-[470px] object-cover mt-2 rounded-lg">
-                </div>
+                <img src="{{ $pesanan_terendah->bukti_pembayaran }}" alt="" class="w-full h-[470px] object-cover mt-2 rounded-lg">
             </div>
         </div>
     </div>
-    @endsection
+</div>
+@endsection

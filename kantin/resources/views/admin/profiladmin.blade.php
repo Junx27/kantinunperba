@@ -2,42 +2,34 @@
 
 @section("container")
 <div class="">
-    <div class="bg-white p-10 rounded-lg">
-        <div class="mb-10 flex justify-between">
-            <button class="font-semibold text-lime-400 bg-cyan-700 py-2 px-3 rounded-full">Homepage</button>
-            <div>
-
-                <button class="font-semibold text-cyan-700 border-2 border border-cyan-700 py-1 px-3 rounded-full">Menu</button>
-                <button class="font-semibold text-cyan-700 border-2 border border-cyan-700 py-1 px-3 rounded-full">Profile</button>
-                <button class="font-semibold text-cyan-700 border-2 border border-cyan-700 py-1 px-3 rounded-full">Keranjang</button>
+    <div class="relative bg-white rounded-lg pb-[87px]">
+        <div class="flex">
+            <img src="https://wallpapersmug.com/download/1920x1080/930962/vegetables-fresh.jpg" alt="" class="z-0 w-full h-[300px] object-cover rounded-t-lg">
+        </div>
+        <div>
+            <span class="w-20 h-20 bg-transparent absolute rounded-br-full top-[220px] left-[64.9px] shadow-myShadow1"></span>
+            <span class="w-20 h-20 bg-transparent absolute rounded-bl-full top-[220px] right-[684.9px] shadow-myShadow2"></span>
+            <img src="https://images.unsplash.com/photo-1463453091185-61582044d556?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1ODIwOTV8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MTEwOTYwNDJ8&ixlib=rb-4.0.3&q=80&w=1080" alt="" class="z-10 relative -mt-32 ml-32 border-[15px] border-white w-64 h-64 object-cover rounded-full">
+        </div>
+        <div class="-mt-24 ml-96 text-gray-400">
+            <h1><span class="font-bold mr-1 text-black">25</span>Produk<span class="text-black font-bold ml-8 mr-1">125</span>Pelanggan<span class="text-black font-bold ml-8 mr-1">email:</span>email@gmail.com<span class="text-black font-bold ml-8 mr-1">Tlp.</span>087664356</h1>
+            <div class="mt-5 flex flex-row w-[700px] overflow-auto">
+                @foreach ($pesanans as $pesanan)
+                <img src="{{ $pesanan->foto }}" alt="" class="w-[30px] h-[30px] mx-1 rounded-full object-cover">
+                @endforeach
             </div>
-            <div>
-                <span class="material-symbols-outlined text-cyan-700">
-                    menu
-                </span>
+            <hr class="my-2 mr-10">
+            <div class="mt-10 flex justify-end mr-10 text-xs">
+                <a class="font-semibold bg-emerald-500 text-white p-3 px-5 rounded-lg">Edit Profil</a>
             </div>
         </div>
-        <div class="relative mt-10">
-            <div class="flex flex-row items-end">
-                <div>
-                    <h1 class="tracking-wide text-7xl font-black text-cyan-700">Finding <br>Balance</h1>
-                    <h1 class="tracking-wide text-7xl font-black text-emerald-500">In Mental</h1>
-                    <h1 class="tracking-wide text-7xl font-black text-lime-400">Wellness.</h1>
-                    <div class="mt-10 flex flex-row">
-                        <h1 class="text-emerald-500 font-semibold">Here is my exploration SERENEMIND</h1>
-                        <p class="text-xs mx-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quod voluptates fugit tenetur. Voluptatum deserunt voluptate provident.</p>
-                    </div>
-                    <div class="mt-10">
-                        <button class="w-64 font-semibold bg-emerald-500 text-cyan-700 p-3 px-10 rounded-lg">Join Us</button>
-                        <button class="font-semibold text-lime-400 bg-cyan-700 p-3 px-10 rounded-lg">Join Us</button>
-                    </div>
-                </div>
-                <img src="https://www.foodnavigator-usa.com/var/wrbm_gb_food_pharma/storage/images/publications/food-beverage-nutrition/foodnavigator-usa.com/news/markets/deloitte-report-consumers-fresh-food-spending-on-the-rise/10363851-1-eng-GB/Deloitte-report-Consumers-fresh-food-spending-on-the-rise.jpg" alt="" class="w-[500px] h-[600px] object-cover rounded-lg">
-            </div>
-            <div class="absolute bottom-3 right-3 w-[475px] h-[150px] rounded-lg bg-lime-400 opacity-50">
-            </div>
-            <h1 class="text-white absolute bottom-20 right-64 font-bold text-7xl">169 K <span class="text-3xl">+</span></h1>
-            <p class="w-32 text-xs absolute bottom-20 right-20">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, aliquid.</p>
+        <h1 class="text-3xl font-bold mt-10 ml-10">Dinda Ayu Sekar M.</h1>
+        <p class="mt-5 mx-10 indent-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic vitae nostrum, quidem, architecto quos inventore, sit necessitatibus officiis laborum suscipit cum voluptatem commodi quo obcaecati! Non delectus veritatis nihil sequi!</p>
+        <p class="font-bold ml-10 my-5">Produk added:</p>
+        <div class="grid grid-cols-5 gap-5 mx-10 mt-10">
+            @foreach ($menus as $menu)
+            <img src="{{ $menu->gambar }}" alt="" class="w-64 h-64 object-cover rounded-lg mx-1">
+            @endforeach
         </div>
 
     </div>

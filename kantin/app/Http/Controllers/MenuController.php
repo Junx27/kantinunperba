@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Menu;
+use App\Models\Pesanan;
+
 
 class MenuController extends Controller
 {
@@ -16,5 +18,17 @@ class MenuController extends Controller
     {
         $menus = Menu::all();
         return view('admin/daftarmenu', ['menus' => $menus]);
+    }
+    public function getLengthMenu()
+    {
+        $menus = Menu::all();
+        $pesanans = Pesanan::all();
+        return view('admin/dasboard', compact('pesanans', 'menus'));
+    }
+    public function iconMenu()
+    {
+        $menus = Menu::all();
+        $pesanans = Pesanan::all();
+        return view('admin/profiladmin', compact('pesanans', 'menus'));
     }
 }

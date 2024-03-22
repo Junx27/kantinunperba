@@ -25,9 +25,7 @@ Route::get('admin/landingpage', function () {
 Route::get('admin/register', function () {
     return view('admin/register');
 });
-Route::get('admin/dasboard', function () {
-    return view('admin/dasboard');
-});
+Route::get('admin/dasboard', [MenuController::class, "getLengthMenu"]);
 Route::get('admin/daftarmenu', [MenuController::class, "getMenuAdmin"]);
 Route::get('admin/historypenjualan', function () {
     return view('admin/historypenjualan');
@@ -43,9 +41,7 @@ Route::get('admin/tambahmenu', function () {
 Route::get('admin/editmenu', function () {
     return view('admin/editmenu');
 });
-Route::get('admin/profiladmin', function () {
-    return view('admin/profiladmin');
-});
+Route::get('admin/profiladmin', [MenuController::class, "iconMenu"]);
 Route::get('admin/kritik&saran', function () {
     return view('admin/kritik&saran');
 });
