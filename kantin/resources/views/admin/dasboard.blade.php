@@ -2,6 +2,7 @@
 $judul = "Dasboard";
 $panjang_menu = count($menus);
 $panjang_pesanan = count($pesanans);
+$panjang_konsumen = count($konsumens);
 $url_daftarmenu = "/admin/daftarmenu";
 $url_pesananmasuk = "/admin/pesananmasuk";
 @endphp
@@ -24,7 +25,7 @@ $url_pesananmasuk = "/admin/pesananmasuk";
         </div>
         <div class="transition-all duration-500 shadow hover:scale-[101%] w-full h-[200px] bg-orange-400 rounded-lg cursor-pointer p-5">
             <p class="text-white font-bold text-center">Data Pelanggan</p>
-            <p class="text-white font-black text-center mt-7 text-7xl">45</p>
+            <p class="text-white font-black text-center mt-7 text-7xl">{{ $panjang_konsumen }}</p>
         </div>
     </div>
 </div>

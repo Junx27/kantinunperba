@@ -30,9 +30,7 @@ Route::get('admin/daftarmenu', [MenuController::class, "getMenuAdmin"]);
 Route::get('admin/historypenjualan', function () {
     return view('admin/historypenjualan');
 });
-Route::get('admin/datapelanggan', function () {
-    return view('admin/datapelanggan');
-});
+Route::get('admin/datapelanggan', [MenuController::class, "konsumen"]);
 Route::get('admin/pesananmasuk', [PesananController::class, 'index']);
 Route::get('admin/pesananmasuk/{id}', [PesananController::class, 'show']);
 Route::get('admin/tambahmenu', function () {

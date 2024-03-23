@@ -74,7 +74,7 @@ $pesanan_terendah = $pesanans->first(); // Mengambil pesanan terendah
                 <div class="w-full bg-white p-2 rounded-lg">
                     <h1 class="mx-auto w-32 p-2 text-center">Bukti pembayaran</h1>
                 </div>
-                <img src="{{ $pesanan_terendah->bukti_pembayaran }}" alt="" class="w-full h-[470px] object-cover mt-2 rounded-lg">
+                <img src="{{ $pesanan_terendah->bukti_pembayaran }}" alt="" class="w-full h-[470px] object-cover mt-2 rounded-lg border">
             </div>
         </div>
     </div>
