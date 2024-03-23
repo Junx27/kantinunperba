@@ -62,8 +62,10 @@ Route::get('user/historypembelian', function () {
 Route::get('user/editprofil', function () {
     return view('user/editprofil');
 });
-Route::get('user/dasboard', function () {
-    return view('user/dasboard');
+Route::get('user/dasboard', [MenuController::class, "getLengthMenu"]);
+Route::get('user/daftarmenu', [MenuController::class, "getMenu"]);
+Route::get('user/historypembelian', function () {
+    return view('user/historypembelian');
 });
 Route::get('user/strukpemesanan', function () {
     return view('user/strukpemesanan');
@@ -91,7 +93,4 @@ Route::get('user/pesanansaya', function () {
 });
 Route::get('user/pembayarantunai', function () {
     return view('user/pembayarantunai');
-});
-Route::get('user/deskripsi', function () {
-    return view('user/deskripsi');
 });

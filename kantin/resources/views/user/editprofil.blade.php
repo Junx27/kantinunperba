@@ -1,6 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+@extends("layouts.sidebar")
+
+@section("container")
+<div class="z-30 text-xs sticky top-0 w-full bg-white p-4 rounded-lg overflow-auto">
+    <h1 class="mx-auto w-64 p-2 text-center">Edit Profil</h1>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -8,9 +10,6 @@
     <title>Edit Profil</title>
 </head>
 <body>
-    <div class="text-center bg-yellow-400 py-2 text-xl">
-        Edit Profil
-    </div>
     <div class="mt-20 grid grid-cols-2 gap-10">
         <div class="mx-auto">
             <img src="https://www.shutterstock.com/image-vector/avatar-male-profile-gray-person-260nw-538708681.jpg" alt="" class="w-[200px]">
@@ -26,5 +25,8 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+    @endsection
+
+@php
+$judul = "Edit Profil";
+@endphp

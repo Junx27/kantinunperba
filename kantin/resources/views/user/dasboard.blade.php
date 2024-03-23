@@ -1,11 +1,3 @@
-@php
-$judul = "Dasboard";
-$panjang_menu = count($menus);
-$panjang_pesanan = count($pesanans);
-$panjang_konsumen = count($konsumens);
-$url_daftarmenu = "/admin/daftarmenu";
-$url_pesananmasuk = "/admin/pesananmasuk";
-@endphp
 @extends("layouts.sidebar")
 
 @section("container")
@@ -33,3 +25,6 @@ $url_pesananmasuk = "/admin/pesananmasuk";
     <img src="https://assets-global.website-files.com/5d2dff2ab78ea8fc72873c7b/5de01a1633132eaa5fe5c85f_Doris-Fresh-Food2.jpg" alt="" class="w-full h-[520px] object-cover">
 </div>
 @endsection
+@php
+$judul = "Dasboard User";
+@endphp

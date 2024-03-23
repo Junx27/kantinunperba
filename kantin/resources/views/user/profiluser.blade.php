@@ -11,6 +11,8 @@
             <span class="w-20 h-20 bg-transparent absolute rounded-bl-full top-[220px] right-[684.9px] shadow-myShadow2"></span>
             <img src="https://images.unsplash.com/photo-1463453091185-61582044d556?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1ODIwOTV8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MTEwOTYwNDJ8&ixlib=rb-4.0.3&q=80&w=1080" alt="" class="z-10 relative -mt-32 ml-32 border-[15px] border-white w-64 h-64 object-cover rounded-full">
         </div>
+        <div class="-mt-24 ml-96 text-gray-400">
+            <h1><span class="font-bold mr-1 text-black">25</span>Produk<span class="text-black font-bold ml-8 mr-1">125</span>Pelanggan<span class="text-black font-bold ml-8 mr-1">email:</span>email@gmail.com<span class="text-black font-bold ml-8 mr-1">Tlp.</span>087664356</h1>
             </div>
             <hr class="my-2 mr-10">
             <div class="mt-10 flex justify-end mr-10 text-xs">
@@ -19,9 +21,6 @@
         </div>
         <h1 class="text-3xl font-bold mt-10 ml-10">Nama User.</h1>
         <p class="mt-5 mx-10 indent-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic vitae nostrum, quidem, architecto quos inventore, sit necessitatibus officiis laborum suscipit cum voluptatem commodi quo obcaecati! Non delectus veritatis nihil sequi!</p>
-        </div>
-
-    </div>
 </div>
 @endsection
 

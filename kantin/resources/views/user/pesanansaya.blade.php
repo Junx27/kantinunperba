@@ -3,7 +3,7 @@ $judul = "Daftar Menu Admin";
 $pesanan_terendah = $pesanans->first(); // Mengambil pesanan terendah
 @endphp
 
-@extends("layouts.sidebaradmin")
+@extends("layouts.sidebar")
 
 @section("container")
 <div class="flex">
@@ -11,7 +11,7 @@ $pesanan_terendah = $pesanans->first(); // Mengambil pesanan terendah
         <h1 class="sticky -top-5 bg-white border-b font-bold text-center -mt-3 py-3 px-4">Daftar Pemesanan</h1>
         <div class="mt-5">
             @foreach ($pesanans as $pesanan)
-            <a href="/admin/pesananmasuk/{{ $pesanan->id }}" class="{{ $pesanan->id == $pesanan_terendah->id ? 'transition-all duration-500 my-2 p-2 bg-lime-400 rounded-lg cursor-pointer flex items-center' : 'transition-all duration-500 my-2 p-2 hover:bg-lime-400 hover:rounded-lg cursor-pointer flex items-center' }}">
+            <a href="/user/pesansaya/{{ $pesanan->id }}" class="{{ $pesanan->id == $pesanan_terendah->id ? 'transition-all duration-500 my-2 p-2 bg-lime-400 rounded-lg cursor-pointer flex items-center' : 'transition-all duration-500 my-2 p-2 hover:bg-lime-400 hover:rounded-lg cursor-pointer flex items-center' }}">
                 <img src="{{ $pesanan->foto }}" alt="" class="w-10 h-10 rounded-full mr-2">
                 <h1 class="py-2 px-4">{{ $pesanan->nama_pembeli }}</h1>
             </a>
