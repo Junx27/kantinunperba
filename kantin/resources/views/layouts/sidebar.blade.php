@@ -10,40 +10,44 @@
 </head>
 
 <body>
-    <div class="fixed top-0 z-10 w-full text-center bg-yellow-400 py-2 text-xl font-bold">
-        {{ $judul }}
-    </div>
-    </head>
+    <div class="text-xs m-2 z-20 w-[280px] h-[760px] bg-white fixed top-0 rounded-lg">
+        <div class="flex flex-col pt-20">
+            <a href="/user/dasboard" class="{{ request()->is('user/dasboard') ? 'flex items-center bg-cyan-700 text-white p-2 pl-5 mx-5 rounded-lg my-1' : 'flex items-center p-2 pl-5 mx-5 my-1' }}">
+                <img src="{{ asset('images/icons/dashboard.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full mr-3">
+                Dashboard
+            </a>
+            <a href="/user/profiluser" class="{{ request()->is('user/profiluser') ? 'flex items-center bg-cyan-700 text-white p-2 pl-5 mx-5 rounded-lg my-1' : 'flex items-center p-2 pl-5 mx-5 my-1' }}">
+                <img src="{{ asset('images/icons/user.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full mr-3">
+                Profil User
+            </a>
+            <a href="/user/daftarmenu" class="{{ request()->is('user/daftarmenu') ? 'flex items-center bg-cyan-700 text-white p-2 pl-5 mx-5 rounded-lg my-1' : 'flex items-center p-2 pl-5 mx-5 my-1' }}">
+                <img src="{{ asset('images/icons/restaurant.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full mr-3">
+                Daftar Menu
+            </a>
+            <a href="/user/pesanansaya" class="{{ request()->is('user/pesanansaya*') ? 'flex items-center bg-cyan-700 text-white p-2 pl-5 mx-5 rounded-lg my-1' : 'flex items-center p-2 pl-5 mx-5 my-1' }}">
+                <img src="{{ asset('images/icons/shopping-cart-add.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full mr-3">
+                Pesanan Saya
+            </a>
 
-    <body class="">
-        <!-- Sidebar -->
-        <div class="z-20 w-[280px] h-[800px] bg-gray-400 fixed top-0">
-            <ul class="pt-20 pl-8">
-                <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-                <li class="px-4 mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/user/profiluser"><span class="material-symbols-outlined">
-                        person</span>Profil User</a></button>
-                <li class="px-4 mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/user/dasboard"><span class="material-symbols-outlined">
-                        home</span>Dasboard</a></button>
-                <li class="px-4 mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/user/daftarmenu"><span class="material-symbols-outlined">
-                        book
-                    </span>Daftar Menu</a></button>
-                <li class="px-4 mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/user/keranjang"><span class="material-symbols-outlined">
-                        shopping_cart_checkout
-                    </span>keranjang</a></button>
-                <li class="px-4 mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/user/historypembelian"><span class="material-symbols-outlined">
-                        manage_history
-                    </span>History Pembelian</a></button>
-                <li class="px-4 mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/user/landingpage"><span class="material-symbols-outlined">
-                        logout
-                    </span>Log out</a></button>
-            </ul>
-            <!-- end sidebar -->
+            <a href="/user/historypembelian" class="{{ request()->is('user/historypembelian') ? 'flex items-center bg-cyan-700 text-white p-2 pl-5 mx-5 rounded-lg my-1' : 'flex items-center p-2 pl-5 mx-5 my-1' }}">
+                <img src="{{ asset('images/icons/time-past.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full mr-3">
+                History Pembelian
+            </a>
+            <a href="/user/keranjang" class="{{ request()->is('user/keranjang') ? 'flex items-center bg-cyan-700 text-white p-2 pl-5 mx-5 rounded-lg my-1' : 'flex items-center p-2 pl-5 mx-5 my-1' }}">
+                <img src="{{ asset('images/icons/address-book.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full mr-3">
+                Keranjang
+            </a>
+            <a href="/admin/landingpage" class="{{ request()->is('') ? 'flex items-center bg-cyan-700 text-white p-2 pl-5 mx-5 rounded-lg my-1' : 'flex items-center p-2 pl-5 mx-5 my-1' }}">
+                <img src="{{ asset('images/icons/leave.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full mr-3">
+                Logout
+            </a>
         </div>
-        <!-- content -->
-        <div class="m-10 ml-[310px] mt-20">
-            @yield ("container")
-        </div>
-        <!-- end content -->
-    </body>
+    </div>
+    <!-- content -->
+    <div class="bg-gray-200 pl-[300px] p-2">
+        @yield ("container")
+    </div>
+    <!-- end content -->
+</body>
 
 </html>

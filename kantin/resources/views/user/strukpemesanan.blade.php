@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+@extends("layouts.sidebar")
+
+@section("container")
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail Pemesanan</title>
@@ -8,8 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100">
-    <div class="container mx-auto px-4 py-8">
-        <h1 class="text-3xl flex justify-center font-bold mb-10">Detail Pemesanan</h1>
+    <div class="px-4 py-8">
+        <h1 class="text-3xl flex justify-center font-bold mb-10">Struk Pemesanan</h1>
         <!-- Kolom Detail Pemesanan -->
         <div class="mb-8">
             <h2 class="text-xl font-semibold mb-2">Detail Pemesanan</h2>
@@ -52,5 +52,9 @@
             <button onclick="window.print()" class="bg-yellow-400 text-white px-6 py-3 rounded-md">Cetak PDF</button>
         </div>
     </div>
-</body>
-</html>
+    </div>
+@endsection
+
+@php
+$judul = "Struk";
+@endphp

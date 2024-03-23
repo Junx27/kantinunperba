@@ -1,133 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>landing Page</title>
-    <!-- Tambahkan link CSS Tailwind -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    @vite('resources/css/app.css')
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
-<body class="bg-gray-100">
-    <!-- Header -->
-    <header class="bg-white shadow-md px-2">
-        <div class="container mx-auto flex justify-between items-center py-2">
-            <h1 class="text-xl font-semibold text-gray-800">Sistem Informasi Kantin UNPERBA</h1>
-            <nav>
-            <a href="#" class="text-gray-600 hover:text-gray-800 px-4 py-2"><a href="http://127.0.0.1:8000/user/login">Login</a>
-            <a href="#" class="text-gray-600 hover:text-gray-800 px-4 py-2"><a href="http://127.0.0.1:8000/user/register">Register</a>
-            <a href="#" class="text-gray-600 hover:text-gray-800 px-4 py-2"><a href="http://127.0.0.1:8000/user/kritik&saran">Kritik & saran</a>
-            
-            </nav>
-        </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="bg-yellow-400 py-16">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-semibold text-white mb-4">Pesanan Kantin Jadi Lebih Mudah!</h2>
-            <p class="text-lg text-white mb-8">Sistem Informasi Kantin kami memberikan pengalaman yang nyaman untuk pemesanan makanan dan minuman favorit Anda.</p>
-        </div>
-    </section>
-<!-- Tailwind CSS -->
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <!-- Alpine.js for interactivity -->
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
-    <style>
-        /* Custom styles */
-        .product-image {
-            transition: transform 0.2s;
-        }
-        .product-image:hover {
-            transform: scale(1.1);
-        }
-    </style>
-    </head>
-    <body class="bg-gray-100">
-    <div class="container mx-auto py-8">
-        <h1 class="text-3xl font-bold text-center mb-8">Menu Kantin</h1>
-        <div class="flex flex-wrap justify-center">
-            <?php
-            // Array of product images (replace with actual data)
-            $productImages = [
-                "https://cdn-brilio-net.akamaized.net/news/2019/10/01/171511/1104781-1000xauto-resep-soto-ayam-santan.jpg",
-                "https://1.bp.blogspot.com/-z5TzU1NiOOc/VbjRojnm8iI/AAAAAAAAEb0/8a79yoP5y1c/s640/IMG_3659.JPG",
-                "https://th.bing.com/th/id/OIP.3140EtMQYk4Pyb5-gyLeLwHaHa?w=1200&h=1200&rs=1&pid=ImgDetMain",
-                "https://th.bing.com/th/id/R.c53d6a303a9f174ffe2a02222e1f4f84?rik=UCRBJ9%2bvPp6mbA&riu=http%3a%2f%2fwww.meeteat.org%2fwp-content%2fuploads%2f2021%2f08%2fsate-taichan-6.jpg&ehk=arWjf%2fcYgkff1lpdHyOfzmSFWQSKC%2fv2XMVuYpF7vMc%3d&risl=&pid=ImgRaw&r=0",
-                "https://pktvkaltim.com/wp-content/uploads/2016/06/Manfaat-Jus-Alpukat-768x510.jpg",
-                "https://doktersehat.com/wp-content/uploads/2018/09/jus-jeruk.jpg",
-                "https://majalah.ottencoffee.co.id/wp-content/uploads/2015/08/shutterstock_223511062.jpg",
-            ];
-            foreach ($productImages as $image) {
-                echo '<img src="' . $image . '" alt="Product" class="w-32 h-32 object-cover m-2 product-image">';
-            }
-            ?>
+<body class="bg-gray-200 p-10">
+    <div class="">
+        <div class="bg-white p-5 pb-10 rounded-lg">
+            <div class="relative mt-10">
+                <div class="flex flex-row items-end">
+                    <div class="w-full mx-20">
+                        <div class="absolute top-0 w-full top-3">
+                            <div class="text-xs mb-10 flex justify-between">
+                                <h1 class="font-semibold text-lime-400 bg-cyan-700 py-2 px-3 rounded-full">Kantin Unperba.</h1>
+                                <div class="flex mr-32">
+                                    <h1 class="font-semibold text-cyan-700 border border-2 border-cyan-700 py-2 px-3 rounded-full mr-3">Food & Drink</h1>
+                                    <h1 class="font-semibold text-cyan-700 border border-2 border-cyan-700 py-2 px-3 rounded-full mr-3">Free Delivery</h1>
+                                    <h1 class="font-semibold text-cyan-700 border border-2 border-cyan-700 py-2 px-3 rounded-full">Online Payment</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <h1 class="tracking-wide text-6xl font-black text-cyan-700">Temukan <br>Menu Favoritmu</h1>
+                        <h1 class="tracking-wide text-6xl font-black text-emerald-500">Di Sini Sekarang</h1>
+                        <h1 class="tracking-wide text-6xl font-black text-lime-400">Di Kantin Unperba.</h1>
+                        <div class="mt-10 flex flex-row">
+                            <h1 class="text-emerald-500 font-semibold">Pesanan Kantin Jadi Lebih Mudah!</h1>
+                            <p class="text-xs mx-12">Sistem Informasi Kantin kami memberikan pengalaman yang nyaman untuk pemesanan makanan dan minuman favorit Anda.</p>
+                        </div>
+                        <div class="mt-10">
+                            <a class="font-semibold bg-emerald-500 text-white p-3 px-24 rounded-lg">Daftar Sekarang</a>
+                            <a href="/admin/login" class="font-semibold text-lime-400 bg-cyan-700 p-3 px-24 rounded-lg">Masuk</a>
+                        </div>
+                    </div>
+                    <img src="https://www.foodnavigator-usa.com/var/wrbm_gb_food_pharma/storage/images/publications/food-beverage-nutrition/foodnavigator-usa.com/news/markets/deloitte-report-consumers-fresh-food-spending-on-the-rise/10363851-1-eng-GB/Deloitte-report-Consumers-fresh-food-spending-on-the-rise.jpg" alt="" class="w-[500px] h-[600px] object-cover rounded-lg mr-10">
+                </div>
+                <div class="absolute bottom-3 right-14 w-[475px] h-[150px] rounded-lg bg-lime-400 opacity-50">
+                </div>
+                <h1 class="text-white absolute bottom-20 right-64 font-bold text-7xl">169 K <span class="text-3xl">+</span></h1>
+                <p class="w-32 text-xs absolute bottom-20 right-20">Daftar menu makanan dan minuman tersedia di kantin unperba, harga terjangkau!</p>
+            </div>
         </div>
     </div>
-
-    <!-- Fitur Section -->
-    <section class="container mx-auto py-16">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <!-- Fitur 1 -->
-            <div class="bg-green-400 shadow-md p-8 rounded-md text-center">
-                <h3 class="text-xl font-semibold mb-4">Pemesanan Online</h3>
-                <p class="text-gray-600">Pesan makanan dan minuman favorit Anda secara online tanpa antri!</p>
-            </div>
-            <!-- Fitur 2 -->
-            <div class="bg-blue-400 shadow-md p-8 rounded-md text-center">
-                <h3 class="text-xl font-semibold mb-4">Menu Interaktif</h3>
-                <p class="text-gray-600">Lihat menu lengkap kantin kami dengan gambar dan deskripsi.</p>
-            </div>
-            <!-- Fitur 3 -->
-            <div class="bg-pink-400 shadow-md p-8 rounded-md text-center">
-                <h3 class="text-xl font-semibold mb-4">Pembayaran Digital</h3>
-                <p class="text-gray-600">Bayar pesanan Anda secara digital untuk kenyamanan dan keamanan.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimoni Section -->
-    <section class="bg-white-400 text-black py-16">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-semibold mb-8">Apa yang Pelanggan Kami Katakan</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Testimoni 1 -->
-                <div class="bg-yellow-400 p-8 rounded-md">
-                    <p>"Sistem Informasi Kantin ini benar-benar membantu saya untuk memesan makanan dengan mudah. Sangat direkomendasikan!"</p>
-                    <p class="font-semibold mt-4">- John Doe</p>
-                </div>
-                <!-- Testimoni 2 -->
-                <div class="bg-yellow-400 p-8 rounded-md">
-                    <p>"Saya sangat menyukai menu interaktifnya. Sangat membantu saya untuk memilih makanan yang ingin saya pesan."</p>
-                    <p class="font-semibold mt-4">- Jane Smith</p>
-                </div>
-            </div>
-        </div>
-    </section>
-        <!-- Informasi Kontak -->
-    <footer class="bg-grey-400 text-black py-8">
-        <div class="container mx-auto flex justify-center">
-            <div class="text-center">
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-                <h2 class="text-2xl font-bold mb-4">Hubungi Kami</h2>
-                <p><span class="material-symbols-outlined">pin_drop
-                </span>Alamat: Jl. Kedungmenjangan No. 123</p>
-                <p><span class="material-symbols-outlined">
-                perm_phone_msg
-                </span>Telepon: 123-456-789</p>
-                <p><span class="material-symbols-outlined">
-                stacked_email
-                </span>Email: kantinunperba@gmail.com</p>
-            </div>
-        </div>
-    </footer>
-</body>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2024 KantinUnperba. All rights reserved.</p>
-        </div>
-    </footer>
 </body>
 
 </html>

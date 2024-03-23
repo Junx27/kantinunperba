@@ -1,47 +1,35 @@
+@php
+$judul = "Dasboard";
+$panjang_menu = count($menus);
+$panjang_pesanan = count($pesanans);
+$panjang_konsumen = count($konsumens);
+$url_daftarmenu = "/admin/daftarmenu";
+$url_pesananmasuk = "/admin/pesananmasuk";
+@endphp
 @extends("layouts.sidebar")
 
 @section("container")
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Three Boxes with PHP and Tailwind CSS</title>
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-
-<body>
-    <!-- Fitur Section -->
-    <section class="container mx-auto py-5">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <!-- Fitur 1 -->
-            <div class="bg-purple-300 shadow-md p-8 rounded-md text-center">
-                <p class="text-gray-600"><span class="material-symbols-outlined">restaurant_menu</span></p>
-                <a href="http://127.0.0.1:8000/user/daftarmenu">
-                    <h3 class="text-xl font-semibold mb-4">Daftar Menu
-                </a></button>
-            </div>
-            <!-- Fitur 2 -->
-            <div class="bg-blue-300 shadow-md p-8 rounded-md text-center">
-                <p class="text-gray-600"><span class="material-symbols-outlined">shopping_cart</span>
-                    <a href="http://127.0.0.1:8000/user/keranjang">
-                        <h3 class="text-xl font-semibold mb-4">Keranjang Saya
-                    </a></button>
-            </div>
-            <!-- Fitur 3 -->
-            <div class="bg-green-300 shadow-md p-8 rounded-md text-center">
-                <p class="text-gray-600"><span class="material-symbols-outlined">monitoring</span>.</p>
-                <a href="http://127.0.0.1:8000/user/historypembelian">
-                    <h3 class="text-xl font-semibold mb-4">Histori Pembelian
-                </a></button>
-            </div>
-            <!-- Fitur 4 -->
-            <div class="bg-yellow-300 shadow-md p-8 rounded-md text-center">
-                <p class="text-gray-600"><span class="material-symbols-outlined">featured_play_list</span></p>
-                <a href="http://127.0.0.1:8000/user/pesanansaya">
-                    <h3 class="text-xl font-semibold mb-4">Pesanan Saya
-                </a></button>
-    </section>
-</body>
+<div class="w-full bg-white p-5 rounded-lg">
+    <div class="grid grid-cols-4 gap-4">
+        <a href="{{ $url_daftarmenu }}" class="transition-all duration-500 shadow hover:scale-[101%] w-full h-[200px] bg-cyan-700 rounded-lg p-5 cursor-pointer">
+            <p class="text-white font-bold text-center">Daftar Menu</p>
+            <p class="text-white font-black text-center mt-7 text-7xl">{{ $panjang_menu }}</p>
+        </a>
+        <a href="{{ $url_pesananmasuk }}" class="transition-all duration-500 shadow hover:scale-[101%] w-full h-[200px] bg-emerald-500 rounded-lg  cursor-pointer p-5">
+            <p class="text-white font-bold text-center">Pesanan saya</p>
+            <p class="text-white font-black text-center mt-7 text-7xl">{{ $panjang_pesanan }}</p>
+        </a>
+        <div class="transition-all duration-500 shadow hover:scale-[101%] w-full h-[200px] bg-lime-400 rounded-lg p-5 cursor-pointer">
+            <p class="text-white font-bold text-center">History Pembelian</p>
+            <p class="text-white font-black text-center mt-7 text-7xl">12</p>
+        </div>
+        <div class="transition-all duration-500 shadow hover:scale-[101%] w-full h-[200px] bg-orange-400 rounded-lg cursor-pointer p-5">
+            <p class="text-white font-bold text-center">Keranjang</p>
+            <p class="text-white font-black text-center mt-7 text-7xl">{{ $panjang_konsumen }}</p>
+        </div>
+    </div>
+</div>
+<div>
+    <img src="https://assets-global.website-files.com/5d2dff2ab78ea8fc72873c7b/5de01a1633132eaa5fe5c85f_Doris-Fresh-Food2.jpg" alt="" class="w-full h-[520px] object-cover">
+</div>
 @endsection
-
-@php
-$judul = "Dasboard";
-@endphp

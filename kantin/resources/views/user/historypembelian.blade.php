@@ -1,16 +1,40 @@
+@php
+$judul = "Histori Pembelian";
+$dataPembelian = [
+[
+'no' => 1,
+'nama_menu' => 'Menu 1',
+'id_pesanan' => 'ORD001',
+'total_harga' => 'Rp 500.000',
+'tanggal_transaksi' => '2024-02-28',
+'metode_pembayaran' => 'Transfer Bank',
+'detail' => 'Lihat',
+'status_pengiriman' => 'Dikirim',
+],
+[
+'no' => 2,
+'nama_menu' => 'Menu 2',
+'id_pesanan' => 'ORD002',
+'total_harga' => 'Rp 750.000',
+'tanggal_transaksi' => '2024-02-27',
+'metode_pembayaran' => 'Kartu Kredit',
+'detail' => 'Lihat',
+'status_pengiriman' => 'Belum Dikirim',
+],
+// Anda dapat menambahkan data pembelian lainnya di sini
+];
+@endphp
+
 @extends("layouts.sidebar")
 
 @section("container")
-<!-- Konten -->
-<div class="flex justify-center">
-    <div class="ml-[5px] p-2">
-        <h1 class="flex justify-center text-2xl font-bold mb-5">History Pembelian</h1>
-        <!-- Tabel Data History Penjualan -->
-        <table class="ml-[100px]">
-            <thead>
-                <tr class="bg-yellow-400">
+<div class="text-xs w-full h-screen bg-white p-10 rounded-lg">
+    <div class="overflow-x-auto">
+        <table class="min-w-full bg-white rounded-lg overflow-hidden shadow-md">
+            <thead class="bg-lime-400">
+                <tr>
                     <th class="py-2 px-4">No.</th>
-                    <th class="py-2 px-4">Nama Pembeli</th>
+                    <th class="py-2 px-4">Nama Menu</th>
                     <th class="py-2 px-4">ID Pesanan</th>
                     <th class="py-2 px-4">Total Harga</th>
                     <th class="py-2 px-4">Tanggal Transaksi</th>
@@ -19,23 +43,25 @@
                     <th class="py-2 px-4">Status Pengiriman</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td class="py-2 px-4">1</td>
-                    <td class="py-2 px-4">Dinda</td>
-                    <td class="py-2 px-4">12345</td>
-                    <td class="py-2 px-4">Rp 150.000</td>
-                    <td class="py-2 px-4">2024-02-07</td>
-                    <td class="py-2 px-4">Transfer Bank</td>
-                    <td class="py-2 px-4"><a href="#">Detail</a></td>
-                    <td class="py-2 px-4">Dikirim</td>
+            <tbody class="text-gray-700">
+                @foreach ($dataPembelian as $pembelian)
+                <tr class="border">
+                    <td class="py-2 px-4 border">{{ $pembelian['no'] }}</td>
+                    <td class="py-2 px-4 border">{{ $pembelian['nama_menu'] }}</td>
+                    <td class="py-2 px-4 border">{{ $pembelian['id_pesanan'] }}</td>
+                    <td class="py-2 px-4 border">{{ $pembelian['total_harga'] }}</td>
+                    <td class="py-2 px-4 border">{{ $pembelian['tanggal_transaksi'] }}</td>
+                    <td class="py-2 px-4 border">{{ $pembelian['metode_pembayaran'] }}</td>
+                    <td class="py-2 px-4 border"><a href="#">{{ $pembelian['detail'] }}</a></td>
+                    @if ($pembelian['status_pengiriman'] === 'Belum Dikirim')
+                    <td class="py-2 px-4 border text-red-500">{{ $pembelian['status_pengiriman'] }}</td>
+                    @else
+                    <td class="py-2 px-4 border">{{ $pembelian['status_pengiriman'] }}</td>
+                    @endif
                 </tr>
-                <!-- Data History Penjualan lainnya -->
+                @endforeach
             </tbody>
         </table>
     </div>
-    @endsection
-
-    @php
-    $judul = "Histori Pembelian";
-    @endphp
+</div>
+@endsection

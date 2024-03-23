@@ -1,82 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    @vite('resources/css/app.css')
-    <title>Pesanan Saya</title>
-</head>
-<body>
-    <div class="text-center bg-yellow-400 py-2 text-xl">
-    Pesanan Saya
-  </div>
-  <body class="bg-gray-100">
-    <!-- Sidebar -->
-    <div class="flex h-screen">
-        <div class="w-1/6 bg-gray-400">
-            <ul>
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" /><li class="px-4 mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/user/profiluser"><span class="material-symbols-outlined">
-            person</span>Profil User</a></button>
-            <li class="px-4 mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/user/dasboard"><span class="material-symbols-outlined">
-            home</span>Dasboard</a></button>
-            <li class="px-4 mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/user/daftarmenu"><span class="material-symbols-outlined">
-            book
-            </span>Daftar Menu</a></button>
-            <li class="px-4 mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/user/keranjang"><span class="material-symbols-outlined">
-            shopping_cart_checkout
-            </span>keranjang</a></button>
-            <li class="px-4 mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/user/historypembelian"><span class="material-symbols-outlined">
-            manage_history
-            </span>History Pembelian</a></button>
-            <li class="px-4 mb-2"><a href="#" class="block"></a></li><a href="http://127.0.0.1:8000/user/landingpage"><span class="material-symbols-outlined">
-            logout
-            </span>Log out</a></button>
-            </ul>
-            </div>
-    <!-- Konten -->
-    <div class="ml-1/5 p-8">
-        <!-- Pencarian -->
-        <div class="mb-4">
-            <input type="text" id="searchInput" class="border border-gray-300 rounded-md py-2 px-3 w-full" placeholder="Cari...">
-        </div>
-        <!-- Tabel Data Pesanan -->
-        <div class="overflow-x-auto">
-            <table class="min-w-full bg-white rounded-lg overflow-hidden shadow-md">
-                <thead class="bg-yellow-400 text-white">
-                    <tr>
-                        <th class="px-4 py-2">No.</th>
-                        <th class="px-4 py-2">ID Pesanan</th>
-                        <th class="px-4 py-2">Waktu Pemesanan</th>
-                        <th class="px-4 py-2">Nama Menu</th>
-                        <th class="px-4 py-2">Harga Menu</th>
-                        <th class="px-4 py-2">Total Harga</th>
-                        <th class="px-4 py-2">Status</th>
-                        <th class="px-4 py-2">Gambar</th>
-                        <th class="px-4 py-2">Detail</th>
-                    </tr>
-                </thead>
-                <tbody class="text-gray-700">
-                    <!-- Data Pesanan -->
-                    <tr>
-                        <td class="px-4 py-2">1</td>
-                        <td class="px-4 py-2">------</td>
-                        <td class="px-4 py-2">13/03/2024</td>
-                        <td class="px-4 py-2">------</td>
-                        <td class="px-4 py-2">------</td>
-                        <td class="px-4 py-2">------</td>
-                        <td class="px-4 py-2">Dikirim</td>
-                        <td class="px-4 py-2">
-                            <img src="path_to_profile_image" alt="Profil" class="w-10 h-10 rounded-full">
-                        </td>
-                        <td class="px-4 py-2">
-                            <button class="bg-blue-500 text-white py-1 px-2 rounded-md">Lihat Detail</button>
-                        </td>
-                    </tr>
-                    <!-- Data Pesanan lainnya dapat ditambahkan di sini -->
-                </tbody>
-            </table>
+@php
+$judul = "Daftar Menu Admin";
+$pesanan_terendah = $pesanans->first(); // Mengambil pesanan terendah
+@endphp
+
+@extends("layouts.sidebaradmin")
+
+@section("container")
+<div class="flex">
+    <div class="fixed top-2 text-xs w-[300px] h-[760px] bg-white p-5 rounded-lg mr-3 overflow-auto">
+        <h1 class="sticky -top-5 bg-white border-b font-bold text-center -mt-3 py-3 px-4">Daftar Pemesanan</h1>
+        <div class="mt-5">
+            @foreach ($pesanans as $pesanan)
+            <a href="/admin/pesananmasuk/{{ $pesanan->id }}" class="{{ $pesanan->id == $pesanan_terendah->id ? 'transition-all duration-500 my-2 p-2 bg-lime-400 rounded-lg cursor-pointer flex items-center' : 'transition-all duration-500 my-2 p-2 hover:bg-lime-400 hover:rounded-lg cursor-pointer flex items-center' }}">
+                <img src="{{ $pesanan->foto }}" alt="" class="w-10 h-10 rounded-full mr-2">
+                <h1 class="py-2 px-4">{{ $pesanan->nama_pembeli }}</h1>
+            </a>
+            @endforeach
         </div>
     </div>
-</body>
-</html>
+    <div class=" flex flex-col text-xs ml-[310px] w-full h-full">
+        <div class="w-full bg-white p-2 rounded-lg">
+            <h1 class="mx-auto w-32 p-2 text-center">Detail Pesanan</h1>
+        </div>
+        <div class="mt-2 text-xs w-full h-[170px] bg-white p-5 rounded-lg">
+            <div class="mt-5 overflow-x-auto">
+                <table class="min-w-full bg-white rounded-lg overflow-hidden shadow-md">
+                    <thead>
+                        <tr class="bg-lime-400">
+                            <th class="py-2 px-4">Nama Pembeli</th>
+                            <th class="py-2 px-4">ID Pesanan</th>
+                            <th class="py-2 px-4">Total Harga</th>
+                            <th class="py-2 px-4">Tanggal Transaksi</th>
+                            <th class="py-2 px-4">Metode Pembayaran</th>
+                            <th class="py-2 px-4">Ket</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white">
+                            <td class="py-2 px-4 border">{{ $pesanan_terendah->nama_pembeli }}</td>
+                            <td class="py-2 px-4 border">{{ $pesanan_terendah->id_pesanan }}</td>
+                            <td class="py-2 px-4 border">{{ $pesanan_terendah->total_harga }}</td>
+                            <td class="py-2 px-4 border">{{ $pesanan_terendah->tanggal_transaksi }}</td>
+                            <td class="py-2 px-4 border">{{ $pesanan_terendah->metode_pembayaran }}</td>
+                            <td class="py-2 px-4 border">{{ $pesanan_terendah->keterangan }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="flex flex-row">
+            <div class="text-xs w-full mt-2 rounded-lg">
+                <div class="w-full bg-white p-2 rounded-lg">
+                    <h1 class="mx-auto w-32 p-2 text-center">Informasi Pesanan</h1>
+                </div>
+                <div class="relative mt-2 bg-white rounded-lg w-full h-[470px] p-5 overflow-auto">
+                    <img src="{{ $pesanan_terendah->foto}}" alt="" class="mx-auto w-32 h-32 rounded-full object-cover">
+                    <h1 class="sticky -top-5 bg-white border-b font-bold text-center mt-5 py-3 px-4">{{ $pesanan_terendah->nama_pembeli }}</h1>
+                    @foreach ($menus as $menu)
+                    <div class="flex items-center">
+                        <img src="{{$menu->gambar}}" alt="" class="w-10 h-10 my-2 rounded-full mr-2">
+                        <p class="font-bold">{{$menu->nama}}</p>
+                        <p class="mx-5">x</p>
+                        <p class="">Rp.{{$menu->harga}}</p>
+                        <p class="mx-5">=</p>
+                        <p class="">Rp.{{$menu->harga}}</p>
+                    </div>
+                    @endforeach
+                    <hr>
+                    <p class="font-bold my-2 text-end">Total = Rp. 200.000,00</p>
+                </div>
+            </div>
+            <div id="bukti_pembayaran" class="text-xs w-[500px] mt-2 ml-2 rounded-lg">
+                <div class="w-full bg-white p-2 rounded-lg">
+                    <h1 class="mx-auto w-32 p-2 text-center">Bukti pembayaran</h1>
+                </div>
+                <img src="{{ $pesanan_terendah->bukti_pembayaran }}" alt="" class="w-full h-[470px] object-cover mt-2 rounded-lg border">
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

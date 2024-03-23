@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+@extends("layouts.sidebar")
+
+@section("container")
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Metode Pembayaran</title>
@@ -49,6 +49,9 @@
             }
         });
     </script>
-</body>
-</html>
+@endsection
+
+@php
+$judul = "Metode Pembayaran";
+@endphp
 
