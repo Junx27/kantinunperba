@@ -62,11 +62,7 @@ Route::get('user/historypembelian', function () {
 Route::get('user/editprofil', function () {
     return view('user/editprofil');
 });
-Route::get('user/dasboard', [MenuController::class, "getLengthMenu"]);
-Route::get('user/daftarmenu', [MenuController::class, "getMenu"]);
-Route::get('user/historypenjualan', function () {
-    return view('user/historypenjualan');
-});
+
 Route::get('user/strukpemesanan', function () {
     return view('user/strukpemesanan');
 });

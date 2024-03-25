@@ -8,7 +8,7 @@
         </div>
         <div>
             <span class="w-20 h-20 bg-transparent absolute rounded-br-full top-[220px] left-[64.9px] shadow-myShadow1"></span>
-            <span class="w-20 h-20 bg-transparent absolute rounded-bl-full top-[220px] right-[684.9px] shadow-myShadow2"></span>
+            <span class="w-20 h-20 bg-transparent absolute rounded-bl-full top-[220px] right-[590px] shadow-myShadow2"></span>
             <img src="https://images.unsplash.com/photo-1559598467-8be25b6dc34f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1ODIwOTV8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MTEwOTYxNTN8&ixlib=rb-4.0.3&q=80&w=1080" alt="" class="z-10 relative -mt-32 ml-32 border-[15px] border-white w-64 h-64 object-cover rounded-full">
         </div>
         <div class="-mt-24 ml-96 text-gray-400">

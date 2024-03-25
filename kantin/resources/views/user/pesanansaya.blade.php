@@ -56,7 +56,7 @@ $dataPembelian = [
                     @if ($pembelian['status_pengiriman'] === 'Belum Dikirim')
                     <td class="py-2 px-4 border text-red-500">{{ $pembelian['status_pengiriman'] }}</td>
                     @else
-                    <td class="py-2 px-4 border">{{ $pembelian['status_pengiriman'] }}</td>
+                    <td class="py-2 px-4 border text-green-500">{{ $pembelian['status_pengiriman'] }}</td>
                     @endif
                 </tr>
                 @endforeach
