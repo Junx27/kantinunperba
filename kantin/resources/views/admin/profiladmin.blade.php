@@ -24,7 +24,9 @@
             </div>
         </div>
         <h1 class="text-3xl font-bold mt-10 ml-10">Dinda Ayu Sekar M.</h1>
-        <p class="mt-5 mx-10 indent-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic vitae nostrum, quidem, architecto quos inventore, sit necessitatibus officiis laborum suscipit cum voluptatem commodi quo obcaecati! Non delectus veritatis nihil sequi!</p>
+        <p class="mt-5 mx-10 indent-8">Nama Rekening: Admin</p>
+        <p class="mt-5 mx-10 indent-8">Nama Bank: BRI</p>
+        <p class="mt-5 mx-10 indent-8">No Rekening: 0022342211</p>
         <p class="font-bold ml-10 my-5">Produk added:</p>
         <div class="grid grid-cols-5 gap-5 mx-10 mt-10">
             @foreach ($menus as $menu)
