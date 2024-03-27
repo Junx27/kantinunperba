@@ -33,8 +33,8 @@
                             <p class="text-xs mx-12">Sistem Informasi Kantin kami memberikan pengalaman yang nyaman untuk pemesanan makanan dan minuman favorit Anda.</p>
                         </div>
                         <div class="mt-10">
-                            <a class="font-semibold bg-emerald-500 text-white p-3 px-24 rounded-lg">Daftar Sekarang</a>
-                            <a href="/admin/login" class="font-semibold text-lime-400 bg-cyan-700 p-3 px-24 rounded-lg">Masuk</a>
+                            <a href="/register" class="font-semibold bg-emerald-500 text-white p-3 px-24 rounded-lg">Daftar Sekarang</a>
+                            <a href="/login" class="font-semibold text-lime-400 bg-cyan-700 p-3 px-24 rounded-lg">Masuk</a>
                         </div>
                     </div>
                     <img src="https://www.foodnavigator-usa.com/var/wrbm_gb_food_pharma/storage/images/publications/food-beverage-nutrition/foodnavigator-usa.com/news/markets/deloitte-report-consumers-fresh-food-spending-on-the-rise/10363851-1-eng-GB/Deloitte-report-Consumers-fresh-food-spending-on-the-rise.jpg" alt="" class="w-[500px] h-[600px] object-cover rounded-lg mr-10">

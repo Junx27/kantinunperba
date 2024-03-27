@@ -2,9 +2,10 @@
 $judul = "Dasboard";
 $panjang_menu = count($menus);
 $panjang_pesanan = count($pesanans);
-$panjang_konsumen = count($konsumens);
+$panjang_konsumen = count($users);
 $url_daftarmenu = "/admin/daftarmenu";
 $url_pesananmasuk = "/admin/pesananmasuk";
+$url_datapelanggan = "/admin/datapelanggan";
 @endphp
 @extends("layouts.sidebaradmin")
 
@@ -23,10 +24,10 @@ $url_pesananmasuk = "/admin/pesananmasuk";
             <p class="text-white font-bold text-center">History Penjualan</p>
             <p class="text-white font-black text-center mt-7 text-7xl">12</p>
         </div>
-        <div class="transition-all duration-500 shadow hover:scale-[101%] w-full h-[200px] bg-orange-400 rounded-lg cursor-pointer p-5">
+        <a href="{{ $url_datapelanggan }}" class="transition-all duration-500 shadow hover:scale-[101%] w-full h-[200px] bg-orange-400 rounded-lg cursor-pointer p-5">
             <p class="text-white font-bold text-center">Data Pelanggan</p>
             <p class="text-white font-black text-center mt-7 text-7xl">{{ $panjang_konsumen }}</p>
-        </div>
+        </a>
     </div>
 </div>
 <div>

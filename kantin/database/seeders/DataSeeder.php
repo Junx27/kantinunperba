@@ -7,9 +7,9 @@ use Faker\Factory as Faker;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
 use App\Models\Menu;
+use App\Models\User;
 use App\Models\Pesanan;
 use App\Models\Konsumen;
-use Illuminate\Foundation\Auth\User;
 
 class DataSeeder extends Seeder
 {
@@ -79,6 +79,28 @@ class DataSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now()
             ]);
+        }
+        $userData = [
+            [
+                'nama' => "admin",
+                'email' => "admin@gmail.com",
+                "password" => bcrypt("123456"),
+                'role' => "admin",
+                'nomor' => '123456',
+                'gambar' => 'https://randomuser.me/api/portraits/women/65.jpg',
+            ],
+            [
+                'nama' => "user",
+                'email' => "user@gmail.com",
+                "password" => bcrypt("123456"),
+                'role' => "user",
+                'nomor' => '123456',
+                'gambar' => 'https://randomuser.me/api/portraits/women/65.jpg',
+            ],
+        ];
+
+        foreach ($userData as $key => $value) {
+            User::create($value);
         }
     }
 }

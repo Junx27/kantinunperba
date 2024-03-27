@@ -12,7 +12,7 @@
 <body>
     <div class="text-xs m-2 z-20 w-[280px] h-[605px] bg-white fixed top-0 rounded-lg">
         <div class="flex flex-col pt-20">
-            <a href="/admin/dasboard" class="{{ request()->is('admin/dasboard') ? 'flex items-center bg-cyan-700 text-white p-2 pl-5 mx-5 rounded-lg my-1' : 'flex items-center p-2 pl-5 mx-5 my-1' }}">
+            <a href="/admin/dashboard" class="{{ request()->is('admin/dasboard') ? 'flex items-center bg-cyan-700 text-white p-2 pl-5 mx-5 rounded-lg my-1' : 'flex items-center p-2 pl-5 mx-5 my-1' }}">
                 <img src="{{ asset('images/icons/dashboard.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full mr-3">
                 Dashboard
             </a>
@@ -37,7 +37,7 @@
                 <img src="{{ asset('images/icons/address-book.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full mr-3">
                 Data Pelanggan
             </a>
-            <a href="/admin/laogin" class="{{ request()->is('admin/laogin') ? 'flex items-center bg-cyan-700 text-white p-2 pl-5 mx-5 rounded-lg my-1' : 'flex items-center p-2 pl-5 mx-5 my-1' }}">
+            <a href="/logout" class="{{ request()->is('admin/laogin') ? 'flex items-center bg-cyan-700 text-white p-2 pl-5 mx-5 rounded-lg my-1' : 'flex items-center p-2 pl-5 mx-5 my-1' }}">
                 <img src="{{ asset('images/icons/leave.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full mr-3">
                 Logout
             </a>

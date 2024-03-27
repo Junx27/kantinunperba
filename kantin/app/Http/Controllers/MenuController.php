@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Menu;
+use App\Models\User;
 use App\Models\Pesanan;
 use App\Models\Konsumen;
 
@@ -25,7 +26,8 @@ class MenuController extends Controller
         $menus = Menu::all();
         $pesanans = Pesanan::all();
         $konsumens = Konsumen::all();
-        return view('admin/dasboard', compact('pesanans', 'menus', 'konsumens'));
+        $users = User::all();
+        return view('admin/dasboard', compact('pesanans', 'menus', 'konsumens', 'users'));
     }
     public function iconMenu()
     {
@@ -36,6 +38,7 @@ class MenuController extends Controller
     public function konsumen()
     {
         $konsumens = Konsumen::all();
-        return view('admin/datapelanggan', compact('konsumens'));
+        $users = User::all();
+        return view('admin/datapelanggan', compact('konsumens', 'users'));
     }
 }
