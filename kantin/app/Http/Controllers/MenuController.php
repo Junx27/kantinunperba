@@ -7,13 +7,15 @@ use App\Models\Menu;
 use App\Models\User;
 use App\Models\Pesanan;
 use App\Models\Konsumen;
+use App\Models\DaftarMenu;
+
 
 
 class MenuController extends Controller
 {
     public function getMenu()
     {
-        $menus = Menu::all();
+        $menus = DaftarMenu::all();
         return view('user/daftarmenu', ['menus' => $menus]);
     }
     public function getMenuAdmin()
