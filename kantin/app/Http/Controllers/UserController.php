@@ -35,6 +35,7 @@ class UserController extends Controller
     {
         $validateddata = $request->validate([
             'nama' => 'required',
+            'gender' => 'required',
             'email' => 'required',
             'password' => 'required',
             'nomor' => 'required',

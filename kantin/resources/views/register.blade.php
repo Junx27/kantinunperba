@@ -10,7 +10,7 @@
 
 <body>
     <div class="text-xs bg-cyan-700 w-full py-10">
-        <div class="relative w-[400px] h-[640px] bg-white mx-auto rounded-lg">
+        <div class="relative w-[400px] h-[660px] bg-white mx-auto rounded-lg">
             @if ($errors->any())
             <div class="text-red-500 absolute top-5 left-10">
                 @foreach ($errors->all() as $error)
@@ -38,6 +38,14 @@
                 <div class="relative mx-10 pt-5 flex flex-col">
                     <label for="">Nama</label>
                     <input type="text" class="p-3 border rounded-lg mt-2 outline-cyan-700" placeholder="nama" name="nama" required value="{{old ("nama")}}">
+                </div>
+                <div class="relative mx-10 pt-5 flex flex-col">
+                    <label for="gender">Jenis Kelamin</label>
+                    <select name="gender" class="p-3 border rounded-lg mt-2">
+                        <option value="">Pilih jenis kelamin</option>
+                        <option value="laki-laki">laki-laki</option>
+                        <option value="perempuan">perempuan</option>
+                    </select>
                 </div>
                 <div class="relative mx-10 pt-5 flex flex-col">
                     <label for="">Email</label>

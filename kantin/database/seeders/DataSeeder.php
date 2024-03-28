@@ -83,6 +83,7 @@ class DataSeeder extends Seeder
         $userData = [
             [
                 'nama' => "admin",
+                'gender' => "laki-laki",
                 'email' => "admin@gmail.com",
                 "password" => bcrypt("123456"),
                 'role' => "admin",
@@ -91,6 +92,7 @@ class DataSeeder extends Seeder
             ],
             [
                 'nama' => "user",
+                'gender' => "laki-laki",
                 'email' => "user@gmail.com",
                 "password" => bcrypt("123456"),
                 'role' => "user",
