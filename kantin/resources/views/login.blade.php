@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div class="text-xs bg-cyan-700 w-full h-screen py-20">
+    <div class="text-xs bg-cyan-700 w-full py-5">
         <div class=" relative w-[400px] h-[600px] bg-white mx-auto rounded-lg">
             @if ($errors->any())
             <div class="text-red-500 absolute top-5 left-10">

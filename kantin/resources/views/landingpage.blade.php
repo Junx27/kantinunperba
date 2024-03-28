@@ -33,7 +33,7 @@
                             <p class="text-xs mx-12">Sistem Informasi Kantin kami memberikan pengalaman yang nyaman untuk pemesanan makanan dan minuman favorit Anda.</p>
                         </div>
                         <div class="mt-10">
-                            <a href="/register" class="font-semibold bg-emerald-500 text-white p-3 px-24 rounded-lg">Daftar Sekarang</a>
+                            <a href="/register" class="font-semibold bg-emerald-500 text-white p-3 px-16 rounded-lg">Daftar Sekarang</a>
                             <a href="/login" class="font-semibold text-lime-400 bg-cyan-700 p-3 px-24 rounded-lg">Masuk</a>
                         </div>
                     </div>
