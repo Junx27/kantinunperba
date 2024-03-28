@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\DaftarMenu;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Faker\Factory as Faker;
 use Illuminate\Support\Facades\DB;
@@ -80,6 +81,22 @@ class DataSeeder extends Seeder
                 'updated_at' => now()
             ]);
         }
+        $dataMenu = [
+            [
+                'nama_menu' => "nasi goreng",
+                'kategori' => "makanan",
+                'harga' => 2222,
+                "stock" => 56,
+                'gambar' => 'https://randomuser.me/api/portraits/women/65.jpg',
+            ],
+            [
+                'nama_menu' => "nasi goreng",
+                'kategori' => "makanan",
+                'harga' => 2222,
+                "stock" => 56,
+                'gambar' => 'https://randomuser.me/api/portraits/women/65.jpg',
+            ],
+        ];
         $userData = [
             [
                 'nama' => "admin",
@@ -104,5 +121,9 @@ class DataSeeder extends Seeder
         foreach ($userData as $key => $value) {
             User::create($value);
         }
+        foreach ($dataMenu as $key => $value) {
+            DaftarMenu::create($value);
+        }
+       
     }
 }

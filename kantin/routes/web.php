@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DaftarMenuController;
 use App\Http\Controllers\MendaftarController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
@@ -44,9 +45,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('admin/datapelanggan', UserController::class)->middleware('userAkses:admin');
     Route::get('admin/pesananmasuk', [PesananController::class, 'index'])->middleware('userAkses:admin');
     Route::get('admin/pesananmasuk/{id}', [PesananController::class, 'show'])->middleware('userAkses:admin');
-    Route::get('admin/tambahmenu', function () {
-        return view('admin/tambahmenu');
-    })->middleware('userAkses:admin');
+    Route::resource('admin/tambahmenu', DaftarMenuController::class)->middleware('userAkses:admin');
     Route::get('admin/editmenu', function () {
         return view('admin/editmenu');
     })->middleware('userAkses:admin');
