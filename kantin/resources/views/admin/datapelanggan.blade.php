@@ -19,9 +19,14 @@
                     <h1 class="mt-3 text-[10px]">{{ $user->email}}</h1>
                     <h1 class="mt-1 text-[10px]">{{ $user->nomor}}</h1>
 
-                    <div class="mt-2 text-xs">
-                        <button class="bg-emerald-500 p-1 rounded px-5 text-white">Edit</button>
-                        <button class="bg-orange-500 p-1 rounded px-5 text-white">Hapus</button>
+                    <div class="mt-2 text-xs flex flex-row">
+                        <button class="bg-emerald-500 p-1 rounded px-5 text-white mr-3">Edit</button>
+                        <form action="/admin/datapelanggan/{{ $user->id }}" method="post" onclick="return confirm('Apakah Anda yakin ingin menghapus data pelanggan ini?')">
+                            @method('delete')
+                            @csrf
+                            <button type="submit" class="bg-orange-500 p-1 rounded px-5 text-white">Hapus</button>
+                        </form>
+
                     </div>
                 </div>
             </div>

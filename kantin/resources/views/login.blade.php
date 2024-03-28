@@ -18,7 +18,13 @@
                 @endforeach
             </div>
             @endif
-            <div class="text-sm absolute top-5 right-5 text-center">
+            @if (session('berhasil'))
+            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                <strong class="font-bold">Success!</strong>
+                <span class="block sm:inline">{{ session('berhasil') }}</span>
+            </div>
+            @endif
+            <div class="text-sm absolute top-2 right-2 text-center">
                 <a href="/">X</a>
             </div>
             <form action="/login" method="post" class="py-10">

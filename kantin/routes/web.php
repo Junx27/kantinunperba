@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +22,8 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/', function () {
         return view('landingpage');
     })->name('login');
-    Route::get('/register', [MendaftarController::class, 'index']);
-    Route::post('/register', [MendaftarController::class, 'create']);
+    Route::get('/register', [UserController::class, 'create']);
+    Route::post('/register', [UserController::class, 'store']);
     Route::get('/login', [SessionController::class, 'index']);
     Route::post('/login', [SessionController::class, 'login']);
 });
@@ -40,7 +41,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('admin/historypenjualan', function () {
         return view('admin/historypenjualan');
     })->middleware('userAkses:admin');
-    Route::get('admin/datapelanggan', [MenuController::class, "konsumen"])->middleware('userAkses:admin');
+    Route::resource('admin/datapelanggan', UserController::class)->middleware('userAkses:admin');
     Route::get('admin/pesananmasuk', [PesananController::class, 'index'])->middleware('userAkses:admin');
     Route::get('admin/pesananmasuk/{id}', [PesananController::class, 'show'])->middleware('userAkses:admin');
     Route::get('admin/tambahmenu', function () {
