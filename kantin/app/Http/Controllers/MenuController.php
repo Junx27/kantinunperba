@@ -25,7 +25,7 @@ class MenuController extends Controller
     }
     public function getLengthMenu()
     {
-        $menus = Menu::all();
+        $menus = DaftarMenu::all();
         $pesanans = Pesanan::all();
         $konsumens = Konsumen::all();
         $users = User::all();

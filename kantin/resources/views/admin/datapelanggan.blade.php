@@ -20,7 +20,8 @@
                     <h1 class="mt-1 text-[10px]">{{ $user->nomor}}</h1>
 
                     <div class="mt-2 text-xs flex flex-row">
-                        <button class="bg-emerald-500 p-1 rounded px-5 text-white mr-3">Edit</button>
+                        <a href="/admin/datapelanggan/{{ $user->id }}/edit" class="transition-all duration-500 w-16 bg-emerald-500 hover:bg-black text-white p-1 rounded mr-2 text-center">Edit</a>
+                    <a  href="/admin/datapelanggan/{{ $user->id }}" class="transition-all duration-500 w-16 bg-cyan-700 hover:bg-black text-white p-1 rounded mr-2 text-center">View</a>
                         <form action="/admin/datapelanggan/{{ $user->id }}" method="post" onclick="return confirm('Apakah Anda yakin ingin menghapus data pelanggan ini?')">
                             @method('delete')
                             @csrf

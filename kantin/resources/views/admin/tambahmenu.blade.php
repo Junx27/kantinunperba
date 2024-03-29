@@ -9,9 +9,9 @@
             <img src="{{ asset('storage/' . $menu->gambar)}}" alt="Product 2" class="w-32 h-32 object-cover rounded-l-lg">
             <div class="text-xs ml-3 mt-3">
                 <p class="font-bold">{{ $menu->nama_menu}}</p>
-                <p class="mt-3">Harga: {{ $menu->harga}}</p>
-                <p class="my-1">Stock: {{ $menu->stock}}</p>
-                <p>Dibuat oleh: {{ $menu->user->nama}}</p>
+                <p class="flex items-center mt-3"><img src="{{ asset('images/icons/brand.png') }}" alt="Ikon" class="w-3 mr-2">Rp {{ number_format($menu->harga, 2, ',', '.') }}</p>
+                <p class="flex items-center"><img src="{{ asset('images/icons/box-open.png') }}" alt="Ikon" class="w-3 mr-2">{{ $menu->stock}}</p>
+                <p class="flex items-center"><img src="{{ asset('images/icons/user.png') }}" alt="Ikon" class="w-3 mr-2">{{ $menu->user->nama}}</p>
             </div>
         </a>
         @endforeach

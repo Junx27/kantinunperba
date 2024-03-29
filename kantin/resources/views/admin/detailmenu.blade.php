@@ -9,7 +9,7 @@
             <img src="{{ asset('storage/' . $menus->gambar)}}" alt="Product 2" class="w-32 h-32 object-cover rounded-l-lg">
             <div class="text-xs ml-3 mt-3">
                 <p class="font-bold">{{ $menus->nama_menu}}</p>
-                <p class="flex items-center mt-3"><img src="{{ asset('images/icons/brand.png') }}" alt="Ikon" class="w-3 mr-2"> {{ $menus->harga}}</p>
+                <p class="flex items-center mt-3"><img src="{{ asset('images/icons/brand.png') }}" alt="Ikon" class="w-3 mr-2">Rp {{ number_format($menus->harga, 2, ',', '.') }}</p>
                 <p class="flex items-center"><img src="{{ asset('images/icons/box-open.png') }}" alt="Ikon" class="w-3 mr-2">{{ $menus->stock}}</p>
                 <p class="flex items-center"><img src="{{ asset('images/icons/user.png') }}" alt="Ikon" class="w-3 mr-2">{{ $menus->user->nama}}</p>
             </div>
@@ -25,7 +25,7 @@
                 <img src="{{ asset('storage/' . $menu->gambar)}}" alt="Product 2" class="w-full h-96 object-cover rounded-lg">
             <div class="text-xs mt-10">
                 <p class="font-bold text-xl">{{ $menu->nama_menu}}</p>
-                <p class="flex items-center mt-3"><img src="{{ asset('images/icons/brand.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full"> {{ $menu->harga}}</p>
+                <p class="flex items-center mt-3"><img src="{{ asset('images/icons/brand.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full">Rp {{ number_format($menu->harga, 2, ',', '.') }}</p>
                 <p class="flex items-center"><img src="{{ asset('images/icons/box-open.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full">{{ $menu->stock}}</p>
                 <p class="flex items-center"><img src="{{ asset('images/icons/user.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full">{{ $menu->user->nama}}</p>
                 <div class="p-5 w-full overflow-auto">

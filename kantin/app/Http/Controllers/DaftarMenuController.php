@@ -97,7 +97,7 @@ class DaftarMenuController extends Controller
         }
 
         DaftarMenu::where('id', $id)->update($validateddata);
-        return redirect('/admin/daftarmenu')->with('berhasil', 'penambahan menu telah berhasil');
+        return redirect('/admin/daftarmenu')->with('berhasil', 'perubahan menu telah berhasil');
     }
 
     /**

@@ -36,4 +36,20 @@ class PesananController extends Controller
         }
         return view('admin/detailpesanan', compact('pesanan', 'pesanans', 'menus'));
     }
+    public function riwayat()
+    {
+        $pesanans = Pesanan::all();
+        $menus = Menu::all();
+        return view('admin/historypenjualan', compact('pesanans', 'menus'));
+    }
+    public function detailriwayat($id)
+    {
+        $pesanan = Pesanan::find($id);
+        $pesanans = Pesanan::all();
+        $menus = Menu::all();
+        if (!$pesanan) {
+            return response()->json(['message' => 'Pesanan not found'], 404);
+        }
+        return view('admin/historypenjualan', compact('pesanan', 'pesanans', 'menus'));
+    }
 }

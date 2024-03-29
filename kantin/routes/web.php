@@ -5,6 +5,7 @@ use App\Http\Controllers\MendaftarController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PesananController;
+use App\Http\Controllers\ProfilAdminController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\UserController;
 
@@ -39,17 +40,16 @@ Route::middleware(['auth', 'userAkses:user'])->get('/home', function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('admin/dashboard', [MenuController::class, "getLengthMenu"])->middleware('userAkses:admin');
     Route::get('admin/daftarmenu', [MenuController::class, "getMenuAdmin"])->middleware('userAkses:admin');
-    Route::get('admin/historypenjualan', function () {
-        return view('admin/historypenjualan');
-    })->middleware('userAkses:admin');
+    Route::get('admin/historypenjualan', [PesananController::class, 'riwayat'])->middleware('userAkses:admin');
     Route::resource('admin/datapelanggan', UserController::class)->middleware('userAkses:admin');
     Route::get('admin/pesananmasuk', [PesananController::class, 'index'])->middleware('userAkses:admin');
     Route::get('admin/pesananmasuk/{id}', [PesananController::class, 'show'])->middleware('userAkses:admin');
+    Route::get('admin/historypenjualan/{id}', [PesananController::class, 'detailriwayat'])->middleware('userAkses:admin');
     Route::resource('admin/daftarmenu', DaftarMenuController::class)->middleware('userAkses:admin');
     Route::get('admin/editmenu', function () {
         return view('admin/editmenu');
     })->middleware('userAkses:admin');
-    Route::get('admin/profiladmin', [MenuController::class, "iconMenu"])->middleware('userAkses:admin');
+    Route::get('admin/profiladmin', [ProfilAdminController::class, "index"])->middleware('userAkses:admin');
     Route::get('admin/kritik&saran', function () {
         return view('admin/kritik&saran');
     })->middleware('userAkses:admin');
