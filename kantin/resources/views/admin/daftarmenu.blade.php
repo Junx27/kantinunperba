@@ -16,7 +16,7 @@
         @foreach ($makanans as $makanan)
         <div class="relative bg-white rounded-lg shadow-md">
             <img src="{{ asset('storage/' . $makanan->gambar)}}" alt="Product 2" class="w-full h-96 object-cover rounded-lg hover:scale-[101%] hover:rounded-none transition-all duration-500">
-            <div class="z-0 top-56 left-2 absolute bg-black w-[305px] rounded-lg h-[150px] opacity-40"></div>
+            <div class="z-0 bottom-0 left-0 absolute bg-black w-full rounded-lg h-[150px] opacity-40"></div>
             <div class="absolute text-white top-56 left-2 z-10 p-4">
                 <h2 class="font-semibold text-xl">{{ $makanan->nama_menu}}</h2>
                 <p class="flex items-center mt-3"><img src="{{ asset('images/icons/brand.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full mr-2">Rp {{ number_format($makanan->harga, 0, ',', '.') }}</p>
@@ -44,7 +44,7 @@
         @foreach ($minumans as $minuman)
         <div class="relative bg-white rounded-lg shadow-md">
             <img src="{{ asset('storage/' . $minuman->gambar)}}" alt="Product 2" class="w-full h-96 object-cover rounded-lg hover:scale-[101%] hover:rounded-none transition-all duration-500">
-            <div class="z-0 top-56 left-2 absolute bg-black w-[305px] rounded-lg h-[150px] opacity-40"></div>
+            <div class="z-0 bottom-0 left-0 absolute bg-black w-full rounded-lg h-[150px] opacity-40"></div>
             <div class="absolute top-56 text-white left-2 z-10 p-4">
                 <h2 class="font-semibold text-xl">{{ $minuman->nama_menu}}</h2>
                 <p class="flex items-center mt-3"><img src="{{ asset('images/icons/brand.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full mr-2">Rp {{ number_format($minuman->harga, 0, ',', '.') }}</p>
