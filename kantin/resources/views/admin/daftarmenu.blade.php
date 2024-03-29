@@ -21,13 +21,13 @@
                 <h2 class="font-semibold text-xl">{{ $makanan->nama_menu}}</h2>
                 <p class="flex items-center mt-3"><img src="{{ asset('images/icons/brand.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full mr-2">Rp {{ number_format($makanan->harga, 2, ',', '.') }}</p>
                 <p class="flex items-center mt-2"><img src="{{ asset('images/icons/box-open.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full mr-2">{{ $makanan->stock}}</p>
-                <div class="mt-1 flex flex-row items-center">
+                <div class="mt-3 flex flex-row items-center">
                     <a href="/admin/daftarmenu/{{ $makanan->id }}/edit" class="transition-all duration-500 w-16 bg-emerald-500 hover:bg-black text-white p-1 rounded mr-2 text-center">Edit</a>
                     <a  href="/admin/daftarmenu/{{ $makanan->id }}" class="transition-all duration-500 w-16 bg-cyan-700 hover:bg-black text-white p-1 rounded mr-2 text-center">View</a>
                     <form action="/admin/daftarmenu/{{ $makanan->id }}" method="post" onclick="return confirm('Apakah Anda yakin ingin menghapus data pelanggan ini?')">
                         @method('delete')
                         @csrf
-                        <button type="submit" class="bg-orange-500 p-1 rounded px-5 text-white">Hapus</button>
+                        <button type="submit" class="bg-orange-500 transition-all duration-500 w-16 bg-cyan-700 hover:bg-black text-white p-1 rounded mr-2 text-center">Hapus</button>
                     </form>            
                 </div>
             </div>
@@ -49,13 +49,13 @@
                 <h2 class="font-semibold text-xl">{{ $minuman->nama_menu}}</h2>
                 <p class="flex items-center mt-3"><img src="{{ asset('images/icons/brand.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full mr-2">Rp {{ number_format($minuman->harga, 2, ',', '.') }}</p>
                 <p class="flex items-center mt-2"><img src="{{ asset('images/icons/box-open.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full mr-2">{{ $minuman->stock}}</p>
-                <div class="mt-1 flex flex-row items-center">
+                <div class="mt-3 flex flex-row items-center">
                     <a href="/admin/daftarmenu/{{ $minuman->id }}/edit" class="transition-all duration-500 w-16 bg-emerald-500 hover:bg-black text-white p-1 rounded mr-2 text-center">Edit</a>
                     <a  href="/admin/daftarmenu/{{ $minuman->id }}" class="transition-all duration-500 w-16 bg-cyan-700 hover:bg-black text-white p-1 rounded mr-2 text-center">View</a>
                     <form action="/admin/daftarmenu/{{ $minuman->id }}" method="post" onclick="return confirm('Apakah Anda yakin ingin menghapus data pelanggan ini?')">
                         @method('delete')
                         @csrf
-                        <button type="submit" class="bg-orange-500 p-1 rounded px-5 text-white">Hapus</button>
+                        <button type="submit" class="bg-orange-500 transition-all duration-500 w-16 bg-cyan-700 hover:bg-black text-white p-1 rounded mr-2 text-center">Hapus</button>
                     </form>            
                 </div>
             </div>

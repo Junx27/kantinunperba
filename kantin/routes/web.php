@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\DaftarMenuController;
+use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\MendaftarController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\ProfilAdminController;
+use App\Http\Controllers\ProfilUserController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\UserController;
 
@@ -38,7 +40,7 @@ Route::middleware(['auth', 'userAkses:user'])->get('/home', function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('admin/dashboard', [MenuController::class, "getLengthMenu"])->middleware('userAkses:admin');
+    Route::get('admin/dashboard', [MenuController::class, "dashboard"])->middleware('userAkses:admin');
     Route::get('admin/daftarmenu', [MenuController::class, "getMenuAdmin"])->middleware('userAkses:admin');
     Route::get('admin/historypenjualan', [PesananController::class, 'riwayat'])->middleware('userAkses:admin');
     Route::resource('admin/datapelanggan', UserController::class)->middleware('userAkses:admin');
@@ -46,9 +48,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('admin/pesananmasuk/{id}', [PesananController::class, 'show'])->middleware('userAkses:admin');
     Route::get('admin/historypenjualan/{id}', [PesananController::class, 'detailriwayat'])->middleware('userAkses:admin');
     Route::resource('admin/daftarmenu', DaftarMenuController::class)->middleware('userAkses:admin');
-    Route::get('admin/editmenu', function () {
-        return view('admin/editmenu');
-    })->middleware('userAkses:admin');
     Route::get('admin/profiladmin', [ProfilAdminController::class, "index"])->middleware('userAkses:admin');
     Route::get('admin/kritik&saran', function () {
         return view('admin/kritik&saran');
@@ -56,9 +55,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('admin/detailpesanan', function () {
         return view('admin/detailpesanan');
     })->middleware('userAkses:admin');
-    Route::get('user/keranjang', function () {
-        return view('user/keranjang');
-    })->middleware('userAkses:user');
+    Route::get('user/keranjang/{id}', [MenuController::class, 'store'])->middleware('userAkses:user');
+    Route::get('user/keranjang', [MenuController::class, 'index'])->middleware('userAkses:user');
     Route::get('user/historypembelian', function () {
         return view('user/historypembelian');
     })->middleware('userAkses:user');
@@ -77,9 +75,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('user/pembayaranDana', function () {
         return view('user/pembayaranDana');
     })->middleware('userAkses:user');
-    Route::get('user/profiluser', function () {
-        return view('user/profiluser');
-    })->middleware('userAkses:user');
+    Route::resource('user/profileuser', ProfilUserController::class)->middleware('userAkses:user');
     Route::get('user/kritik&saran', function () {
         return view('user/kritik&saran');
     })->middleware('userAkses:user');
@@ -91,4 +87,6 @@ Route::middleware(['auth'])->group(function () {
     })->middleware('userAkses:user');
     Route::get('user/daftarmenu', [MenuController::class, "getMenu"])->middleware('userAkses:user');
     Route::get('/logout', [SessionController::class, 'logout']);
+    Route::post('/tambah/{id}', [KeranjangController::class, "tambah"])->middleware('userAkses:user');
+    Route::post('/kurang/{id}', [KeranjangController::class, "kurang"])->middleware('userAkses:user');
 });

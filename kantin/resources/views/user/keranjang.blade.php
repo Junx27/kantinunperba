@@ -1,71 +1,58 @@
 @extends("layouts.sidebar")
 
 @section("container")
-<div class="z-30 text-xs sticky top-0 w-full bg-white p-4 rounded-lg overflow-auto">
-    <h1 class="mx-auto w-64 p-2 text-center">Keranjang</h1>
-</div>
-<div>
-<div class="text-xs mt-2 w-full bg-white p-5 rounded-lg">
-            <div class="col-span-2">
-                <ul>
-                    <li class="flex justify-between items-center border-b py-2">
-                        <div>
-                            <span class="font-bold">Menu</span>
-                            <img src="" alt="">
-                        </div>
-                        <div class="flex items-center">
-                            <button class="bg-gray-200 hover:bg-gray-300 text-xs px-2 py-1 rounded" onclick="removeItem('productA')">-</button>
-                            <span class="mx-2" id="productA">1</span>
-                            <button class="bg-gray-200 hover:bg-gray-300 text-xs px-2 py-1 rounded" onclick="addItem('productA')">+</button>
-                        </div>
-                    </li>
-                    <!-- Tambahkan item lainnya di sini -->
-                </ul>
-            </div>
-            <div class="col-span-1">
-                <p>Total: <span id="total">Rp 0</span></p>
-                <button class="mt-4 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded" onclick="clearCart()">Hapus Pesanan</button>
-            </div>
-        </div>
+<div class="text-xs bg-white rounded-lg p-5">
+    <h1 class="text-center py-2">Keranjang</h1>
+    <p class="mt-10">Daftar Pesanan</p>
+    <div class="mt-5">
+        <table class="w-full border-collapse">
+            <thead>
+                <tr>
+                    <th class="border p-2 text-center">Items</th>
+                    <th class="border p-2 text-center">Nama</th>
+                    <th class="border p-2 text-center">Harga</th>
+                    <th class="border p-2 text-center">Jumlah</th>
+                    <th class="border p-2 text-center">Sub Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                @php
+                $totalKeseluruhan = 0;
+                @endphp
+                @foreach ($menus as $menu)
+                <tr>
+                    <td class="border p-2 text-center">
+                        <img src="{{ asset('storage/' . $menu->menu->gambar)}}" alt="Product" class="w-20 h-20 object-cover rounded-lg">
+                    </td>
+                    <td class="border p-2 text-center">{{ $menu->nama }}</td>
+                    <td class="border p-2 text-center" id="harga{{ $menu->id }}">Rp {{ number_format($menu->harga, 2, ',', '.') }}</td>
+                    <td class="border p-2 text-center">
+                        <form action="/kurang/{{ $menu->id }}" method="POST">
+                            @csrf
+                            <button type="submit">Kurang</button>
+                        </form>
+                        <span class="mx-2" id="product{{ $menu->id }}">{{ $menu->jumlah }}</span>
+                        <form action="/tambah/{{ $menu->id }}" method="POST">
+                            @csrf
+                            <button type="submit">Tambah</button>
+                        </form>
+                    </td>
+                    @php
+                    $subtotal = $menu->harga * $menu->jumlah;
+                    $totalKeseluruhan += $subtotal;
+                    @endphp
+                    <td class="border p-2 text-center" id="subtotal{{ $menu->id }}">Rp {{ number_format($subtotal, 2, ',', '.') }}</td>
+                </tr>
+                @endforeach
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4" class="border p-2 text-right">Total Keseluruhan:</td>
+                    <td class="border p-2 text-center" id="totalKeseluruhan">Rp {{ number_format($totalKeseluruhan, 2, ',', '.') }}</td>
+                </tr>
+            </tfoot>
+        </table>
     </div>
-
-    <script>
-        function addItem(itemId) {
-            var itemElement = document.getElementById(itemId);
-            var currentCount = parseInt(itemElement.innerText);
-            itemElement.innerText = currentCount + 1;
-            updateTotal();
-        }
-
-        function removeItem(itemId) {
-            var itemElement = document.getElementById(itemId);
-            var currentCount = parseInt(itemElement.innerText);
-            if (currentCount > 0) {
-                itemElement.innerText = currentCount - 1;
-                updateTotal();
-            }
-        }
-
-        function updateTotal() {
-            var productA = parseInt(document.getElementById('productA').innerText);
-            // Tambahkan item lainnya di sini
-            
-            var total = productA * 100; // Ganti 100 dengan harga per unit produk
-            // Hitung total harga dengan menambahkan harga produk lainnya
-            document.getElementById('total').innerText = 'Rp ' + total;
-        }
-
-        function clearCart() {
-            // Reset jumlah item di keranjang
-            document.getElementById('productA').innerText = '0';
-            // Reset jumlah item lainnya di sini
-            
-            updateTotal();
-        }
-
-        // Panggil updateTotal saat halaman dimuat
-        updateTotal();
-    </script>
 </div>
 @endsection
 

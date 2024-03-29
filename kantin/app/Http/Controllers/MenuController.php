@@ -8,39 +8,59 @@ use App\Models\User;
 use App\Models\Pesanan;
 use App\Models\Konsumen;
 use App\Models\DaftarMenu;
-
+use App\Models\Keranjang;
+use Illuminate\Support\Facades\Auth;
 
 
 class MenuController extends Controller
 {
     public function getMenu()
     {
-        $menus = DaftarMenu::all();
-        return view('user/daftarmenu', ['menus' => $menus]);
+        $makanans = DaftarMenu::where('kategori', 'makanan')->get();
+        $minumans = DaftarMenu::where('kategori', 'minuman')->get();
+        return view('user/daftarmenu', compact('makanans', 'minumans'));
     }
-    public function getMenuAdmin()
+    public function store(Request $request, string $id)
     {
-        $menus = Menu::all();
-        return view('admin/daftarmenu', ['menus' => $menus]);
+        $menu = DaftarMenu::find($id);
+        $userId = Auth::id();
+
+        // Cek apakah produk sudah ada dalam keranjang untuk user yang sedang login
+        $existingItem = Keranjang::where('menu_id', $menu->id)
+            ->where('user_id', $userId)
+            ->first();
+
+        if ($existingItem) {
+            // Jika produk sudah ada dalam keranjang, update jumlah dan subtotal
+            $existingItem->jumlah += 1;
+            $existingItem->subtotal = $existingItem->jumlah * $menu->harga;
+            $existingItem->save();
+        } else {
+            // Jika produk belum ada dalam keranjang, buat entri baru
+            $data = [
+                'nama' => $menu->nama_menu,
+                'harga' => $menu->harga,
+                'jumlah' => 1,
+                'subtotal' => $menu->harga * 1,
+                'catatan' => $menu->deskripsi,
+                'menu_id' => $menu->id,
+                'user_id' => $userId,
+            ];
+            Keranjang::create($data);
+        }
+
+        return redirect('user/daftarmenu')->with('berhasil', 'Berhasil menambahkan data');
     }
-    public function getLengthMenu()
+
+
+    public function dashboard()
     {
-        $menus = DaftarMenu::all();
-        $pesanans = Pesanan::all();
-        $konsumens = Konsumen::all();
-        $users = User::all();
-        return view('admin/dasboard', compact('pesanans', 'menus', 'konsumens', 'users'));
+        return view('admin/dashboard');
     }
-    public function iconMenu()
+    public function index()
     {
-        $menus = Menu::all();
-        $pesanans = Pesanan::all();
-        return view('admin/profiladmin', compact('pesanans', 'menus'));
-    }
-    public function konsumen()
-    {
-        $konsumens = Konsumen::all();
-        $users = User::all();
-        return view('admin/datapelanggan', compact('konsumens', 'users'));
+        $userId = Auth::id();
+        $menus = Keranjang::where('user_id', $userId)->get();
+        return view('user/keranjang', compact('menus'));
     }
 }
