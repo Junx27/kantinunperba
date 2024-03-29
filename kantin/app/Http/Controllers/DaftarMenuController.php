@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\DaftarMenu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class DaftarMenuController extends Controller
 {
@@ -13,8 +14,12 @@ class DaftarMenuController extends Controller
      */
     public function index()
     {
-        $menus = DaftarMenu::all();
-        return view('admin/daftarmenu', compact('menus'));
+        $userId = Auth::id();
+        $makanan = 'makanan';
+        $minuman = 'minuman';
+        $makanans = DaftarMenu::where('user_id', $userId)->where('kategori', $makanan)->get();
+        $minumans = DaftarMenu::where('user_id', $userId)->where('kategori', $minuman)->get();
+        return view('admin/daftarmenu', compact('makanans', 'minumans'));
     }
 
     /**
@@ -22,7 +27,9 @@ class DaftarMenuController extends Controller
      */
     public function create()
     {
-        return view('admin/tambahmenu');
+        $userId = Auth::id();
+        $menus = DaftarMenu::where('user_id', $userId)->get();
+        return view('admin/tambahmenu', compact('menus'));
     }
 
     /**
@@ -36,7 +43,9 @@ class DaftarMenuController extends Controller
             'harga' => 'required',
             'stock' => 'required',
             'gambar' => 'image|file|max:1024',
+            'deskripsi' => 'required',
         ]);
+        $validateddata["user_id"] = auth()->id();
         if ($request->file('gambar')) {
             $validateddata['gambar'] = $request->file('gambar')->store('gambar-menu');
         }
@@ -50,7 +59,10 @@ class DaftarMenuController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $userId = Auth::id();
+        $menu = DaftarMenu::where('user_id', $userId)->find($id);
+        $menus = DaftarMenu::where('user_id', $userId)->get();
+        return view('admin/detailmenu', compact('menu', 'menus'));
     }
 
     /**
@@ -58,7 +70,10 @@ class DaftarMenuController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $userId = Auth::id();
+        $menu = DaftarMenu::where('user_id', $userId)->find($id);
+        $menus = DaftarMenu::where('user_id', $userId)->get();
+        return view('admin/editmenu', compact('menu', 'menus'));
     }
 
     /**
@@ -66,7 +81,23 @@ class DaftarMenuController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validateddata = $request->validate([
+            'nama_menu' => 'required',
+            'kategori' => 'required',
+            'harga' => 'required',
+            'stock' => 'required',
+            'gambar' => 'image|file|max:1024',
+            'deskripsi' => 'required',
+        ]);
+        if ($request->file('gambar')) {
+            if ($request->gambar_lama) {
+                Storage::delete($request->gambar_lama);
+            }
+            $validateddata['gambar'] = $request->file('gambar')->store('gambar-menu');
+        }
+
+        DaftarMenu::where('id', $id)->update($validateddata);
+        return redirect('/admin/daftarmenu')->with('berhasil', 'penambahan menu telah berhasil');
     }
 
     /**

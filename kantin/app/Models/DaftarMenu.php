@@ -14,5 +14,11 @@ class DaftarMenu extends Model
         'harga',
         'stock',
         'gambar',
+        'deskripsi',
+        'user_id',
     ];
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

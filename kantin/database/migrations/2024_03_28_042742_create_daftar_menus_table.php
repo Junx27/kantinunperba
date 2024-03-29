@@ -18,6 +18,8 @@ return new class extends Migration
             $table->integer('harga');
             $table->integer('stock');
             $table->string('gambar');
+            $table->string('deskripsi');
+            $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });
     }

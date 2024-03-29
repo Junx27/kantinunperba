@@ -31,7 +31,7 @@
             </div>
             @endif
             <div class="text-sm absolute top-5 right-5 text-center">
-                <a href="/">X</a>
+                <a href="/"><img src="{{ asset('images/icons/cross-circle.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full"></a>
             </div>
             <form action="/register" class="py-10" method="post" enctype="multipart/form-data">
                 @csrf

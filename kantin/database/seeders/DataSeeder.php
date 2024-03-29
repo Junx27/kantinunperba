@@ -88,6 +88,8 @@ class DataSeeder extends Seeder
                 'harga' => 2222,
                 "stock" => 56,
                 'gambar' => 'https://randomuser.me/api/portraits/women/65.jpg',
+                'deskripsi' => 'Deskripsi makanan adalah teks singkat yang menjelaskan tentang makanan tertentu.',
+                'user_id' => 1,
             ],
             [
                 'nama_menu' => "nasi goreng",
@@ -95,6 +97,8 @@ class DataSeeder extends Seeder
                 'harga' => 2222,
                 "stock" => 56,
                 'gambar' => 'https://randomuser.me/api/portraits/women/65.jpg',
+                'deskripsi' => 'Deskripsi makanan adalah teks singkat yang menjelaskan tentang makanan tertentu.',
+                'user_id' => 1,
             ],
         ];
         $userData = [
@@ -124,6 +128,5 @@ class DataSeeder extends Seeder
         foreach ($dataMenu as $key => $value) {
             DaftarMenu::create($value);
         }
-       
     }
 }

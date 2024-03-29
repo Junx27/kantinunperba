@@ -25,7 +25,7 @@
             </div>
             @endif
             <div class="text-sm absolute top-2 right-2 text-center">
-                <a href="/">X</a>
+                <a href="/"><img src="{{ asset('images/icons/cross-circle.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full"></a>
             </div>
             <form action="/login" method="post" class="py-10">
                 @csrf
