@@ -1,16 +1,30 @@
 @extends("layouts.sidebar")
 
 @section("container")
+     <form action="/user/daftarmenu" method="GET" class="z-40 left-[600px] sticky top-5 ml-[57px] rounded-t">
+        <?php
+        $cari = request('cari');
+        if ($cari === '') {
+            $cari = 'all';
+        }
+        ?>
+        <input type="text" name="cari" class="w-64 text-xs border p-2 rounded-lg outline-cyan-700" placeholder="cari menu" value="{{ $cari }}">
+        <button type="submit" class="text-xs w-16 text-white bg-cyan-700 p-2 rounded">Cari</button>
+        <a href="/user/daftarmenu" class="text-xs w-16 text-white bg-orange-500 p-2 rounded">Refresh</a>
+    </form>
+<div class="text-xs w-full bg-white rounded-t-lg pt-10 -mt-[32px]">
     @if (session('berhasil'))
-        <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+        <div class="z-40 absolute top-5 right-5 w-96 text-xs bg-green-100 border border-green-400 text-green-700 px-4 py-3 mb-2 rounded" role="alert">
             <strong class="font-bold">Success!</strong>
             <span class="block sm:inline">{{ session('berhasil') }}</span>
         </div>
      @endif
-<div class="text-xs w-full bg-white rounded-t-lg">
     <div class="flex justify-between items-center z-30 text-center sticky top-0 bg-white p-5 rounded-t-lg">
-        <a href="/admin/daftarmenu/create" class="flex text-xs items-center hover:bg-emerald-500 p-1 w-32 rounded"><img src="{{ asset('images/icons/square-plus.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full mr-3">tambah menu</a>
-        <h1 class="bg-emerald-500 p-1 px-2 text-white rounded">Menu Makanan</h1>
+        <a href="/user/keranjang" class="relative">
+            <p class="absolute -top-2 -right-2 text-[10px] w-5 h-5 flex justify-center items-center bg-orange-500 rounded-full">{{ count($keranjangs)}}</p>
+            <img src="{{ asset('images/icons/shopping-cart-add.png') }}" alt="Ikon" class="w-5">
+        </a>
+        <h1 class="bg-emerald-500 p-2 text-white rounded">Menu Makanan</h1>
     </div>
     <div class="px-5 pb-5 grid grid-cols-3 gap-4">
         @foreach ($makanans as $makanan)
@@ -33,9 +47,8 @@
     </div>
 </div>
 <div class="text-xs w-full bg-white rounded-lg">
-    <div class="flex justify-between items-center z-30 text-center sticky top-0 bg-white p-5">
-        <a href="/admin/daftarmenu/create" class="flex text-xs items-center hover:bg-emerald-500 p-1 w-32 rounded"><img src="{{ asset('images/icons/square-plus.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full mr-3">tambah menu</a>
-        <h1 class="bg-orange-500 p-1 px-2 text-white rounded">Menu Minuman</h1>
+    <div class="flex justify-end items-center z-30 text-center sticky top-0 bg-white p-5">
+        <h1 class="bg-orange-500 p-2 text-white rounded">Menu Minuman</h1>
     </div>
     <div class="px-5 pb-5 grid grid-cols-3 gap-4">
         @foreach ($minumans as $minuman)

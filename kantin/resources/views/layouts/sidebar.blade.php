@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="text-xs m-2 z-20 w-[280px] h-[605px] bg-white fixed top-0 rounded-lg">
+    <div class="text-xs m-2 z-20 w-[280px] h-screen bg-white fixed top-0 rounded-lg">
         <div class="flex flex-col pt-20">
             <a href="/user/profileuser" class="{{ request()->is('user/profileuser*') ? 'flex items-center bg-cyan-700 text-white p-2 pl-5 mx-5 rounded-lg my-1' : 'flex items-center p-2 pl-5 mx-5 my-1' }}">
                 <img src="{{ asset('images/icons/user.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full mr-3">
@@ -20,7 +20,7 @@
                 <img src="{{ asset('images/icons/restaurant.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full mr-3">
                 Daftar Menu
             </a>
-            <a href="/user/pesanansaya" class="{{ request()->is('user/pesanansaya*') ? 'flex items-center bg-cyan-700 text-white p-2 pl-5 mx-5 rounded-lg my-1' : 'flex items-center p-2 pl-5 mx-5 my-1' }}">
+            <a href="/user/pembayaran" class="{{ request()->is('user/pembayaran*') ? 'flex items-center bg-cyan-700 text-white p-2 pl-5 mx-5 rounded-lg my-1' : 'flex items-center p-2 pl-5 mx-5 my-1' }}">
                 <img src="{{ asset('images/icons/shopping-cart-add.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full mr-3">
                 Pesanan Saya
             </a>

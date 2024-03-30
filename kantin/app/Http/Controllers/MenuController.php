@@ -14,29 +14,33 @@ use Illuminate\Support\Facades\Auth;
 
 class MenuController extends Controller
 {
-    public function getMenu()
+    public function getMenu(Request $request)
     {
-        $makanans = DaftarMenu::where('kategori', 'makanan')->get();
-        $minumans = DaftarMenu::where('kategori', 'minuman')->get();
-        return view('user/daftarmenu', compact('makanans', 'minumans'));
+        $cari = $request->get('cari');
+        $userId = Auth::id();
+        $keranjangs = Keranjang::where('user_id', $userId)->where('pembayaran_id', null)->get();
+        $makanans = DaftarMenu::where('kategori', 'makanan')->where('nama_menu', 'like', '%' . $cari . '%')->get();
+        $minumans = DaftarMenu::where('kategori', 'minuman')->where('nama_menu', 'like', '%' . $cari . '%')->get();
+        if ($makanans->isEmpty() && $minumans->isEmpty()) {
+            return redirect('/user/blankpagemenu')->with('gagal', 'menu tidak ditemukan');
+        } else {
+
+            return view('user/daftarmenu', compact('makanans', 'minumans', 'keranjangs'));
+        }
     }
     public function store(Request $request, string $id)
     {
         $menu = DaftarMenu::find($id);
         $userId = Auth::id();
-
-        // Cek apakah produk sudah ada dalam keranjang untuk user yang sedang login
         $existingItem = Keranjang::where('menu_id', $menu->id)
             ->where('user_id', $userId)
             ->first();
 
         if ($existingItem) {
-            // Jika produk sudah ada dalam keranjang, update jumlah dan subtotal
             $existingItem->jumlah += 1;
             $existingItem->subtotal = $existingItem->jumlah * $menu->harga;
             $existingItem->save();
         } else {
-            // Jika produk belum ada dalam keranjang, buat entri baru
             $data = [
                 'nama' => $menu->nama_menu,
                 'harga' => $menu->harga,
@@ -55,12 +59,15 @@ class MenuController extends Controller
 
     public function dashboard()
     {
-        return view('admin/dashboard');
+        $menus = DaftarMenu::all();
+        $pesanans = Keranjang::all();
+        $users = User::all();
+        return view('admin/dashboard', compact('menus', 'pesanans', 'users'));
     }
     public function index()
     {
         $userId = Auth::id();
-        $menus = Keranjang::where('user_id', $userId)->get();
+        $menus = Keranjang::where('user_id', $userId)->where('pembayaran_id', null)->get();
         return view('user/keranjang', compact('menus'));
     }
 }

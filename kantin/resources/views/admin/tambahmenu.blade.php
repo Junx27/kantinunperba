@@ -8,10 +8,10 @@
         <a href="/admin/daftarmenu/{{ $menu->id }}" class="transition-shadow duration-500 cursor-pointer flex flex-row mt-5 border rounded-lg hover:shadow">
             <img src="{{ asset('storage/' . $menu->gambar)}}" alt="Product 2" class="w-32 h-32 object-cover rounded-l-lg">
             <div class="text-xs ml-3 mt-3">
-                <p class="font-bold">{{ $menu->nama_menu}}</p>
-                <p class="flex items-center mt-3"><img src="{{ asset('images/icons/brand.png') }}" alt="Ikon" class="w-3 mr-2">Rp {{ number_format($menu->harga, 2, ',', '.') }}</p>
-                <p class="flex items-center"><img src="{{ asset('images/icons/box-open.png') }}" alt="Ikon" class="w-3 mr-2">{{ $menu->stock}}</p>
-                <p class="flex items-center"><img src="{{ asset('images/icons/user.png') }}" alt="Ikon" class="w-3 mr-2">{{ $menu->user->nama}}</p>
+                <p class="font-bold capitalize">{{ $menu->nama_menu}}</p>
+                <p class="flex items-center mt-4"><img src="{{ asset('images/icons/brand.png') }}" alt="Ikon" class="w-3 mr-2">Rp {{ number_format($menu->harga, 2, ',', '.') }}</p>
+                <p class="flex items-center my-2"><img src="{{ asset('images/icons/box-open.png') }}" alt="Ikon" class="w-3 mr-2">{{ $menu->stock}}</p>
+                <p class="flex items-center my-2 capitalize"><img src="{{ asset('images/icons/user.png') }}" alt="Ikon" class="w-3 mr-2">{{ $menu->user->nama}}</p>
             </div>
         </a>
         @endforeach

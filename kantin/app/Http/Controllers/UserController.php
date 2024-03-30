@@ -14,12 +14,31 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $konsumens = Konsumen::all();
-        $users = User::all();
-        return view('admin/datapelanggan', compact('konsumens', 'users'));
+        $cari = $request->get('cari');
+        $gender = $request->get('gender');
+
+        $query = User::query();
+
+        if ($cari) {
+            $query->where('nama', 'like', '%' . $cari . '%');
+        }
+
+        if ($gender && $gender !== 'all') {
+            $query->where('gender', $gender);
+        }
+
+        $users = $query->paginate(10);
+
+        if ($users->isEmpty()) {
+            return redirect('/admin/blankpagekonsumen')->with('gagal', 'kosumen tidak ditemukan');
+        }
+
+        return view('admin/datapelanggan', compact('users'));
     }
+
+
 
     /**
      * Show the form for creating a new resource.

@@ -6,10 +6,10 @@
         <div class="flex">
             <img src="https://wallpapersmug.com/download/1920x1080/930962/vegetables-fresh.jpg" alt="" class="z-0 w-full h-[300px] object-cover rounded-t-lg">
         </div>
-        <div>
-            <span class="w-20 h-20 bg-transparent absolute rounded-br-full top-[220px] left-[64.9px] shadow-myShadow1"></span>
-            <span class="w-20 h-20 bg-transparent absolute rounded-bl-full top-[220px] right-[590px] shadow-myShadow2"></span>
-            <img src="{{ asset('storage/' . $user->gambar)}}" alt="" class="z-10 relative -mt-32 ml-32 border-[15px] border-white w-64 h-64 object-cover rounded-full">
+        <div class="relative w-96">
+            <span class="z-10 w-20 h-20 bg-transparent absolute rounded-br-full top-[48px] left-[64.9px] shadow-myShadow1"></span>
+            <span class="w-20 h-20 bg-transparent absolute rounded-bl-full top-[48px] -right-[63px] shadow-myShadow2"></span>
+            <img src="{{ asset('storage/' . $user->gambar)}}" alt="" class="z-30 -mt-32 ml-32 border-[18px] border-white w-64 h-64 object-cover rounded-full">
         </div>
         <div class="-mt-32 ml-96">
             <h1 class="mt-5 text-3xl font-bold ml-2 capitalize">{{ $user->nama}}</h1>

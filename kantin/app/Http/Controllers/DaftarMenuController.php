@@ -12,14 +12,19 @@ class DaftarMenuController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $cari = $request->get('cari');
         $userId = Auth::id();
         $makanan = 'makanan';
         $minuman = 'minuman';
-        $makanans = DaftarMenu::where('user_id', $userId)->where('kategori', $makanan)->get();
-        $minumans = DaftarMenu::where('user_id', $userId)->where('kategori', $minuman)->get();
-        return view('admin/daftarmenu', compact('makanans', 'minumans'));
+        $makanans = DaftarMenu::where('user_id', $userId)->where('kategori', $makanan)->where('nama_menu', 'like', '%' . $cari . '%')->get();
+        $minumans = DaftarMenu::where('user_id', $userId)->where('kategori', $minuman)->where('nama_menu', 'like', '%' . $cari . '%')->get();
+        if ($makanans->isEmpty() && $minumans->isEmpty()) {
+            return redirect('/admin/blankpagemenu')->with('gagal', 'menu tidak ditemukan');
+        } else {
+            return view('admin/daftarmenu', compact('makanans', 'minumans'));
+        }
     }
 
     /**
@@ -105,23 +110,16 @@ class DaftarMenuController extends Controller
      */
     public function destroy(string $id)
     {
-        // Temukan pengguna berdasarkan ID
         $menu = DaftarMenu::find($id);
 
-        // Pastikan pengguna ditemukan
         if ($menu) {
-            // Hapus gambar terkait jika ada
             if ($menu->gambar) {
                 Storage::delete($menu->gambar);
             }
 
-            // Hapus pengguna dari database
             $menu->delete();
-
-            // Redirect ke halaman index dengan pesan sukses
             return redirect("/admin/daftarmenu")->with('success', 'Data pengguna dan gambar berhasil dihapus');
         } else {
-            // Jika pengguna tidak ditemukan, kembalikan dengan pesan kesalahan
             return redirect("/admin/daftarmenu")->with('error', 'Pengguna tidak ditemukan');
         }
     }

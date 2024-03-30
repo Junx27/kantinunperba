@@ -5,6 +5,8 @@ use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\MendaftarController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\PencarianController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\ProfilAdminController;
 use App\Http\Controllers\ProfilUserController;
@@ -49,44 +51,28 @@ Route::middleware(['auth'])->group(function () {
     Route::get('admin/historypenjualan/{id}', [PesananController::class, 'detailriwayat'])->middleware('userAkses:admin');
     Route::resource('admin/daftarmenu', DaftarMenuController::class)->middleware('userAkses:admin');
     Route::get('admin/profiladmin', [ProfilAdminController::class, "index"])->middleware('userAkses:admin');
-    Route::get('admin/kritik&saran', function () {
-        return view('admin/kritik&saran');
+    Route::get('admin/blankpagekonsumen', function () {
+        return view('admin/blankpagekonsumen');
+    })->middleware('userAkses:admin');
+    Route::get('admin/blankpagemenu', function () {
+        return view('admin/blankpagemenu');
     })->middleware('userAkses:admin');
     Route::get('admin/detailpesanan', function () {
         return view('admin/detailpesanan');
     })->middleware('userAkses:admin');
+    Route::get('/user/blankpagemenu', function () {
+        return view('user/blankpagemenu');
+    })->middleware('userAkses:user');
     Route::get('user/keranjang/{id}', [MenuController::class, 'store'])->middleware('userAkses:user');
     Route::get('user/keranjang', [MenuController::class, 'index'])->middleware('userAkses:user');
+    Route::resource('user/pembayaran', PembayaranController::class)->middleware('userAkses:user');
     Route::get('user/historypembelian', function () {
         return view('user/historypembelian');
     })->middleware('userAkses:user');
-    Route::get('user/editprofil', function () {
-        return view('user/editprofil');
-    })->middleware('userAkses:user');
-    Route::get('user/strukpemesanan', function () {
-        return view('user/strukpemesanan');
-    })->middleware('userAkses:user');
-    Route::get('user/metodepembayaran', function () {
-        return view('user/metodepembayaran');
-    })->middleware('userAkses:user');
-    Route::get('user/pembayaranBank', function () {
-        return view('user/pembayaranBank');
-    })->middleware('userAkses:user');
-    Route::get('user/pembayaranDana', function () {
-        return view('user/pembayaranDana');
-    })->middleware('userAkses:user');
     Route::resource('user/profileuser', ProfilUserController::class)->middleware('userAkses:user');
-    Route::get('user/kritik&saran', function () {
-        return view('user/kritik&saran');
-    })->middleware('userAkses:user');
-    Route::get('user/pesanansaya', function () {
-        return view('user/pesanansaya');
-    })->middleware('userAkses:user');
-    Route::get('user/pembayarantunai', function () {
-        return view('user/pembayarantunai');
-    })->middleware('userAkses:user');
     Route::get('user/daftarmenu', [MenuController::class, "getMenu"])->middleware('userAkses:user');
     Route::get('/logout', [SessionController::class, 'logout']);
     Route::post('/tambah/{id}', [KeranjangController::class, "tambah"])->middleware('userAkses:user');
     Route::post('/kurang/{id}', [KeranjangController::class, "kurang"])->middleware('userAkses:user');
+    Route::delete('user/keranjang/{id}', [KeranjangController::class, "hapus"])->middleware('userAkses:user');
 });
