@@ -46,7 +46,6 @@ class MenuController extends Controller
                 'harga' => $menu->harga,
                 'jumlah' => 1,
                 'subtotal' => $menu->harga * 1,
-                'catatan' => $menu->deskripsi,
                 'menu_id' => $menu->id,
                 'user_id' => $userId,
             ];

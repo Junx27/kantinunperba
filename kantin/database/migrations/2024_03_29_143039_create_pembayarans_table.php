@@ -17,9 +17,10 @@ return new class extends Migration
             $table->string('nama');
             $table->string('id_pesanan');
             $table->string('total_bayar')->default('belum');
-            $table->string('metode_pembayaran')->default('belum');
-            $table->string('bukti_pembayaran')->default('belum');
-            $table->string('status_pesanan')->default('belum');
+            $table->string('metode_pembayaran')->default('Pilih Metode Pembayaran');
+            $table->string('gambar')->default('belum');
+            $table->string('status_pesanan')->default('Pilih Status Pengiriman');
+            $table->string('catatan')->default('Masukan catatan pembelian bila perlu, seperti lokasi pengiriman.');
             $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });

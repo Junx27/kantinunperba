@@ -4,12 +4,12 @@
 @endphp
 
 @section("container")
-<div class="text-xs bg-white w-sreen h-screen rounded-lg p-5">
+<div class="text-xs bg-white w-full h-full rounded-lg p-5">
     @if ($data == 0)
-        <div class="my-3 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-            <strong class="font-bold">Belum ada pesanan!</strong>
-        </div>
-    @endif
+    <div class="my-3 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+        <strong class="font-bold">Belum ada pesanan!</strong>
+    </div>
+    @else
     <p class="font-bold text-center sticky top-0 bg-white p-4">Daftar Pesanan</p>
     <div class="mt-5">
         <table class="w-full border-collapse">
@@ -81,6 +81,7 @@
             </tfoot>
         </table>
     </div>
+    @endif
 </div>
 @endsection
 
