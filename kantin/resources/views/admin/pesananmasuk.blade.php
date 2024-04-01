@@ -53,7 +53,9 @@ $data = count($pembayarans)
                         <td class="py-2 px-4 border">{{ $pesanan_terendah->id_pesanan }}</td>
                         <td class="py-2 px-4 border font-bold">Rp {{ number_format($pesanan_terendah->total_bayar, 2, ',', '.') }}</td>
                         <td class="py-2 px-4 border">{{ $pesanan_terendah->created_at }}</td>
-                        <td class="py-2 px-4 border">{{ $pesanan_terendah->metode_pembayaran }}</td>
+                        <td class="py-2 px-4 border-r border-b flex justify-between">{{ $pesanan_terendah->metode_pembayaran }}  @if ($pesanan_terendah->metode_pembayaran == 'transfer')
+                            <p id="lihat_bukti_transfer" class="text-sky-400 cursor-pointer">lihat</p>  
+                        @endif</td>
                     </tr>
                 </tbody>
             </table>
@@ -134,6 +136,25 @@ $data = count($pembayarans)
                 </div>
             </div>
         </div>
+        <div id="bukti_transfer" class="z-30 hidden absolute top-20 right-3">
+            <img src="{{ asset('storage/' . $pesanan_terendah->gambar)}}" alt="Product 2" class="w-[200px] h-[400px] object-cover rounded-lg hover:scale-[101%] hover:rounded-none transition-all duration-500">
+        </div>
+        <script>
+            const tampilkanGambar = document.getElementById("bukti_transfer");
+            const tutupkanGambar = document.getElementById("lihat_bukti_transfer");
+            tampilkanGambar.addEventListener('click', function() {
+                tampilkanGambar.classList.add('hidden');
+            })
+            tutupkanGambar.addEventListener('click', function() {
+                tampilkanGambar.classList.add('block');
+                tampilkanGambar.classList.remove('hidden');
+            })
+            document.addEventListener('scroll', function() {
+        if (!tampilkanGambar.classList.contains('hidden')) {
+            tampilkanGambar.classList.add('hidden');
+            }
+            });
+        </script>
 </div>
 @endif
 @endsection
