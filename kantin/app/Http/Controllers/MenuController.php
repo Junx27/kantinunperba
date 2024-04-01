@@ -9,6 +9,7 @@ use App\Models\Pesanan;
 use App\Models\Konsumen;
 use App\Models\DaftarMenu;
 use App\Models\Keranjang;
+use App\Models\Pembayaran;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -59,9 +60,10 @@ class MenuController extends Controller
     public function dashboard()
     {
         $menus = DaftarMenu::all();
-        $pesanans = Keranjang::all();
+        $pesanans = Pembayaran::whereIn('metode_pembayaran', ['tunai', 'transfer'])->get();
+        $riwayats = Pembayaran::where('status', 'selesai')->get();
         $users = User::all();
-        return view('admin/dashboard', compact('menus', 'pesanans', 'users'));
+        return view('admin/dashboard', compact('menus', 'pesanans', 'users', 'riwayats'));
     }
     public function index()
     {
