@@ -1,6 +1,5 @@
 @php
 $judul = "Pesanan Saya";
-$pesanan_terendah = $pembayarans->first();
 $data = count($pembayarans)
 @endphp
 
@@ -8,15 +7,16 @@ $data = count($pembayarans)
 
 @section("container")
 @if ($data == 0)
-<div class="text-xs bg-white h-screen text-center pt-64 text-red-700 px-4 rounded-lg relative" role="alert">
-    <strong class="font-bold">Belum ada pesanan!</strong>
+<div class="pt-96 text-xs text-center bg-white w-full h-screen">
+    <p>Belum ada data</p>
 </div>
 @else
 <div class="fixed top-2 text-xs w-[300px] h-[760px] bg-white p-5 rounded-lg mr-3 overflow-auto">
     <h1 class="sticky -top-5 bg-white border-b font-bold text-center -mt-3 py-3 px-4">Daftar Pemesanan</h1>
     <div class="mt-5">
         @foreach ($pembayarans as $pembayaran)
-        <a href="/user/historypembelian/{{ $pembayaran->id }}" class="{{ $pembayaran->id == $pesanan_terendah->id ? 'transition-all duration-500 my-2 p-4 bg-lime-400 rounded-lg cursor-pointer flex flex-col' : 'transition-all duration-500 my-2 p-4 hover:bg-lime-400 hover:rounded-lg cursor-pointer flex flex-col' }}">
+        @if ($pembayaran->metode_pembayaran == 'tunai' | $pembayaran->metode_pembayaran == 'transfer' )
+        <a href="/user/historypembelian/{{ $pembayaran->id }}" class="{{ request()->is('user/historypembelian/' .$pembayaran->id) ? 'transition-all duration-500 my-2 p-4 bg-lime-400 rounded-lg cursor-pointer flex flex-col' : 'transition-all duration-500 my-2 p-4 hover:bg-lime-400 hover:rounded-lg cursor-pointer flex flex-col' }}">
             <p class="font-bold">ID Pesanan: {{$pembayaran->id_pesanan}}</p>
             <div class="flex justify-between items-center">
                 <div>
@@ -39,6 +39,7 @@ $data = count($pembayarans)
                 @endif
             </div>
         </a>
+        @endif
         @endforeach
     </div>
 </div>
@@ -57,19 +58,18 @@ $data = count($pembayarans)
                         <th class="py-2 px-4">Tanggal Transaksi</th>
                         <th class="py-2 px-4">Pembayaran</th>
                         <th class="py-2 px-4">Status</th>
-
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="bg-white">
-                        <td class="py-2 px-4 border capitalize">{{ $pesanan_terendah->nama }}</td>
-                        <td class="py-2 px-4 border">{{ $pesanan_terendah->id_pesanan }}</td>
-                        <td class="py-2 px-4 border font-bold">Rp {{ number_format($pesanan_terendah->total_bayar, 2, ',', '.') }}</td>
-                        <td class="py-2 px-4 border">{{ $pesanan_terendah->created_at }}</td>
-                        <td class="py-2 px-4 border-r border-b flex justify-between">{{ $pesanan_terendah->metode_pembayaran }}  @if ($pesanan_terendah->metode_pembayaran == 'transfer')
+                        <td class="py-2 px-4 border capitalize">{{ $pesanan->nama }}</td>
+                        <td class="py-2 px-4 border">{{ $pesanan->id_pesanan }}</td>
+                        <td class="py-2 px-4 border font-bold">Rp {{ number_format($pesanan->total_bayar, 2, ',', '.') }}</td>
+                        <td class="py-2 px-4 border">{{ $pesanan->created_at }}</td>
+                        <td class="py-2 px-4 border-r border-b flex justify-between">{{ $pesanan->metode_pembayaran }} @if ($pesanan->metode_pembayaran == 'transfer')
                             <p id="lihat_bukti_transfer" class="text-sky-400 cursor-pointer">lihat</p>  
                         @endif</td>
-                        @if ($pesanan_terendah->status == 'dikirim')
+                        @if ($pesanan->status == 'dikirim')
                         <td class="py-2 px-4 border-r border-b text-green-500">Pesanan dikirim</td>  
                         @else
                         <td class="py-2 px-4 border-r border-b text-red-500">Pesanan dikemas</td> 
@@ -83,8 +83,8 @@ $data = count($pembayarans)
             <div class="relative text-center mt-2 bg-white rounded-lg w-full h-full p-5 overflow-auto">
                 <h1 class="mb-2">Informasi Pengguna</h1>
                 <hr class="mb-5">
-                <img src="{{ asset('storage/' . $pesanan_terendah->user->gambar)}}" alt="" class="mx-auto w-32 h-32 rounded-full object-cover">
-                <h1 class="mt-5 text-sm font-bold ml-2 capitalize">{{ $pesanan_terendah->user->nama}}</h1>
+                <img src="{{ asset('storage/' . $pesanan->user->gambar)}}" alt="" class="mx-auto w-32 h-32 rounded-full object-cover">
+                <h1 class="mt-5 text-sm font-bold ml-2 capitalize">{{ $pesanan->user->nama}}</h1>
             <div class="flex justify-center mt-5">
                 <div class="flex items-center border-r border-black pr-3">
                     <img src="{{ asset('images/icons/shopping-cart-check.png') }}" alt="Ikon" class="w-4 mx-2">
@@ -92,14 +92,14 @@ $data = count($pembayarans)
                 </div>
                 <div class="flex items-center border-r border-black pr-3">
                     <img src="{{ asset('images/icons/envelope.png') }}" alt="Ikon" class="w-4 mx-2">
-                    <p>{{ $pesanan_terendah->user->email}}</p>
+                    <p>{{ $pesanan->user->email}}</p>
                 </div>
                 <div class="flex items-center">
                     <img src="{{ asset('images/icons/phone-flip.png') }}" alt="Ikon" class="w-4 mx-2">
-                    <p>{{ $pesanan_terendah->user->nomor}}</p>
+                    <p>{{ $pesanan->user->nomor}}</p>
                 </div>
             </div>
-            <h1 class="text-start my-5 font-bold ml-2 capitalize">Detail pesanan_terendah:</h1>
+            <h1 class="text-start my-5 font-bold ml-2 capitalize">Detail pesanan:</h1>
                 <table class="w-full border-collapse">
                     <thead>
                         <tr>
@@ -116,7 +116,7 @@ $data = count($pembayarans)
                         $totalKeseluruhan = 0;
                         @endphp
                         @foreach ($pembelians as $index => $menu)
-                        @if ($menu->pembayaran_id == $pesanan_terendah->id)   
+                        @if ($menu->pembayaran_id == $pesanan->id)   
                         <tr>
                             <td class="border p-2 text-center">{{ $index + 1}}</td>
                             <td class="border p-2 text-center w-32">
@@ -145,7 +145,7 @@ $data = count($pembayarans)
             </div>
         </div>
         <div id="bukti_transfer" class="z-30 hidden absolute top-20 right-3">
-            <img src="{{ asset('storage/' . $pesanan_terendah->gambar)}}" alt="Product 2" class="w-[200px] h-[400px] object-cover rounded-lg hover:scale-[101%] hover:rounded-none transition-all duration-500">
+            <img src="{{ asset('storage/' . $pesanan->gambar)}}" alt="Product 2" class="w-[200px] h-[400px] object-cover rounded-lg hover:scale-[101%] hover:rounded-none transition-all duration-500">
         </div>
         <script>
             const tampilkanGambar = document.getElementById("bukti_transfer");

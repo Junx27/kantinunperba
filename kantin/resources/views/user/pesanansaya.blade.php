@@ -8,8 +8,8 @@ $data = count($pembayarans)
 
 @section("container")
 @if ($data == 0)
-<div class="pt-96 text-xs text-center bg-white w-full h-screen">
-    <p>Belum ada data</p>
+<div class="text-xs bg-white h-screen text-center pt-64 text-red-700 px-4 rounded-lg relative" role="alert">
+    <strong class="font-bold">Belum ada pesanan!</strong>
 </div>
 @else
 <div class="fixed top-2 text-xs w-[300px] h-[760px] bg-white p-5 rounded-lg mr-3 overflow-auto">

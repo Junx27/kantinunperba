@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pembayaran;
+use App\Models\Pembelian;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PembelianController extends Controller
 {
@@ -11,7 +14,10 @@ class PembelianController extends Controller
      */
     public function index()
     {
-        //
+        $userId = Auth::id();
+        $keranjangs = Pembelian::all();
+        $pembayarans = Pembayaran::whereIn('metode_pembayaran', ["transfer", "tunai"])->get();
+        return view('/admin/pesananmasuk', compact('pembayarans', 'keranjangs'))->with('berhasil', 'Pesanan berhasil dibuat');
     }
 
     /**
@@ -35,7 +41,10 @@ class PembelianController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $keranjangs = Pembelian::all();
+        $pembayaran = Pembayaran::find($id);
+        $pembayarans = Pembayaran::whereIn('metode_pembayaran', ["tunai", "transfer"])->get();
+        return view('/admin/detailpesanan', compact('pembayarans', 'keranjangs', 'pembayaran'))->with('berhasil', 'Pesanan berhasil dibuat');
     }
 
     /**
@@ -51,7 +60,11 @@ class PembelianController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validateddata = $request->validate([
+            'status' => 'required',
+        ]);
+        Pembayaran::where('id', $id)->update($validateddata);
+        return redirect('/admin/daftarmenu')->with('berhasil', 'Pesanan dikirim');
     }
 
     /**

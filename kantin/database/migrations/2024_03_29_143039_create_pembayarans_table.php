@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('gambar')->default('belum');
             $table->string('status_pesanan')->default('Pilih Status Pengiriman');
             $table->string('catatan')->default('Masukan catatan pembelian bila perlu, seperti lokasi pengiriman.');
+            $table->string('status')->default('belum');
             $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });

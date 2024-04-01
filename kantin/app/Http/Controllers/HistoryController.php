@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pembayaran;
+use App\Models\Pembelian;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class HistoryController extends Controller
 {
@@ -11,7 +15,26 @@ class HistoryController extends Controller
      */
     public function index()
     {
-        return view("user/historypembelian");
+        $userId = Auth::user()->id;
+        $pembelians = Pembelian::where("user_id", $userId)->get();
+        $pembayarans = Pembayaran::where("user_id", $userId)->whereIn('metode_pembayaran', ["tunai", "transfer"])->whereIn("status", ["dikirim", "belum"])->get();
+        return view("user/historypembelian", compact("pembelians", 'pembayarans'));
+    }
+    public function admin()
+    {
+        $userId = Auth::user()->id;
+        $status = "selesai";
+        $pembelians = Pembelian::all();
+        $pembayarans = Pembayaran::whereIn('metode_pembayaran', ["tunai", "transfer"])->where("status", $status)->get();
+        return view("admin/historypenjualan", compact("pembelians", 'pembayarans'));
+    }
+    public function detailriwayat()
+    {
+        $userId = Auth::user()->id;
+        $status = "selesai";
+        $pembelians = Pembelian::all();
+        $pembayarans = Pembayaran::whereIn('metode_pembayaran', ["tunai", "transfer"])->where("status", $status)->get();
+        return view("admin/detailhistorypenjualan", compact("pembelians", 'pembayarans'));
     }
 
     /**
@@ -35,7 +58,11 @@ class HistoryController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $userId = Auth::user()->id;
+        $pembelians = Pembelian::where("user_id", $userId)->get();
+        $pembayarans = Pembayaran::where("user_id", $userId)->whereIn('metode_pembayaran', ["tunai", "transfer"])->whereIn("status", ["dikirim", "belum"])->get();
+        $pesanan = Pembayaran::where("id", $id)->where("user_id", $userId)->find($id);
+        return view("user/detailhistorypembelian", compact("pembelians", 'pembayarans', "pesanan"));
     }
 
     /**
@@ -51,7 +78,11 @@ class HistoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validateddata = $request->validate([
+            'status' => 'required',
+        ]);
+        Pembayaran::where('id', $id)->update($validateddata);
+        return redirect('/user/daftarmenu')->with('berhasil', 'Riwayat pesanan telah dihapus');
     }
 
     /**
@@ -59,6 +90,12 @@ class HistoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $pembayaran = Pembayaran::find($id);
+        if ($pembayaran->gambar) {
+            Storage::delete($pembayaran->gambar);
+        }
+        Pembelian::where('pembayaran_id', $pembayaran->id)->delete();
+        $pembayaran->delete();
+        return redirect('/admin/daftarmenu')->with('berhasil', 'Keranjang menu telah dihapus');
     }
 }

@@ -25,7 +25,7 @@
                 Pesanan Saya
             </a>
 
-            <a href="/user/historypembelian" class="{{ request()->is('user/historypembelian') ? 'flex items-center bg-cyan-700 text-white p-2 pl-5 mx-5 rounded-lg my-1' : 'flex items-center p-2 pl-5 mx-5 my-1' }}">
+            <a href="/user/historypembelian" class="{{ request()->is('user/historypembelian*') ? 'flex items-center bg-cyan-700 text-white p-2 pl-5 mx-5 rounded-lg my-1' : 'flex items-center p-2 pl-5 mx-5 my-1' }}">
                 <img src="{{ asset('images/icons/time-past.png') }}" alt="Ikon" class="bg-white w-6 p-1 rounded-full mr-3">
                 History Pembelian
             </a>

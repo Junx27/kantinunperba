@@ -6,7 +6,7 @@
 @section("container")
 <div class="text-xs bg-white w-full h-full rounded-lg p-5">
     @if ($data == 0)
-    <div class="my-3 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+    <div class="my-3 h-screen text-center mt-64 text-red-700 px-4 py-3 rounded relative" role="alert">
         <strong class="font-bold">Belum ada pesanan!</strong>
     </div>
     @else

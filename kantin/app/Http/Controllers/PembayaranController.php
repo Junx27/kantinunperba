@@ -117,7 +117,7 @@ class PembayaranController extends Controller
         }
 
         Pembayaran::where('id', $id)->update($validateddata);
-        return redirect('/user/daftarmenu')->with('berhasil', 'penambahan menu telah berhasil');
+        return redirect('/user/daftarmenu')->with('berhasil', 'Pembayaran telah berhasil');
     }
 
     /**
@@ -139,7 +139,6 @@ class PembayaranController extends Controller
             ->delete();
 
         $pembayaran->delete();
-
         return redirect('/user/daftarmenu')->with('berhasil', 'Keranjang menu telah dihapus');
     }
 }
