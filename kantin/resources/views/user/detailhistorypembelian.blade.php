@@ -30,10 +30,20 @@ $data = count($pembayarans)
                 <form action="/user/historypembelian/{{ $pembayaran->id }}" method="post" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
                     @method('put')
                     @csrf
-                    <input type="text" name="status" value="selesai" type="hidden" class="hidden">
+                    <input type="text" name="status" value="diterima" type="hidden" class="hidden">
                     <button type="submit" class="flex items-center hover:text-white">
                         <img src="{{ asset('images/icons/trash.png') }}" alt="Ikon" class="w-3">
-                        <p class="ml-2">hapus</p>
+                        <p class="ml-2">Pesanan diterima</p>
+                    </button>
+                </form>
+                @elseif ($pembayaran->status == "diterima")  
+                <form action="/user/historypembelian/{{ $pembayaran->id }}" method="post" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+                    @method('put')
+                    @csrf
+                    <input type="text" name="status" value="dihapus" type="hidden" class="hidden">
+                    <button type="submit" class="flex items-center hover:text-white">
+                        <img src="{{ asset('images/icons/trash.png') }}" alt="Ikon" class="w-3">
+                        <p class="ml-2">dihapus</p>
                     </button>
                 </form>
                 @endif

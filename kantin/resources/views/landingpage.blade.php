@@ -37,7 +37,7 @@
                             <a href="/login" class="font-semibold text-lime-400 bg-cyan-700 p-3 px-24 rounded-lg">Masuk</a>
                         </div>
                     </div>
-                    <img src="https://www.foodnavigator-usa.com/var/wrbm_gb_food_pharma/storage/images/publications/food-beverage-nutrition/foodnavigator-usa.com/news/markets/deloitte-report-consumers-fresh-food-spending-on-the-rise/10363851-1-eng-GB/Deloitte-report-Consumers-fresh-food-spending-on-the-rise.jpg" alt="" class="w-[500px] h-[600px] object-cover rounded-lg mr-10">
+                    <img src="https://th.bing.com/th/id/OIP.p1_lN8nNUyN_Qzn7jpH-vgHaGP?&w=160&h=240&c=7&pid=ImgDet" alt="" class="w-[500px] h-[600px] object-cover rounded-lg mr-10">
                 </div>
                 <div class="absolute bottom-3 right-14 w-[475px] h-[150px] rounded-lg bg-lime-400 opacity-50">
                 </div>

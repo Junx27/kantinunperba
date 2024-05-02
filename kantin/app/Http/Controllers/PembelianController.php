@@ -16,7 +16,7 @@ class PembelianController extends Controller
     {
         $userId = Auth::id();
         $keranjangs = Pembelian::all();
-        $pembayarans = Pembayaran::whereIn('metode_pembayaran', ["transfer", "tunai"])->get();
+        $pembayarans = Pembayaran::whereIn('metode_pembayaran', ["transfer", "tunai"])->whereIn("status", ["belum"])->get();
         return view('/admin/pesananmasuk', compact('pembayarans', 'keranjangs'))->with('berhasil', 'Pesanan berhasil dibuat');
     }
 

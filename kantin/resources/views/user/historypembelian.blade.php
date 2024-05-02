@@ -17,7 +17,7 @@ $data = count($pembayarans)
     <div class="mt-5">
         @foreach ($pembayarans as $pembayaran)
         <a href="/user/historypembelian/{{ $pembayaran->id }}" class="{{ $pembayaran->id == $pesanan_terendah->id ? 'transition-all duration-500 my-2 p-4 bg-lime-400 rounded-lg cursor-pointer flex flex-col' : 'transition-all duration-500 my-2 p-4 hover:bg-lime-400 hover:rounded-lg cursor-pointer flex flex-col' }}">
-            <p class="font-bold">ID Pesanan: {{$pembayaran->id_pesanan}}</p>
+        <p class="font-bold">ID Pesanan: {{$pembayaran->id_pesanan}}</p>
             <div class="flex justify-between items-center">
                 <div>
                     <div class="mt-3 flex items-center">
@@ -30,10 +30,20 @@ $data = count($pembayarans)
                 <form action="/user/historypembelian/{{ $pembayaran->id }}" method="post" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
                     @method('put')
                     @csrf
-                    <input type="text" name="status" value="selesai" type="hidden" class="hidden">
+                    <input type="text" name="status" value="diterima" type="hidden" class="hidden">
                     <button type="submit" class="flex items-center hover:text-white">
-                        <img src="{{ asset('images/icons/trash.png') }}" alt="Ikon" class="w-3">
-                        <p class="ml-2">hapus</p>
+                       
+                        <p class="ml-2 bg-sky-500 p-1 rounded">Pesanan diterima</p>
+                    </button>
+                </form>
+                @elseif ($pembayaran->status == "diterima")  
+                <form action="/user/historypembelian/{{ $pembayaran->id }}" method="post" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+                    @method('put')
+                    @csrf
+                    <input type="text" name="status" value="dihapus" type="hidden" class="hidden">
+                    <button type="submit" class="flex items-center hover:text-white">
+                       
+                        <p class="ml-2 bg-red-500 p-1 rounded">dihapus</p>
                     </button>
                 </form>
                 @endif
@@ -69,7 +79,7 @@ $data = count($pembayarans)
                         <td class="py-2 px-4 border-r border-b flex justify-between">{{ $pesanan_terendah->metode_pembayaran }}  @if ($pesanan_terendah->metode_pembayaran == 'transfer')
                             <p id="lihat_bukti_transfer" class="text-sky-400 cursor-pointer">lihat</p>  
                         @endif</td>
-                        @if ($pesanan_terendah->status == 'dikirim')
+                        @if ($pesanan_terendah->status == 'dikirim' | $pesanan_terendah->status == 'diterima' )
                         <td class="py-2 px-4 border-r border-b text-green-500">Pesanan dikirim</td>  
                         @else
                         <td class="py-2 px-4 border-r border-b text-red-500">Pesanan dikemas</td> 

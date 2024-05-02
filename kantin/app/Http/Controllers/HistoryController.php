@@ -17,7 +17,7 @@ class HistoryController extends Controller
     {
         $userId = Auth::user()->id;
         $pembelians = Pembelian::where("user_id", $userId)->get();
-        $pembayarans = Pembayaran::where("user_id", $userId)->whereIn('metode_pembayaran', ["tunai", "transfer"])->whereIn("status", ["dikirim", "belum"])->get();
+        $pembayarans = Pembayaran::where("user_id", $userId)->whereIn('metode_pembayaran', ["tunai", "transfer"])->whereIn("status", ["dikirim", "belum", "diterima"])->get();
         return view("user/historypembelian", compact("pembelians", 'pembayarans'));
     }
     public function admin()
@@ -25,7 +25,7 @@ class HistoryController extends Controller
         $userId = Auth::user()->id;
         $status = "selesai";
         $pembelians = Pembelian::all();
-        $pembayarans = Pembayaran::whereIn('metode_pembayaran', ["tunai", "transfer"])->where("status", $status)->get();
+        $pembayarans = Pembayaran::whereIn('metode_pembayaran', ["tunai", "transfer"])->whereIn("status", ["dihapus", "diterima"])->get();
         return view("admin/historypenjualan", compact("pembelians", 'pembayarans'));
     }
     public function detailriwayat()
@@ -60,7 +60,7 @@ class HistoryController extends Controller
     {
         $userId = Auth::user()->id;
         $pembelians = Pembelian::where("user_id", $userId)->get();
-        $pembayarans = Pembayaran::where("user_id", $userId)->whereIn('metode_pembayaran', ["tunai", "transfer"])->whereIn("status", ["dikirim", "belum"])->get();
+        $pembayarans = Pembayaran::where("user_id", $userId)->whereIn('metode_pembayaran', ["tunai", "transfer"])->whereIn("status", ["dikirim", "belum", "diterima"])->get();
         $pesanan = Pembayaran::where("id", $id)->where("user_id", $userId)->find($id);
         return view("user/detailhistorypembelian", compact("pembelians", 'pembayarans', "pesanan"));
     }
